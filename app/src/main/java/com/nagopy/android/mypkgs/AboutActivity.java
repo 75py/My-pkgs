@@ -27,7 +27,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.nagopy.android.mypkgs.support.DebugUtil;
+import com.nagopy.android.mypkgs.util.DebugUtil;
 
 import java.io.BufferedReader;
 import java.io.IOException;

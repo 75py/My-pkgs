@@ -23,10 +23,10 @@ import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Build;
 
-import com.nagopy.android.mypkgs.support.AppDataComparator;
-import com.nagopy.android.mypkgs.support.DebugUtil;
-import com.nagopy.android.mypkgs.support.FieldReflectWrapper;
-import com.nagopy.android.mypkgs.support.Logic;
+import com.nagopy.android.mypkgs.util.AppDataComparator;
+import com.nagopy.android.mypkgs.util.DebugUtil;
+import com.nagopy.android.mypkgs.util.FieldReflectWrapper;
+import com.nagopy.android.mypkgs.util.Logic;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

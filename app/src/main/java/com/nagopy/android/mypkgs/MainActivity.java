@@ -47,8 +47,8 @@ import android.widget.Filterable;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.nagopy.android.mypkgs.support.DebugUtil;
-import com.nagopy.android.mypkgs.support.Logic;
+import com.nagopy.android.mypkgs.util.DebugUtil;
+import com.nagopy.android.mypkgs.util.Logic;
 import com.viewpagerindicator.PageIndicator;
 
 import java.lang.ref.WeakReference;

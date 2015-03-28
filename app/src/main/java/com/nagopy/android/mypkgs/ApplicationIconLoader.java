@@ -21,8 +21,8 @@ import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.widget.TextView;
 
-import com.nagopy.android.mypkgs.support.DebugUtil;
-import com.nagopy.android.mypkgs.support.Logic;
+import com.nagopy.android.mypkgs.util.DebugUtil;
+import com.nagopy.android.mypkgs.util.Logic;
 
 import java.lang.ref.WeakReference;
 

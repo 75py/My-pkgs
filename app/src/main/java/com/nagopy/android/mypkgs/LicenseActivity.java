@@ -25,7 +25,7 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.nagopy.android.mypkgs.support.DimenUtil;
+import com.nagopy.android.mypkgs.util.DimenUtil;
 
 import java.io.BufferedReader;
 import java.io.IOException;

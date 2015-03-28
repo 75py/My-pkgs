@@ -1,4 +1,4 @@
-package com.nagopy.android.mypkgs.support;
+package com.nagopy.android.mypkgs.util;
 
 import android.app.admin.DevicePolicyManager;
 import android.content.Context;

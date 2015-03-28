@@ -13,33 +13,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.nagopy.android.mypkgs.support;
+package com.nagopy.android.mypkgs.util;
 
 import android.util.Log;
 
-import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 /**
- * リフレクションでフィールドを取得する際、try-catchを書かずに済ませるためのラッパークラス.<br>
+ * リフレクションでメソッドを取得する際、try-catchを書かずに済ませるためのラッパークラス.<br>
  * インスタンス生成時にリフレクションを実行し、成功判定を保存する。<br>
- * 呼び出す側は、{@link #isEnabled()}を事前に使用し、{@link java.lang.reflect.Field}取得に成功している場合は値取得メソッドを使用できる。
+ * 呼び出す側は、{@link #isEnabled()}を事前に使用し、{@link java.lang.reflect.Method}取得に成功している場合はメソッドを使用できる。
  */
-public class FieldReflectWrapper {
+public class MethodReflectWrapper {
 
-    private final Field field;
+    private final Method method;
     private final boolean enabled;
 
-    public FieldReflectWrapper(Class<?> cls, String fieldName) {
-        Field field = null;
+    public MethodReflectWrapper(Class<?> cls, String methodName, Class<?>... parameterTypes) {
+        Method method = null;
         boolean enabled = false;
         try {
-            field = cls.getDeclaredField(fieldName);
-            field.setAccessible(true);
+            method = cls.getDeclaredMethod(methodName, parameterTypes);
+            method.setAccessible(true);
             enabled = true;
-        } catch (NoSuchFieldException e) {
+        } catch (NoSuchMethodException e) {
             log(e);
         }
-        this.field = field;
+        this.method = method;
         this.enabled = enabled;
     }
 
@@ -47,24 +48,16 @@ public class FieldReflectWrapper {
         return enabled;
     }
 
-    public Object get(Object object) {
+    public Object invoke(Object receiver, Object... args) {
         try {
-            return field.get(object);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public int getInt(Object object) {
-        try {
-            return field.getInt(object);
-        } catch (IllegalAccessException e) {
+            return method.invoke(receiver, args);
+        } catch (IllegalAccessException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }
     }
 
     private void log(Exception e) {
-        Log.e("FieldReflectWrapper", e.getMessage());
+        Log.e("MethodReflectWrapper", e.getMessage());
     }
 
 }

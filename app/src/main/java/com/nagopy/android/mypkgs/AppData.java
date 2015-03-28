@@ -24,8 +24,8 @@ import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 
-import com.nagopy.android.mypkgs.support.DebugUtil;
-import com.nagopy.android.mypkgs.support.DevicePolicyUtil;
+import com.nagopy.android.mypkgs.util.DebugUtil;
+import com.nagopy.android.mypkgs.util.DevicePolicyUtil;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
