@@ -36,7 +36,13 @@
         <item name="android:scrollbarTrackVertical">@drawable/fast_scroll_track_drawable</item>
 
         <item name="vpiTabPageIndicatorStyle">@style/CustomTabPageIndicator</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowMenuButton</item>
     </style>
+
+    <style name="OverflowMenuButton" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_action_more</item>
+    </style>
+
 
     <style name="TextAppearance.AppTheme.Large" parent="TextAppearance.AppCompat.Large">
         <item name="android:textColor">@color/text_color</item>
