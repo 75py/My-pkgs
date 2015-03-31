@@ -15,16 +15,16 @@
     <string name="description_list_parent" translatable="false">listItem</string>
 
     <string name="title_all">All</string>
-    <string name="title_all_running">All, Running</string>
+    <string name="title_all_running">All, running</string>
     <string name="title_system">System</string>
-    <string name="title_system_running">System, Running</string>
-    <string name="title_system_active_admin">System, Admin</string>
-    <string name="title_system_active_admin_running">System, Admin, Running</string>
-    <string name="title_system_inactive_admin">System, Non-admin</string>
-    <string name="title_system_inactive_admin_running">System, Non-admin, Running</string>
+    <string name="title_system_running">System, running</string>
+    <string name="title_system_active_admin">Undisablable</string>
+    <string name="title_system_active_admin_running">Undisablable, running</string>
+    <string name="title_system_inactive_admin">Disablable</string>
+    <string name="title_system_inactive_admin_running">Disablable, running</string>
     <string name="title_disabled">"Disabled"</string>
     <string name="title_user">"User"</string>
-    <string name="title_user_running">"User, Running"</string>
+    <string name="title_user_running">"User, running"</string>
     <string name="title_default">Default</string>
     <string name="more">More</string>
     <string name="reload">Reload</string>
