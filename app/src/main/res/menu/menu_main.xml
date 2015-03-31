@@ -22,6 +22,11 @@
         android:title="@string/reload"
         app:showAsAction="withText|ifRoom" />
     <item
+        android:id="@+id/action_preference"
+        android:icon="@drawable/ic_action_preference"
+        android:title="@string/preference"
+        app:showAsAction="withText|ifRoom" />
+    <item
         android:id="@+id/action_about"
         android:icon="@drawable/ic_action_help"
         android:title="@string/about"

@@ -15,54 +15,66 @@
  */
 package com.nagopy.android.mypkgs;
 
+import java.util.Comparator;
+
 public enum FilterType {
 
-    ALL(R.string.title_all) {
+    ALL(1, R.string.title_all) {
         @Override
         public boolean isTarget(AppData appData) {
             return true;
         }
-    }, RUNNING(R.string.title_all_running) {
+    }, RUNNING(2, R.string.title_all_running) {
         @Override
         public boolean isTarget(AppData appData) {
             return appData.process != null && !appData.process.isEmpty();
         }
-    }, SYSTEM(R.string.title_system) {
+    }, SYSTEM(3, R.string.title_system) {
         @Override
         public boolean isTarget(AppData appData) {
             return appData.isSystem;
         }
-    }, SYSTEM_ACTIVE_ADMIN(R.string.title_system_active_admin) {
+    }, SYSTEM_RUNNING(4, R.string.title_system_running) {
+        @Override
+        public boolean isTarget(AppData appData) {
+            return SYSTEM.isTarget(appData) && RUNNING.isTarget(appData);
+        }
+    }, SYSTEM_ACTIVE_ADMIN(5, R.string.title_system_active_admin) {
         @Override
         public boolean isTarget(AppData appData) {
             return SYSTEM.isTarget(appData) && (appData.isThisASystemPackage || appData.hasActiveAdmins);
         }
-    }, SYSTEM_INACTIVE_ADMIN(R.string.title_system_inactive_admin) {
+    }, SYSTEM_ACTIVE_ADMIN_RUNNING(6, R.string.title_system_active_admin_running) {
+        @Override
+        public boolean isTarget(AppData appData) {
+            return SYSTEM_ACTIVE_ADMIN.isTarget(appData) && RUNNING.isTarget(appData);
+        }
+    }, SYSTEM_INACTIVE_ADMIN(7, R.string.title_system_inactive_admin) {
         @Override
         public boolean isTarget(AppData appData) {
             return SYSTEM.isTarget(appData) && !SYSTEM_ACTIVE_ADMIN.isTarget(appData);
         }
-    }, SYSTEM_INACTIVE_ADMIN_RUNNING(R.string.title_system_inactive_admin_running) {
+    }, SYSTEM_INACTIVE_ADMIN_RUNNING(8, R.string.title_system_inactive_admin_running) {
         @Override
         public boolean isTarget(AppData appData) {
             return SYSTEM_INACTIVE_ADMIN.isTarget(appData) && RUNNING.isTarget(appData);
         }
-    }, DISABLED(R.string.title_disabled) {
+    }, DISABLED(9, R.string.title_disabled) {
         @Override
         public boolean isTarget(AppData appData) {
             return !appData.isEnabled;
         }
-    }, DEFAULT(R.string.title_default) {
+    }, DEFAULT(10, R.string.title_default) {
         @Override
         public boolean isTarget(AppData appData) {
             return appData.isDefaultApp;
         }
-    }, USER(R.string.title_user) {
+    }, USER(11, R.string.title_user) {
         @Override
         public boolean isTarget(AppData appData) {
             return !appData.isSystem;
         }
-    }, USER_RUNNING(R.string.title_user_running) {
+    }, USER_RUNNING(12, R.string.title_user_running) {
         @Override
         public boolean isTarget(AppData appData) {
             return USER.isTarget(appData) && RUNNING.isTarget(appData);
@@ -70,14 +82,19 @@ public enum FilterType {
     };
 
     public final int titleId;
+    public final int priority;
 
-    private FilterType(int titleId) {
+    private FilterType(int priority, int titleId) {
+        this.priority = priority;
         this.titleId = titleId;
     }
 
-    public static FilterType indexOf(int index) {
-        return values()[index];
-    }
-
     public abstract boolean isTarget(AppData appData);
+
+    public static final Comparator<FilterType> COMPARATOR = new Comparator<FilterType>() {
+        @Override
+        public int compare(FilterType filterType, FilterType filterType2) {
+            return filterType.priority - filterType2.priority;
+        }
+    };
 }

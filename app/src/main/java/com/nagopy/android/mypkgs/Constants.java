@@ -22,6 +22,7 @@ public class Constants {
 
     public static final String LINE_SEPARATOR = System.getProperty("line.separator");
     public static final String MINE_TYPE_TEXT_PLAIN = "text/plain";
+    public static final String KEY_UPDATE_FLG = "UPDATE_FLG";
 
     private Constants() {
     }

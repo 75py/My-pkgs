@@ -19,14 +19,15 @@ import android.annotation.SuppressLint;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.ListFragment;
 import android.support.v4.view.PagerAdapter;
@@ -66,6 +67,7 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
     PageIndicator pageIndicator;
     ActionMode actionMode;
     AppData reloadAppData;
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,12 +77,14 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.pager);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(this);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         pageIndicator = (PageIndicator) findViewById(R.id.indicator);
         pageIndicator.setViewPager(mViewPager);
+
+        sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
     }
 
     @Override
@@ -114,6 +118,16 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
 
             reloadAppData = null;
         }
+
+        // カテゴリ更新
+        if (sp.getBoolean(Constants.KEY_UPDATE_FLG, false)) {
+            // とりあえず一番前に移動
+            mViewPager.setCurrentItem(0);
+            // 再度初期化
+            mSectionsPagerAdapter = new SectionsPagerAdapter(this);
+            mViewPager.setAdapter(mSectionsPagerAdapter);
+            pageIndicator.notifyDataSetChanged();
+        }
     }
 
 
@@ -141,6 +155,10 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
             case R.id.action_reload:
                 ApplicationList.getInstance().clearCache();
                 getApplicationListFragment().showProgressBar().loadApplications();
+                break;
+            case R.id.action_preference:
+                Intent preferenceActivity = new Intent(getApplicationContext(), SettingsActivity.class);
+                startActivity(preferenceActivity);
                 break;
             case R.id.action_about:
                 Intent aboutActivity = new Intent(getApplicationContext(), AboutActivity.class);
@@ -283,20 +301,22 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
      * A {@link android.support.v4.app.FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    public static class SectionsPagerAdapter extends FragmentPagerAdapter {
+        final Context context;
+        final List<FilterType> filterTypeList;
+        Map<FilterType, WeakReference<ApplicationListFragment>> cache = new EnumMap<>(FilterType.class);
 
-        Map<FilterType, WeakReference<ApplicationListFragment>> cache;
-
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-            cache = new EnumMap<>(FilterType.class);
+        public SectionsPagerAdapter(MainActivity activity) {
+            super(activity.getSupportFragmentManager());
+            this.context = activity.getApplicationContext();
+            this.filterTypeList = Logic.getFilters(activity.getApplicationContext());
         }
 
 
         @Override
         public Fragment getItem(int position) {
             DebugUtil.verboseLog("SectionsPagerAdapter#getItem(" + position + ")");
-            FilterType filterType = FilterType.indexOf(position);
+            FilterType filterType = filterTypeList.get(position);
             WeakReference<ApplicationListFragment> weakReference = cache.get(filterType);
             if (weakReference == null || weakReference.get() == null) {
                 DebugUtil.verboseLog("create new instance");
@@ -311,13 +331,13 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
 
         @Override
         public int getCount() {
-            return FilterType.values().length;
+            return filterTypeList.size();
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            FilterType filterType = FilterType.values()[position];
-            return getString(filterType.titleId);
+            FilterType filterType = filterTypeList.get(position);
+            return context.getString(filterType.titleId);
         }
     }
 
@@ -433,7 +453,7 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
             this.filterType = filterType;
             this.packageManager = context.getPackageManager();
             this.iconSize = Logic.getIconSize(context);
-            this.COLOR_ENABLED = context.getResources().getColor(R.color.textColor);
+            this.COLOR_ENABLED = context.getResources().getColor(R.color.text_color);
             this.COLOR_DISABLED = context.getResources().getColor(R.color.textColorTertiary);
         }
 

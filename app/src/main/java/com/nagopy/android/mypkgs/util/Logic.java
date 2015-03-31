@@ -19,11 +19,13 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.UserHandle;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.util.SparseBooleanArray;
 import android.widget.ListView;
@@ -31,12 +33,16 @@ import android.widget.TextView;
 
 import com.nagopy.android.mypkgs.AppData;
 import com.nagopy.android.mypkgs.Constants;
+import com.nagopy.android.mypkgs.FilterType;
+import com.nagopy.android.mypkgs.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Logic {
 
@@ -215,5 +221,28 @@ public class Logic {
             textView.setCompoundDrawablesRelative(drawable, null, null, null);
         }
         drawable.setCallback(null);
+    }
+
+    public static List<FilterType> getFilters(Context context) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean advanced = sp.getBoolean(context.getString(R.string.pref_key_enabled_advanced), false);
+        int keyId = advanced ? R.string.pref_key_app_categories_advanced : R.string.pref_key_app_categories;
+        Set<String> values = sp.getStringSet(context.getString(keyId), Collections.<String>emptySet());
+        if (values.isEmpty()) {
+            int defaultId = advanced ? R.array.values_app_categories_advanced : R.array.values_app_categories_advanced;
+            values = toSet(context.getResources().getStringArray(defaultId));
+        }
+        List<FilterType> list = new ArrayList<>();
+        for (String value : values) {
+            list.add(FilterType.valueOf(value));
+        }
+        Collections.sort(list, FilterType.COMPARATOR);
+        return list;
+    }
+
+    public static <T> Set<T> toSet(T[] array) {
+        Set<T> set = new LinkedHashSet<>(array.length);
+        Collections.addAll(set, array);
+        return set;
     }
 }

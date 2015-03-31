@@ -12,7 +12,6 @@
     <color name="themeColor5_translucent">#7FFFE10D</color>
 
     <color name="backgroundColor">@color/background_material_light</color>
-    <color name="textColor">@color/primary_text_default_material_light</color>
     <color name="textColorSecondary">@color/secondary_text_default_material_light</color>
     <color name="textColorTertiary">#60000000</color>
 
@@ -29,7 +28,7 @@
         <item name="actionMenuTextColor">@android:color/white</item>
         <item name="android:actionMenuTextColor">@android:color/white</item>
 
-        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textColor">@color/text_color</item>
         <item name="android:textColorSecondary">@color/textColorSecondary</item>
         <item name="android:fastScrollThumbDrawable">@drawable/fast_scroll_thumb</item>
         <item name="android:fastScrollTrackDrawable">@drawable/fast_scroll_track_drawable</item>
@@ -40,15 +39,15 @@
     </style>
 
     <style name="TextAppearance.AppTheme.Large" parent="TextAppearance.AppCompat.Large">
-        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textColor">@color/text_color</item>
     </style>
 
     <style name="TextAppearance.AppTheme.Medium" parent="TextAppearance.AppCompat.Medium">
-        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textColor">@color/text_color</item>
     </style>
 
     <style name="TextAppearance.AppTheme.Small" parent="TextAppearance.AppCompat.Small">
-        <item name="android:textColor">@color/textColor</item>
+        <item name="android:textColor">@color/text_color</item>
     </style>
 
     <style name="AppTheme.ListView" />
