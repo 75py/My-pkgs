@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 public class SettingsActivity extends ActionBarActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -43,6 +44,16 @@ public class SettingsActivity extends ActionBarActivity implements SharedPrefere
         if (!s.equals(Constants.KEY_UPDATE_FLG)) {
             sharedPreferences.edit().putBoolean(Constants.KEY_UPDATE_FLG, true).apply();
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public static class SettingsFragment extends PreferenceFragment {
