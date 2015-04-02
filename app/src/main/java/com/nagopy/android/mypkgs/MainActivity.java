@@ -127,6 +127,9 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
             mSectionsPagerAdapter = new SectionsPagerAdapter(this);
             mViewPager.setAdapter(mSectionsPagerAdapter);
             pageIndicator.notifyDataSetChanged();
+
+            // フラグをオフに
+            sp.edit().putBoolean(Constants.KEY_UPDATE_FLG, false).apply();
         }
     }
 
