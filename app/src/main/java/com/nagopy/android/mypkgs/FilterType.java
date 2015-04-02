@@ -15,7 +15,12 @@
  */
 package com.nagopy.android.mypkgs;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public enum FilterType {
 
@@ -80,6 +85,18 @@ public enum FilterType {
             return USER.isTarget(appData) && RUNNING.isTarget(appData);
         }
     };
+
+    public static final List<FilterType> DEFAULT_FILTERS
+            = Collections.unmodifiableList(Arrays.asList(FilterType.ALL, FilterType.SYSTEM, FilterType.USER, FilterType.DISABLED));
+    public static final Set<String> DEFAULT_FILTERS_NAME_SET;
+
+    static {
+        Set<String> defaultNameSet = new HashSet<>();
+        for (FilterType filterType : DEFAULT_FILTERS) {
+            defaultNameSet.add(filterType.name());
+        }
+        DEFAULT_FILTERS_NAME_SET = Collections.unmodifiableSet(defaultNameSet);
+    }
 
     public final int titleId;
     public final int priority;

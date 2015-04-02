@@ -32,35 +32,14 @@
     <string name="title_csv">CSV</string>
 
     <!-- prefs -->
-    <string name="pref_key_app_categories">pref_key_app_categories</string>
-    <string name="pref_title_app_categories">Categories</string>
     <string name="pref_key_app_categories_advanced">pref_key_app_categories_advanced</string>
     <string name="pref_title_app_categories_advanced">Categories (advanced)</string>
-    <string name="pref_title_enabled_advanced">Use advanced features</string>
     <string name="pref_key_enabled_advanced">pref_key_enabled_advanced</string>
+    <string name="pref_title_enabled_advanced">Use advanced features</string>
     <string name="pref_summary_enabled_advanced">You can use advanced features(categorise disableable apps), please check it. The features is for the experienced. Please do at your own risk.</string>
+
     <string name="title_activity_settings">Settings</string>
     <string name="preference">Preference</string>
-
-    <string-array name="title_app_categories">
-        <item>@string/title_all</item>
-        <item>@string/title_all_running</item>
-        <item>@string/title_system</item>
-        <item>@string/title_system_running</item>
-        <item>@string/title_disabled</item>
-        <item>@string/title_user</item>
-        <item>@string/title_user_running</item>
-    </string-array>
-
-    <string-array name="values_app_categories">
-        <item>ALL</item>
-        <item>RUNNING</item>
-        <item>SYSTEM</item>
-        <item>SYSTEM_RUNNING</item>
-        <item>DISABLED</item>
-        <item>USER</item>
-        <item>USER_RUNNING</item>
-    </string-array>
 
     <string-array name="title_app_categories_advanced">
         <item>@string/title_all</item>

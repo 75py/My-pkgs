@@ -226,11 +226,13 @@ public class Logic {
     public static List<FilterType> getFilters(Context context) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         boolean advanced = sp.getBoolean(context.getString(R.string.pref_key_enabled_advanced), false);
-        int keyId = advanced ? R.string.pref_key_app_categories_advanced : R.string.pref_key_app_categories;
-        Set<String> values = sp.getStringSet(context.getString(keyId), Collections.<String>emptySet());
+        if (!advanced) {
+            return FilterType.DEFAULT_FILTERS;
+        }
+
+        Set<String> values = sp.getStringSet(context.getString(R.string.pref_key_app_categories_advanced), Collections.<String>emptySet());
         if (values.isEmpty()) {
-            int defaultId = advanced ? R.array.values_app_categories_advanced : R.array.values_app_categories_advanced;
-            values = toSet(context.getResources().getStringArray(defaultId));
+            return FilterType.DEFAULT_FILTERS;
         }
         List<FilterType> list = new ArrayList<>();
         for (String value : values) {

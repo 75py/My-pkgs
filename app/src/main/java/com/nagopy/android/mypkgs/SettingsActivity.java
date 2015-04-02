@@ -2,10 +2,8 @@ package com.nagopy.android.mypkgs;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.preference.SwitchPreference;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -61,22 +59,6 @@ public class SettingsActivity extends ActionBarActivity implements SharedPrefere
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.pref_general);
-
-            SwitchPreference advancedCheckbox = (SwitchPreference) findPreference(getText(R.string.pref_key_enabled_advanced));
-            updateAdvancedSetting(advancedCheckbox.isChecked());
-            advancedCheckbox.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-                @Override
-                public boolean onPreferenceChange(Preference preference, Object o) {
-                    boolean newValue = (Boolean) o;
-                    updateAdvancedSetting(newValue);
-                    return true;
-                }
-            });
-        }
-
-        private void updateAdvancedSetting(boolean newValue) {
-            findPreference(getText(R.string.pref_key_app_categories)).setEnabled(!newValue);
-            findPreference(getText(R.string.pref_key_app_categories_advanced)).setEnabled(newValue);
         }
     }
 

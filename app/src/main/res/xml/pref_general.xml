@@ -1,18 +1,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.nagopy.android.mypkgs.CustomMultiSelectListPreference
-        android:entries="@array/title_app_categories"
-        android:entryValues="@array/values_app_categories"
-        android:key="@string/pref_key_app_categories"
-        android:title="@string/pref_title_app_categories" />
-
     <SwitchPreference
         android:defaultValue="false"
         android:key="@string/pref_key_enabled_advanced"
-        android:title="@string/pref_title_enabled_advanced"
-        android:summary="@string/pref_summary_enabled_advanced"/>
+        android:summary="@string/pref_summary_enabled_advanced"
+        android:title="@string/pref_title_enabled_advanced" />
 
-    <com.nagopy.android.mypkgs.CustomMultiSelectListPreference
+    <com.nagopy.android.mypkgs.FilterTypeSelectListPreference
+        android:dependency="@string/pref_key_enabled_advanced"
         android:entries="@array/title_app_categories_advanced"
         android:entryValues="@array/values_app_categories_advanced"
         android:key="@string/pref_key_app_categories_advanced"
