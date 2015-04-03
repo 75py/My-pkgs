@@ -15,6 +15,7 @@
  */
 package com.nagopy.android.mypkgs;
 
+import android.annotation.SuppressLint;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.IntentFilter;
@@ -85,6 +86,8 @@ public class AppData {
         this.isSystem = (applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) > 0
                 || (applicationInfo.flags & ApplicationInfo.FLAG_UPDATED_SYSTEM_APP) != 0;
         try {
+            // ここはしょうがないので警告を抑制
+            @SuppressLint("PackageManagerGetSignatures")
             PackageInfo packageInfo = packageManager.getPackageInfo(packageName,
                     PackageManager.GET_DISABLED_COMPONENTS | PackageManager.GET_UNINSTALLED_PACKAGES
                             | PackageManager.GET_SIGNATURES);
@@ -104,7 +107,7 @@ public class AppData {
         packageManager.getPreferredActivities(outFilters, outActivities, applicationInfo.packageName);
         isDefaultApp = !outActivities.isEmpty();
 
-        DebugUtil.debugLog(toString());
+        DebugUtil.verboseLog(toString());
     }
 
     @Override

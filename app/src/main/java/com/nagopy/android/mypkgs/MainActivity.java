@@ -239,7 +239,7 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
 
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-        DebugUtil.debugLog("onCreateActionMode");
+        DebugUtil.verboseLog("onCreateActionMode");
         actionMode = mode;
         mode.getMenuInflater().inflate(R.menu.menu_main_multi, menu);
         return true;

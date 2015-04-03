@@ -64,7 +64,7 @@ public class AboutActivity extends ActionBarActivity {
                 String str;
                 StringBuilder sb = new StringBuilder();
                 while ((str = br.readLine()) != null) {
-                    DebugUtil.debugLog(str);
+                    DebugUtil.verboseLog(str);
                     if (TextUtils.isEmpty(str)) {
                         sb.append("<br>");
                     } else {
