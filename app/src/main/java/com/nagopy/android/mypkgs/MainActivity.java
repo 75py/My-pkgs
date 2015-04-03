@@ -49,6 +49,8 @@ import android.widget.Filterable;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.nagopy.android.mypkgs.util.DebugUtil;
 import com.nagopy.android.mypkgs.util.Logic;
 import com.viewpagerindicator.PageIndicator;
@@ -70,6 +72,8 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
     AppData reloadAppData;
     SharedPreferences sp;
 
+    AdView adView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,18 +90,30 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
         pageIndicator.setViewPager(mViewPager);
 
         sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+        adView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("F3D630FD4B16A430A0CB29123A096F71").build();
+        adView.loadAd(adRequest);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         pageIndicator.setOnPageChangeListener(this);
+        adView.resume();
     }
 
     @Override
     protected void onPause() {
+        adView.pause();
         pageIndicator.setOnPageChangeListener(null);
         super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        adView.destroy();
+        super.onDestroy();
     }
 
     @Override
@@ -386,7 +402,7 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    if(getActivity() == null){
+                    if (getActivity() == null) {
                         return;
                     }
                     Context context = getActivity().getApplicationContext();
