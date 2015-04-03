@@ -92,7 +92,10 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
         sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         adView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("F3D630FD4B16A430A0CB29123A096F71").build();
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .addTestDevice("F3D630FD4B16A430A0CB29123A096F71")
+                .build();
         adView.loadAd(adRequest);
     }
 
