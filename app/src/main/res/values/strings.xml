@@ -18,10 +18,10 @@
     <string name="title_all_running">All, running</string>
     <string name="title_system">System</string>
     <string name="title_system_running">System, running</string>
-    <string name="title_system_active_admin">Undisablable</string>
-    <string name="title_system_active_admin_running">Undisablable, running</string>
-    <string name="title_system_inactive_admin">Disablable</string>
-    <string name="title_system_inactive_admin_running">Disablable, running</string>
+    <string name="title_system_undisablable">Undisablable</string>
+    <string name="title_system_undisablable_running">Undisablable, running</string>
+    <string name="title_system_disablable">Disablable</string>
+    <string name="title_system_disablable_running">Disablable, running</string>
     <string name="title_disabled">"Disabled"</string>
     <string name="title_user">"User"</string>
     <string name="title_user_running">"User, running"</string>
@@ -32,9 +32,9 @@
     <string name="title_csv">CSV</string>
 
     <!-- prefs -->
-    <string name="pref_key_app_categories_advanced">pref_key_app_categories_advanced</string>
+    <string name="pref_key_app_categories_advanced" translatable="false">pref_key_app_categories_advanced</string>
     <string name="pref_title_app_categories_advanced">Categories (advanced)</string>
-    <string name="pref_key_enabled_advanced">pref_key_enabled_advanced</string>
+    <string name="pref_key_enabled_advanced" translatable="false">pref_key_enabled_advanced</string>
     <string name="pref_title_enabled_advanced">Use advanced features</string>
     <string name="pref_summary_enabled_advanced">You can use advanced features(categorise disableable apps), please check it. The features is for the experienced. Please do at your own risk.</string>
 
@@ -46,10 +46,10 @@
         <item>@string/title_all_running</item>
         <item>@string/title_system</item>
         <item>@string/title_system_running</item>
-        <item>@string/title_system_active_admin</item>
-        <item>@string/title_system_active_admin_running</item>
-        <item>@string/title_system_inactive_admin</item>
-        <item>@string/title_system_inactive_admin_running</item>
+        <item>@string/title_system_undisablable</item>
+        <item>@string/title_system_undisablable_running</item>
+        <item>@string/title_system_disablable</item>
+        <item>@string/title_system_disablable_running</item>
         <item>@string/title_disabled</item>
         <item>@string/title_default</item>
         <item>@string/title_user</item>

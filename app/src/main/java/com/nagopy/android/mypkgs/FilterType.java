@@ -44,25 +44,25 @@ public enum FilterType {
         public boolean isTarget(AppData appData) {
             return SYSTEM.isTarget(appData) && RUNNING.isTarget(appData);
         }
-    }, SYSTEM_ACTIVE_ADMIN(5, R.string.title_system_active_admin) {
+    }, SYSTEM_UNDISABLABLE(5, R.string.title_system_undisablable) {
         @Override
         public boolean isTarget(AppData appData) {
             return SYSTEM.isTarget(appData) && (appData.isThisASystemPackage || appData.hasActiveAdmins);
         }
-    }, SYSTEM_ACTIVE_ADMIN_RUNNING(6, R.string.title_system_active_admin_running) {
+    }, SYSTEM_UNDISABLABLE_RUNNING(6, R.string.title_system_undisablable_running) {
         @Override
         public boolean isTarget(AppData appData) {
-            return SYSTEM_ACTIVE_ADMIN.isTarget(appData) && RUNNING.isTarget(appData);
+            return SYSTEM_UNDISABLABLE.isTarget(appData) && RUNNING.isTarget(appData);
         }
-    }, SYSTEM_INACTIVE_ADMIN(7, R.string.title_system_inactive_admin) {
+    }, SYSTEM_DISABLABLE(7, R.string.title_system_disablable) {
         @Override
         public boolean isTarget(AppData appData) {
-            return SYSTEM.isTarget(appData) && !SYSTEM_ACTIVE_ADMIN.isTarget(appData);
+            return SYSTEM.isTarget(appData) && !SYSTEM_UNDISABLABLE.isTarget(appData);
         }
-    }, SYSTEM_INACTIVE_ADMIN_RUNNING(8, R.string.title_system_inactive_admin_running) {
+    }, SYSTEM_DISABLABLE_RUNNING(8, R.string.title_system_disablable_running) {
         @Override
         public boolean isTarget(AppData appData) {
-            return SYSTEM_INACTIVE_ADMIN.isTarget(appData) && RUNNING.isTarget(appData);
+            return SYSTEM_DISABLABLE.isTarget(appData) && RUNNING.isTarget(appData);
         }
     }, DISABLED(9, R.string.title_disabled) {
         @Override
