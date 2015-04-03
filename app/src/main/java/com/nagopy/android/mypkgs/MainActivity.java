@@ -29,6 +29,7 @@ import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.ListFragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -119,9 +120,7 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
             reloadAppData = null;
         }
 
-        // カテゴリ更新
         if (sp.getBoolean(Constants.KEY_UPDATE_FLG, false)) {
-            // とりあえず一番前に移動
             mViewPager.setCurrentItem(0);
             // 再度初期化
             mSectionsPagerAdapter = new SectionsPagerAdapter(this);
@@ -304,7 +303,7 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
      * A {@link android.support.v4.app.FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public static class SectionsPagerAdapter extends FragmentPagerAdapter {
+    public static class SectionsPagerAdapter extends FragmentStatePagerAdapter {
         final Context context;
         final List<FilterType> filterTypeList;
         Map<FilterType, WeakReference<ApplicationListFragment>> cache = new EnumMap<>(FilterType.class);
@@ -387,6 +386,9 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
             new Thread(new Runnable() {
                 @Override
                 public void run() {
+                    if(getActivity() == null){
+                        return;
+                    }
                     Context context = getActivity().getApplicationContext();
                     final ApplicationListAdapter applicationListAdapter = (ApplicationListAdapter) getListAdapter();
 
