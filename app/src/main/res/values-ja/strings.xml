@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">マイパッケージ</string>
+    <string name="action_share">共有</string>
+    <string name="action_search">検索</string>
+    <string name="keyword_disable">無効化</string>
+    <string name="not_installed">未インストール</string>
+    <string name="action_more">More</string>
+    <string name="open_source_license">オープンソースライセンス</string>
+    <string name="about">このアプリについて</string>
+
+    <string name="title_all">全て</string>
+    <string name="title_all_running">全て（実行中）</string>
+    <string name="title_system">システム</string>
+    <string name="title_system_running">システム（実行中）</string>
+    <string name="title_system_undisablable">無効化不可</string>
+    <string name="title_system_undisablable_running">無効化不可（実行中）</string>
+    <string name="title_system_disablable">無効化可能</string>
+    <string name="title_system_disablable_running">無効化可能（実行中）</string>
+    <string name="title_disabled">無効化済み</string>
+    <string name="title_user">ユーザー</string>
+    <string name="title_user_running">ユーザー（実行中）</string>
+    <string name="title_default">デフォルト起動</string>
+    <string name="more">More</string>
+    <string name="reload">再読み込み</string>
+    <string name="title_package_name">パッケージ名</string>
+    <string name="title_csv">CSV形式</string>
+
+    <!-- prefs -->
+    <string name="pref_title_app_categories_advanced">Categories (advanced)</string>
+    <string name="pref_summary_enabled_advanced">上級者向け機能を有効にします。無効化可能アプリなどの一覧が表示可能。使用は自己責任でお願いします。</string>
+
+    <string name="title_activity_settings">設定</string>
+    <string name="preference">設定</string>
+
+    <string-array name="title_app_categories_advanced">
+        <item>@string/title_all</item>
+        <item>@string/title_all_running</item>
+        <item>@string/title_system</item>
+        <item>@string/title_system_running</item>
+        <item>@string/title_system_undisablable</item>
+        <item>@string/title_system_undisablable_running</item>
+        <item>@string/title_system_disablable</item>
+        <item>@string/title_system_disablable_running</item>
+        <item>@string/title_disabled</item>
+        <item>@string/title_default</item>
+        <item>@string/title_user</item>
+        <item>@string/title_user_running</item>
+    </string-array>
+    <string-array name="values_app_categories_advanced">
+        <item>ALL</item>
+        <item>RUNNING</item>
+        <item>SYSTEM</item>
+        <item>SYSTEM_RUNNING</item>
+        <item>SYSTEM_ACTIVE_ADMIN</item>
+        <item>SYSTEM_ACTIVE_ADMIN_RUNNING</item>
+        <item>SYSTEM_INACTIVE_ADMIN</item>
+        <item>SYSTEM_INACTIVE_ADMIN_RUNNING</item>
+        <item>DISABLED</item>
+        <item>DEFAULT</item>
+        <item>USER</item>
+        <item>USER_RUNNING</item>
+    </string-array>
+    <string name="pref_title_enabled_advanced">Use advanced features</string>
+
+</resources>
