@@ -56,7 +56,7 @@ public class FilterTypeSelectListPreference extends MultiSelectListPreference im
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         String key = getKey();
         Set<String> value = sp.getStringSet(key, Collections.<String>emptySet());
-        if (value.isEmpty()) {
+        if (value == null || value.isEmpty()) {
             sp.edit().putStringSet(key, FilterType.DEFAULT_FILTERS_NAME_SET).apply();
         }
         updateSummary();

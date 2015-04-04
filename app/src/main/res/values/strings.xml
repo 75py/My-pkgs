@@ -60,10 +60,10 @@
         <item>RUNNING</item>
         <item>SYSTEM</item>
         <item>SYSTEM_RUNNING</item>
-        <item>SYSTEM_ACTIVE_ADMIN</item>
-        <item>SYSTEM_ACTIVE_ADMIN_RUNNING</item>
-        <item>SYSTEM_INACTIVE_ADMIN</item>
-        <item>SYSTEM_INACTIVE_ADMIN_RUNNING</item>
+        <item>SYSTEM_UNDISABLABLE</item>
+        <item>SYSTEM_UNDISABLABLE_RUNNING</item>
+        <item>SYSTEM_DISABLABLE</item>
+        <item>SYSTEM_DISABLABLE_RUNNING</item>
         <item>DISABLED</item>
         <item>DEFAULT</item>
         <item>USER</item>
