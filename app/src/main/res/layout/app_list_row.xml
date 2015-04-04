@@ -22,14 +22,7 @@
         android:textAppearance="@style/TextAppearance.AppTheme.Large" />
 
     <TextView
-        android:id="@+id/list_process"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="end"
-        android:textAppearance="@style/TextAppearance.AppTheme.Small" />
-
-    <TextView
-        android:id="@+id/list_disabled"
+        android:id="@+id/list_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end"

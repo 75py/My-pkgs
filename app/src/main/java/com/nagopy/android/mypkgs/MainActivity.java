@@ -517,9 +517,8 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
                 holder = new ViewHolder();
                 holder.title = (TextView) convertView.findViewById(R.id.list_title);
                 holder.title.setTag(new Object()); // 同期のために使用するオブジェクト
-                holder.process = (TextView) convertView.findViewById(R.id.list_process);
                 holder.packageName = (TextView) convertView.findViewById(R.id.list_package_name);
-                holder.disabled = (TextView) convertView.findViewById(R.id.list_disabled);
+                holder.info = (TextView) convertView.findViewById(R.id.list_info);
 
                 convertView.setTag(holder);
             } else {
@@ -541,32 +540,32 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
                     Logic.setIcon(holder.title, icon, iconSize);
                 }
 
-                if (appData.process.isEmpty()) {
-                    holder.process.setVisibility(View.GONE);
-                } else {
-                    StringBuilder sb = new StringBuilder();
+                StringBuilder sb = new StringBuilder();
+                if (!appData.process.isEmpty()) {
                     for (String str : appData.process) {
                         sb.append(str);
                         sb.append(Constants.LINE_SEPARATOR);
                     }
-                    sb.setLength(sb.length() - 1);
-                    holder.process.setText(sb.toString());
-                    holder.process.setVisibility(View.VISIBLE);
                 }
 
-                if (appData.isInstalled) {
-                    holder.disabled.setVisibility(View.GONE);
+                if (!appData.isInstalled) {
+                    sb.append(context.getString(R.string.not_installed));
+                    sb.append(Constants.LINE_SEPARATOR);
+                }
+
+                if (sb.length() > 0) {
+                    sb.setLength(sb.length() - 1);
+                    holder.info.setText(sb.toString());
+                    holder.info.setVisibility(View.VISIBLE);
                 } else {
-                    holder.disabled.setText(R.string.not_installed);
-                    holder.disabled.setVisibility(View.VISIBLE);
+                    holder.info.setVisibility(View.GONE);
                 }
 
                 holder.packageName.setText(appData.packageName);
 
                 holder.title.setTextColor(appData.isEnabled ? COLOR_ENABLED : COLOR_DISABLED);
-                holder.process.setTextColor(appData.isEnabled ? COLOR_ENABLED : COLOR_DISABLED);
                 holder.packageName.setTextColor(appData.isEnabled ? COLOR_ENABLED : COLOR_DISABLED);
-                holder.disabled.setTextColor(appData.isEnabled ? COLOR_ENABLED : COLOR_DISABLED);
+                holder.info.setTextColor(appData.isEnabled ? COLOR_ENABLED : COLOR_DISABLED);
             }
 
             return convertView;
@@ -574,9 +573,8 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
 
         static class ViewHolder {
             TextView title;
-            TextView process;
             TextView packageName;
-            TextView disabled;
+            TextView info;
         }
 
         public Filter getFilter() {
