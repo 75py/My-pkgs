@@ -15,10 +15,12 @@
  */
 package com.nagopy.android.mypkgs;
 
+import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
+import android.support.v4.content.res.ResourcesCompat;
 import android.widget.TextView;
 
 import com.nagopy.android.mypkgs.util.DebugUtil;
@@ -30,7 +32,7 @@ import java.lang.ref.WeakReference;
  * アイコン読み込みを非同期で行うためのクラス.
  */
 public class ApplicationIconLoader extends AsyncTask<AppData, Void, AppData> {
-    private final WeakReference<PackageManager> packageManagerWeakReference;
+    private final Context context;
     private final WeakReference<TextView> textViewWeakReference;
     private final int iconSize;
     private static final int RETRIEVE_FLAGS = Logic.getRetrieveFlags();
@@ -39,14 +41,14 @@ public class ApplicationIconLoader extends AsyncTask<AppData, Void, AppData> {
     /**
      * コンストラクタ.
      *
-     * @param packageName    対象パッケージ名
-     * @param packageManager {@link android.content.pm.PackageManager}
-     * @param iconSize       ランチャーのアイコンサイズ（px）
-     * @param textView       表示対象のView
+     * @param context     コンテキスト
+     * @param packageName 対象パッケージ名
+     * @param iconSize    ランチャーのアイコンサイズ（px）
+     * @param textView    表示対象のView
      */
-    public ApplicationIconLoader(String packageName, PackageManager packageManager, int iconSize, TextView textView) {
+    public ApplicationIconLoader(Context context, String packageName, int iconSize, TextView textView) {
+        this.context = context.getApplicationContext();
         this.packageName = packageName;
-        this.packageManagerWeakReference = new WeakReference<>(packageManager);
         this.iconSize = iconSize;
         this.textViewWeakReference = new WeakReference<>(textView);
     }
@@ -60,12 +62,12 @@ public class ApplicationIconLoader extends AsyncTask<AppData, Void, AppData> {
      */
     @Override
     protected AppData doInBackground(AppData... params) {
-        AppData appData = params[0];
         TextView textView = textViewWeakReference.get();
-        PackageManager packageManager = packageManagerWeakReference.get();
-        if (textView == null || packageManager == null) {
+        if (textView == null) {
             return null;
         }
+        AppData appData = params[0];
+        PackageManager packageManager = context.getPackageManager();
         DebugUtil.verboseLog("doInBackground :" + appData.packageName);
 
         if (appData.icon != null && appData.icon.get() != null) {
@@ -75,7 +77,13 @@ public class ApplicationIconLoader extends AsyncTask<AppData, Void, AppData> {
 
         try {
             ApplicationInfo applicationInfo = packageManager.getApplicationInfo(appData.packageName, RETRIEVE_FLAGS);
-            Drawable icon = applicationInfo.loadIcon(packageManager);
+            Drawable icon;
+            if (applicationInfo.icon == 0x0) {
+                DebugUtil.verboseLog(appData.packageName + ", icon=0x0");
+                icon = getDefaultIcon(context);
+            } else {
+                icon = applicationInfo.loadIcon(packageManager);
+            }
             appData.icon = new WeakReference<>(icon);
             DebugUtil.verboseLog("load icon complete :" + appData.packageName);
             return appData;
@@ -108,5 +116,14 @@ public class ApplicationIconLoader extends AsyncTask<AppData, Void, AppData> {
                 Logic.setIcon(textView, icon, iconSize);
             }
         }
+    }
+
+    private static Drawable defaultIcon = null;
+
+    private synchronized static Drawable getDefaultIcon(Context context) {
+        if (defaultIcon == null) {
+            defaultIcon = ResourcesCompat.getDrawable(context.getResources(), android.R.drawable.sym_def_app_icon, null);
+        }
+        return defaultIcon;
     }
 }

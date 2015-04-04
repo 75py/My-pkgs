@@ -28,7 +28,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.ListFragment;
 import android.support.v4.view.PagerAdapter;
@@ -467,7 +466,7 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
         private LayoutInflater mInflater;
         private ItemFilter mFilter = new ItemFilter();
         private final FilterType filterType;
-        private final PackageManager packageManager;
+        private final Context context;
         private final int iconSize;
         private final int COLOR_ENABLED;
         private final int COLOR_DISABLED;
@@ -475,7 +474,7 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
         public ApplicationListAdapter(Context context, FilterType filterType) {
             mInflater = LayoutInflater.from(context);
             this.filterType = filterType;
-            this.packageManager = context.getPackageManager();
+            this.context = context.getApplicationContext();
             this.iconSize = Logic.getIconSize(context);
             this.COLOR_ENABLED = context.getResources().getColor(R.color.text_color);
             this.COLOR_DISABLED = context.getResources().getColor(R.color.textColorTertiary);
@@ -536,7 +535,7 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
                 if (icon == null) {
                     DebugUtil.verboseLog("create loader :" + appData.packageName);
                     Logic.setIcon(holder.title, R.drawable.icon_transparent);
-                    new ApplicationIconLoader(appData.packageName, packageManager, iconSize, holder.title).execute(appData);
+                    new ApplicationIconLoader(context, appData.packageName, iconSize, holder.title).execute(appData);
                 } else {
                     DebugUtil.verboseLog("use cache onCreateView() :" + appData.packageName);
                     Logic.setIcon(holder.title, icon, iconSize);
