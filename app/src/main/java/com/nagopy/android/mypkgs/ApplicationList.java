@@ -23,7 +23,6 @@ import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Build;
 
-import com.nagopy.android.mypkgs.util.AppDataComparator;
 import com.nagopy.android.mypkgs.util.DebugUtil;
 import com.nagopy.android.mypkgs.util.FieldReflectWrapper;
 import com.nagopy.android.mypkgs.util.Logic;
@@ -129,7 +128,6 @@ public class ApplicationList {
                     }
                     appList.add(appData);
                 }
-                Collections.sort(appList, AppDataComparator.getInstance());
 
                 applicationList.appList = appList;
                 for (ApplicationLoadListener listener : applicationList.listeners) {

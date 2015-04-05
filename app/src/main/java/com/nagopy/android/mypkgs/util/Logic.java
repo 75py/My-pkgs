@@ -31,6 +31,7 @@ import android.util.SparseBooleanArray;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.nagopy.android.mypkgs.AppComparator;
 import com.nagopy.android.mypkgs.AppData;
 import com.nagopy.android.mypkgs.Constants;
 import com.nagopy.android.mypkgs.FilterType;
@@ -239,5 +240,15 @@ public class Logic {
         }
         Collections.sort(list, FilterType.COMPARATOR);
         return list;
+    }
+
+    public static AppComparator getAppComparator(Context context) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean advanced = sp.getBoolean(context.getString(R.string.pref_key_enabled_advanced), false);
+        if (!advanced) {
+            return AppComparator.DEFAULT;
+        }
+        String name = sp.getString(context.getString(R.string.pref_key_sort), AppComparator.DEFAULT.name());
+        return AppComparator.valueOf(name);
     }
 }

@@ -72,4 +72,11 @@
 
     <string name="adUnitId" translatable="false">ca-app-pub-2998260208076899/4555689360</string>
 
+
+    <string name="pref_category_sort">Sort</string>
+    <string name="pref_key_sort" translatable="false">Sort</string>
+    <string name="pref_title_sort_default">Default</string>
+    <string name="pref_summary_sort_default">Order by app name, package name</string>
+    <string name="pref_title_sort_update_time_desc">Update time desc</string>
+    <string name="pref_summary_sort_update_time_desc">Order by update time desc, app name, package name</string>
 </resources>

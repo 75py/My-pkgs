@@ -34,5 +34,10 @@
     <string name="preference">設定</string>
 
     <string name="pref_title_enabled_advanced">Use advanced features</string>
+    <string name="pref_category_sort">ソート順</string>
+    <string name="pref_summary_sort_default">アプリ名、パッケージ名の昇順</string>
+    <string name="pref_summary_sort_update_time_desc">最終更新日時の降順、アプリ名の昇順、パッケージ名の昇順</string>
+    <string name="pref_title_sort_default">デフォルト</string>
+    <string name="pref_title_sort_update_time_desc">最終更新日時の降順</string>
 
 </resources>

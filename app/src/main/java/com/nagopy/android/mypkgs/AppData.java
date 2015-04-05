@@ -74,6 +74,15 @@ public class AppData {
 
     public boolean isDefaultApp;
 
+    /**
+     * 初回インストール日時（ミリ秒）
+     */
+    public long firstInstallTime;
+    /**
+     * 最終更新日時（ミリ秒）
+     */
+    public long lastUpdateTime;
+
     public AppData(Context context, ApplicationInfo applicationInfo) {
         load(context, applicationInfo);
     }
@@ -92,6 +101,9 @@ public class AppData {
                     PackageManager.GET_DISABLED_COMPONENTS | PackageManager.GET_UNINSTALLED_PACKAGES
                             | PackageManager.GET_SIGNATURES);
             this.isThisASystemPackage = DevicePolicyUtil.isThisASystemPackage(context, packageInfo);
+
+            firstInstallTime = packageInfo.firstInstallTime;
+            lastUpdateTime = packageInfo.lastUpdateTime;
         } catch (PackageManager.NameNotFoundException e) {
             DebugUtil.errorLog("Package not found:" + packageName);
         }

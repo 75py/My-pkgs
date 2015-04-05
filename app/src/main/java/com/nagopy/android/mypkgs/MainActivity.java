@@ -481,6 +481,7 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
         }
 
         public void updateApplicationList(List<AppData> data) {
+            Collections.sort(data, Logic.getAppComparator(context));
             this.originalData = data;
             this.filteredData = data;
         }

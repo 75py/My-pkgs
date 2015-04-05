@@ -13,4 +13,9 @@
         android:key="@string/pref_key_app_categories_advanced"
         android:title="@string/pref_title_app_categories_advanced" />
 
+    <com.nagopy.android.mypkgs.preference.AppComparatorSelectPreference
+        android:title="@string/pref_category_sort"
+        android:key="@string/pref_key_sort"
+        android:dependency="@string/pref_key_enabled_advanced" />
+
 </PreferenceScreen>
