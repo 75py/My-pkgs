@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.nagopy.android.mypkgs.MainActivity">
+
+    <item
+        android:icon="@drawable/ic_action_share"
+        android:title="@string/action_share"
+        app:showAsAction="withText|ifRoom">
+        <menu>
+            <item
+                android:id="@+id/action_share_package_name"
+                android:title="@string/title_package_name" />
+            <item
+                android:id="@+id/action_share_csv"
+                android:title="@string/title_csv" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/action_reload"
+        android:icon="@drawable/ic_action_reload"
+        android:title="@string/reload"
+        app:showAsAction="withText|ifRoom" />
+    <item
+        android:id="@+id/action_preference"
+        android:icon="@drawable/ic_action_preference"
+        android:title="@string/preference"
+        app:showAsAction="withText|ifRoom" />
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/ic_action_help"
+        android:title="@string/about"
+        app:showAsAction="withText|ifRoom" />
+</menu>

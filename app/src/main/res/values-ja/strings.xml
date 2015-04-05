@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">マイパッケージ</string>
+    <string name="action_share">共有</string>
+    <string name="action_search">検索</string>
+    <string name="keyword_disable">無効化</string>
+    <string name="not_installed">未インストール</string>
+    <string name="action_more">More</string>
+    <string name="open_source_license">オープンソースライセンス</string>
+    <string name="about">このアプリについて</string>
+
+    <string name="title_all">全て</string>
+    <string name="title_all_running">全て（実行中）</string>
+    <string name="title_system">システム</string>
+    <string name="title_system_running">システム（実行中）</string>
+    <string name="title_system_undisablable">無効化不可</string>
+    <string name="title_system_undisablable_running">無効化不可（実行中）</string>
+    <string name="title_system_disablable">無効化可能</string>
+    <string name="title_system_disablable_running">無効化可能（実行中）</string>
+    <string name="title_disabled">無効化済み</string>
+    <string name="title_user">ユーザー</string>
+    <string name="title_user_running">ユーザー（実行中）</string>
+    <string name="title_default">デフォルト起動</string>
+    <string name="more">More</string>
+    <string name="reload">再読み込み</string>
+    <string name="title_package_name">パッケージ名</string>
+    <string name="title_csv">CSV形式</string>
+
+    <string name="pref_summary_enabled_advanced">上級者向け機能を有効にします。無効化可能アプリなどの一覧が表示可能。使用は自己責任でお願いします。</string>
+
+    <string name="title_activity_settings">設定</string>
+    <string name="preference">設定</string>
+
+    <string name="pref_title_enabled_advanced">Use advanced features</string>
+    <string name="pref_category_sort">ソート順</string>
+    <string name="pref_summary_sort_default">アプリ名、パッケージ名の昇順</string>
+    <string name="pref_summary_sort_update_time_desc">最終更新日時の降順、アプリ名の昇順、パッケージ名の昇順</string>
+    <string name="pref_title_sort_default">デフォルト</string>
+    <string name="pref_title_sort_update_time_desc">最終更新日時の降順</string>
+
+    <string name="summary_all" />
+    <string name="summary_all_running" />
+    <string name="summary_system" />
+    <string name="summary_system_running" />
+    <string name="summary_system_undisablable">システムアプリのうち、無効化ボタンが押せないアプリです。</string>
+    <string name="summary_system_undisablable_running" />
+    <string name="summary_system_disablable">システムアプリのうち、無効化ボタンが押せる可能性があるアプリです。</string>
+    <string name="summary_system_disablable_running" />
+    <string name="summary_disabled" />
+    <string name="summary_user" />
+    <string name="summary_user_running" />
+    <string name="summary_default">Applications that are default for some action. Ex: launcher app</string>
+    <string name="pref_category_filters">表示カテゴリ</string>
+
+    <string name="pref_category_app_information">表示する情報</string>
+    <string name="title_info_process">プロセス情報</string>
+    <string name="title_info_not_installed">未インストール</string>
+    <string name="title_info_first_install_time">初回インストール日時</string>
+    <string name="title_info_last_update_time">最終更新日時</string>
+    <string name="summary_info_process" />
+    <string name="summary_info_not_installed" />
+    <string name="summary_info_first_install_time" />
+    <string name="summary_info_last_update_time" />
+    <string name="format_first_install_time">初回インストール：%1$s</string>
+    <string name="format_last_update_time">最終更新：%1$s</string>
+</resources>
