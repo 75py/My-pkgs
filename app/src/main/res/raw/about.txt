@@ -1,0 +1,47 @@
+# About
+My pkgs is an application to list the installed applications.
+
+# Advanced features
+If enabled, you can change extra settings, such as category and sort order.
+Category "Disablable" reserves the same functions as "Disabling Manager".
+
+** Disable Manager is my unpublished app, because there was a following description to content policy of Google Play.
+https://play.google.com/intl/ALL_jp/about/developer-content-policy.html
+> App, except when it is part of the security services provided by the app, and encourage users to remove or disable the third-party apps, or induction, must not have or deceive.
+
+This app can be deactivated tab does not appear by default.
+In addition, only list the application that you can press the Disable button on the Android specifications, more judgment is due to user, we believe that it is not intended to violate any to content policy.
+My pkgs shows an app list that you can press the Disable button on the Android specifications.
+And more judgment (disable app or not) is due to user, I believe that it is not violate any to content policy.
+
+# Running process status
+See http://developer.android.com/reference/android/app/ActivityManager.RunningAppProcessInfo.html
+
+Background
+> this process process contains background code that is expendable.
+Empty
+> this process is empty of any actively running code.
+Foreground
+> this process is running the foreground UI.
+Gone
+> this process does not exist.
+Perceptible
+> this process is running something that is considered to be actively perceptible to the user. An example would be an application performing background music playback.
+Service
+> this process is contains services that should remain running.
+Visible
+> this process is running something that is actively visible to the user, though not in the immediate foreground.
+
+# Source code
+https://github.com/75py/My-pkgs
+License: Apache License 2.0
+
+# Developer
+Twitter
+ https://twitter.com/dev75py
+Google+
+ https://plus.google.com/117203260116749253181/
+Email
+ dev.75py@gmail.com
+Other apps
+ https://play.google.com/store/apps/developer?id=75py

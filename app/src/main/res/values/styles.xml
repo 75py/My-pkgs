@@ -1,0 +1,79 @@
+<resources>
+
+    <color name="themeColor1">#FF730D</color>
+    <color name="themeColor2">#E8890C</color>
+    <color name="themeColor3">#FFAC00</color>
+    <color name="themeColor4">#E8B60C</color>
+    <color name="themeColor5">#FFE10D</color>
+    <color name="themeColor1_translucent">#7FFF730D</color>
+    <color name="themeColor2_translucent">#7FE8890C</color>
+    <color name="themeColor3_translucent">#7FFFAC00</color>
+    <color name="themeColor4_translucent">#7FE8B60C</color>
+    <color name="themeColor5_translucent">#7FFFE10D</color>
+
+    <color name="backgroundColor">@color/background_material_light</color>
+    <color name="textColorSecondary">@color/secondary_text_default_material_light</color>
+    <color name="textColorTertiary">#60000000</color>
+
+    <style name="AppTheme" parent="AppTheme.Base" />
+
+    <!-- Base application theme. -->
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorBackground">@color/backgroundColor</item>
+        <item name="colorPrimaryDark">@color/themeColor1</item>
+        <item name="colorPrimary">@color/themeColor2</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:actionModeBackground">@color/themeColor2</item>
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
+
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+        <item name="android:fastScrollThumbDrawable">@drawable/fast_scroll_thumb</item>
+        <item name="android:fastScrollTrackDrawable">@drawable/fast_scroll_track_drawable</item>
+        <item name="android:scrollbarThumbVertical">@drawable/fast_scroll_thumb</item>
+        <item name="android:scrollbarTrackVertical">@drawable/fast_scroll_track_drawable</item>
+
+        <item name="vpiTabPageIndicatorStyle">@style/CustomTabPageIndicator</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowMenuButton</item>
+    </style>
+
+    <style name="OverflowMenuButton" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_action_more</item>
+    </style>
+
+
+    <style name="TextAppearance.AppTheme.Large" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Medium" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Small" parent="TextAppearance.AppCompat.Small">
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="AppTheme.ListView" />
+
+    <style name="CustomTabPageIndicator" parent="Widget.TabPageIndicator">
+        <item name="android:background">@drawable/tab_indicator</item>
+        <item name="android:textColor">@color/tab_indicator_text_color</item>
+        <item name="android:textSize">@dimen/abc_text_size_subtitle_material_toolbar</item>
+        <item name="android:divider">@android:drawable/divider_horizontal_bright</item>
+        <item name="android:dividerPadding">@dimen/unit_4</item>
+        <item name="android:showDividers">none</item>
+        <item name="android:paddingLeft">@dimen/unit_4</item>
+        <item name="android:paddingRight">@dimen/unit_4</item>
+        <item name="android:fadingEdge">horizontal</item>
+        <item name="android:fadingEdgeLength">@dimen/unit_4</item>
+    </style>
+
+    <style name="Preference" />
+    <style name="Preference.CheckBoxPreference" />
+    <style name="Preference.CheckBoxPreference.Single">
+        <item name="android:widgetLayout">@layout/preference_widget_checkbox_single</item>
+    </style>
+</resources>
