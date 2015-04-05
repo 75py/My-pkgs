@@ -27,7 +27,6 @@
     <string name="title_package_name">パッケージ名</string>
     <string name="title_csv">CSV形式</string>
 
-    <string name="pref_title_app_categories_advanced">Categories (advanced)</string>
     <string name="pref_summary_enabled_advanced">上級者向け機能を有効にします。無効化可能アプリなどの一覧が表示可能。使用は自己責任でお願いします。</string>
 
     <string name="title_activity_settings">設定</string>
@@ -40,4 +39,17 @@
     <string name="pref_title_sort_default">デフォルト</string>
     <string name="pref_title_sort_update_time_desc">最終更新日時の降順</string>
 
+    <string name="summary_all" />
+    <string name="summary_all_running" />
+    <string name="summary_system" />
+    <string name="summary_system_running" />
+    <string name="summary_system_undisablable">システムアプリのうち、無効化ボタンが押せないアプリです。</string>
+    <string name="summary_system_undisablable_running" />
+    <string name="summary_system_disablable">システムアプリのうち、無効化ボタンが押せる可能性があるアプリです。</string>
+    <string name="summary_system_disablable_running" />
+    <string name="summary_disabled" />
+    <string name="summary_user" />
+    <string name="summary_user_running" />
+    <string name="summary_default">Applications that are default for some action. Ex: launcher app</string>
+    <string name="pref_category_filters">表示カテゴリ</string>
 </resources>

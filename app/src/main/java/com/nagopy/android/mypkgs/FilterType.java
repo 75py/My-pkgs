@@ -15,6 +15,8 @@
  */
 package com.nagopy.android.mypkgs;
 
+import com.nagopy.android.mypkgs.preference.Selectable;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -22,64 +24,64 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public enum FilterType {
+public enum FilterType implements Selectable {
 
-    ALL(1, R.string.title_all) {
+    ALL(1, R.string.title_all, R.string.summary_all) {
         @Override
         public boolean isTarget(AppData appData) {
             return true;
         }
-    }, RUNNING(2, R.string.title_all_running) {
+    }, RUNNING(2, R.string.title_all_running, R.string.summary_all_running) {
         @Override
         public boolean isTarget(AppData appData) {
             return appData.process != null && !appData.process.isEmpty();
         }
-    }, SYSTEM(3, R.string.title_system) {
+    }, SYSTEM(3, R.string.title_system, R.string.summary_system) {
         @Override
         public boolean isTarget(AppData appData) {
             return appData.isSystem;
         }
-    }, SYSTEM_RUNNING(4, R.string.title_system_running) {
+    }, SYSTEM_RUNNING(4, R.string.title_system_running, R.string.summary_system_running) {
         @Override
         public boolean isTarget(AppData appData) {
             return SYSTEM.isTarget(appData) && RUNNING.isTarget(appData);
         }
-    }, SYSTEM_UNDISABLABLE(5, R.string.title_system_undisablable) {
+    }, SYSTEM_UNDISABLABLE(5, R.string.title_system_undisablable, R.string.summary_system_undisablable) {
         @Override
         public boolean isTarget(AppData appData) {
             return SYSTEM.isTarget(appData) && (appData.isThisASystemPackage || appData.hasActiveAdmins);
         }
-    }, SYSTEM_UNDISABLABLE_RUNNING(6, R.string.title_system_undisablable_running) {
+    }, SYSTEM_UNDISABLABLE_RUNNING(6, R.string.title_system_undisablable_running, R.string.summary_system_undisablable_running) {
         @Override
         public boolean isTarget(AppData appData) {
             return SYSTEM_UNDISABLABLE.isTarget(appData) && RUNNING.isTarget(appData);
         }
-    }, SYSTEM_DISABLABLE(7, R.string.title_system_disablable) {
+    }, SYSTEM_DISABLABLE(7, R.string.title_system_disablable, R.string.summary_system_disablable) {
         @Override
         public boolean isTarget(AppData appData) {
             return SYSTEM.isTarget(appData) && !SYSTEM_UNDISABLABLE.isTarget(appData);
         }
-    }, SYSTEM_DISABLABLE_RUNNING(8, R.string.title_system_disablable_running) {
+    }, SYSTEM_DISABLABLE_RUNNING(8, R.string.title_system_disablable_running, R.string.summary_system_disablable_running) {
         @Override
         public boolean isTarget(AppData appData) {
             return SYSTEM_DISABLABLE.isTarget(appData) && RUNNING.isTarget(appData);
         }
-    }, DISABLED(9, R.string.title_disabled) {
+    }, DISABLED(9, R.string.title_disabled, R.string.summary_disabled) {
         @Override
         public boolean isTarget(AppData appData) {
             return !appData.isEnabled;
         }
-    }, DEFAULT(10, R.string.title_default) {
+    }, DEFAULT(10, R.string.title_default, R.string.summary_default) {
         @Override
         public boolean isTarget(AppData appData) {
             return appData.isDefaultApp;
         }
-    }, USER(11, R.string.title_user) {
+    }, USER(11, R.string.title_user, R.string.summary_user) {
         @Override
         public boolean isTarget(AppData appData) {
             return !appData.isSystem;
         }
-    }, USER_RUNNING(12, R.string.title_user_running) {
+    }, USER_RUNNING(12, R.string.title_user_running, R.string.summary_user_running) {
         @Override
         public boolean isTarget(AppData appData) {
             return USER.isTarget(appData) && RUNNING.isTarget(appData);
@@ -88,22 +90,29 @@ public enum FilterType {
 
     public static final List<FilterType> DEFAULT_FILTERS
             = Collections.unmodifiableList(Arrays.asList(FilterType.ALL, FilterType.SYSTEM, FilterType.USER, FilterType.DISABLED));
+    public static final String DEFAULT_VALUE;
     public static final Set<String> DEFAULT_FILTERS_NAME_SET;
 
     static {
+        StringBuilder sb = new StringBuilder();
         Set<String> defaultNameSet = new HashSet<>();
         for (FilterType filterType : DEFAULT_FILTERS) {
             defaultNameSet.add(filterType.name());
+            sb.append(filterType.name()).append(',');
         }
+        sb.setLength(sb.length() - 1);
+        DEFAULT_VALUE = sb.toString();
         DEFAULT_FILTERS_NAME_SET = Collections.unmodifiableSet(defaultNameSet);
     }
 
-    public final int titleId;
+    public final int titleResourceId;
+    public final int summaryResourceId;
     public final int priority;
 
-    private FilterType(int priority, int titleId) {
+    FilterType(int priority, int titleResourceId, int summaryResourceId) {
         this.priority = priority;
-        this.titleId = titleId;
+        this.titleResourceId = titleResourceId;
+        this.summaryResourceId = summaryResourceId;
     }
 
     public abstract boolean isTarget(AppData appData);
@@ -114,4 +123,20 @@ public enum FilterType {
             return filterType.priority - filterType2.priority;
         }
     };
+
+
+    @Override
+    public String getName() {
+        return name();
+    }
+
+    @Override
+    public int getTitleResourceId() {
+        return titleResourceId;
+    }
+
+    @Override
+    public int getSummaryResourceId() {
+        return summaryResourceId;
+    }
 }

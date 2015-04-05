@@ -230,13 +230,13 @@ public class Logic {
             return FilterType.DEFAULT_FILTERS;
         }
 
-        Set<String> values = sp.getStringSet(context.getString(R.string.pref_key_app_categories_advanced), Collections.<String>emptySet());
-        if (values == null || values.isEmpty()) {
+        String v = sp.getString(context.getString(R.string.pref_key_filters), FilterType.DEFAULT_VALUE);
+        if (v == null || v.isEmpty()) {
             return FilterType.DEFAULT_FILTERS;
         }
         List<FilterType> list = new ArrayList<>();
-        for (String value : values) {
-            list.add(FilterType.valueOf(value));
+        for (String val : v.split(",")) {
+            list.add(FilterType.valueOf(val));
         }
         Collections.sort(list, FilterType.COMPARATOR);
         return list;

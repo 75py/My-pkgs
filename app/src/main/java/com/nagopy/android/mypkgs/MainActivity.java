@@ -167,10 +167,10 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
         ApplicationListAdapter listAdapter = getApplicationListAdapter();
         switch (item.getItemId()) {
             case R.id.action_share_package_name:
-                Logic.sendIntent(this, getString(listAdapter.filterType.titleId), ShareType.PACKAGE.makeShareString(listAdapter.filteredData));
+                Logic.sendIntent(this, getString(listAdapter.filterType.titleResourceId), ShareType.PACKAGE.makeShareString(listAdapter.filteredData));
                 break;
             case R.id.action_share_csv:
-                Logic.sendIntent(this, getString(listAdapter.filterType.titleId), ShareType.CSV.makeShareString(listAdapter.filteredData));
+                Logic.sendIntent(this, getString(listAdapter.filterType.titleResourceId), ShareType.CSV.makeShareString(listAdapter.filteredData));
                 break;
             case R.id.action_reload:
                 ApplicationList.getInstance().clearCache();
@@ -357,7 +357,7 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
         @Override
         public CharSequence getPageTitle(int position) {
             FilterType filterType = filterTypeList.get(position);
-            return context.getString(filterType.titleId);
+            return context.getString(filterType.titleResourceId);
         }
     }
 

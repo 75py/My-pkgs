@@ -31,44 +31,13 @@
     <string name="title_package_name">Package name</string>
     <string name="title_csv">CSV</string>
 
-    <!-- prefs -->
-    <string name="pref_key_app_categories_advanced" translatable="false">pref_key_app_categories_advanced</string>
-    <string name="pref_title_app_categories_advanced">Categories (advanced)</string>
     <string name="pref_key_enabled_advanced" translatable="false">pref_key_enabled_advanced</string>
     <string name="pref_title_enabled_advanced">Use advanced features</string>
-    <string name="pref_summary_enabled_advanced">You can use advanced features(categorise disableable apps), please check it. The features is for the experienced. Please do at your own risk.</string>
+    <string name="pref_summary_enabled_advanced">You can use advanced features. The features are for the experienced. Please do at your own risk.</string>
 
     <string name="title_activity_settings">Settings</string>
     <string name="preference">Preference</string>
 
-    <string-array name="title_app_categories_advanced">
-        <item>@string/title_all</item>
-        <item>@string/title_all_running</item>
-        <item>@string/title_system</item>
-        <item>@string/title_system_running</item>
-        <item>@string/title_system_undisablable</item>
-        <item>@string/title_system_undisablable_running</item>
-        <item>@string/title_system_disablable</item>
-        <item>@string/title_system_disablable_running</item>
-        <item>@string/title_disabled</item>
-        <item>@string/title_default</item>
-        <item>@string/title_user</item>
-        <item>@string/title_user_running</item>
-    </string-array>
-    <string-array name="values_app_categories_advanced">
-        <item>ALL</item>
-        <item>RUNNING</item>
-        <item>SYSTEM</item>
-        <item>SYSTEM_RUNNING</item>
-        <item>SYSTEM_UNDISABLABLE</item>
-        <item>SYSTEM_UNDISABLABLE_RUNNING</item>
-        <item>SYSTEM_DISABLABLE</item>
-        <item>SYSTEM_DISABLABLE_RUNNING</item>
-        <item>DISABLED</item>
-        <item>DEFAULT</item>
-        <item>USER</item>
-        <item>USER_RUNNING</item>
-    </string-array>
 
     <string name="adUnitId" translatable="false">ca-app-pub-2998260208076899/4555689360</string>
 
@@ -79,4 +48,20 @@
     <string name="pref_summary_sort_default">Order by app name, package name</string>
     <string name="pref_title_sort_update_time_desc">Update time desc</string>
     <string name="pref_summary_sort_update_time_desc">Order by update time desc, app name, package name</string>
+
+    <string name="pref_category_filters">Categories</string>
+    <string name="pref_key_filters" translatable="false">Categories</string>
+
+    <string name="summary_all" />
+    <string name="summary_all_running" />
+    <string name="summary_system" />
+    <string name="summary_system_running" />
+    <string name="summary_system_undisablable">Applications that you cannot click disable button.</string>
+    <string name="summary_system_undisablable_running" />
+    <string name="summary_system_disablable">Applications that you can click disable button.</string>
+    <string name="summary_system_disablable_running" />
+    <string name="summary_disabled" />
+    <string name="summary_user" />
+    <string name="summary_user_running" />
+    <string name="summary_default">Applications that are default for some action. Ex: launcher app</string>
 </resources>

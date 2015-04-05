@@ -6,16 +6,15 @@
         android:summary="@string/pref_summary_enabled_advanced"
         android:title="@string/pref_title_enabled_advanced" />
 
-    <com.nagopy.android.mypkgs.FilterTypeSelectListPreference
-        android:dependency="@string/pref_key_enabled_advanced"
-        android:entries="@array/title_app_categories_advanced"
-        android:entryValues="@array/values_app_categories_advanced"
-        android:key="@string/pref_key_app_categories_advanced"
-        android:title="@string/pref_title_app_categories_advanced" />
+    <com.nagopy.android.mypkgs.preference.AppFilterSelectPreference
+        android:title="@string/pref_category_filters"
+        android:key="@string/pref_key_filters"
+        android:dependency="@string/pref_key_enabled_advanced" />
 
     <com.nagopy.android.mypkgs.preference.AppComparatorSelectPreference
         android:title="@string/pref_category_sort"
         android:key="@string/pref_key_sort"
         android:dependency="@string/pref_key_enabled_advanced" />
+
 
 </PreferenceScreen>
