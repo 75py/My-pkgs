@@ -25,7 +25,7 @@ public enum AppComparator implements Comparator<AppData>, Selectable {
         @Override
         public int compare(AppData lhs, AppData rhs) {
             if (lhs.isInstalled != rhs.isInstalled) {
-                // 「未インストール」は最後に
+                // 縲梧悴繧､繝ｳ繧ｹ繝医�ｼ繝ｫ縲阪�ｯ譛蠕後↓
                 return lhs.isInstalled ? -1 : 1;
             }
 
@@ -33,7 +33,7 @@ public enum AppComparator implements Comparator<AppData>, Selectable {
             String label1 = rhs.label;
 
             int ret = label0.compareToIgnoreCase(label1);
-            // ラベルで並び替え、同じラベルがあったらパッケージ名で
+            // 繝ｩ繝吶Ν縺ｧ荳ｦ縺ｳ譖ｿ縺医∝酔縺倥Λ繝吶Ν縺後≠縺｣縺溘ｉ繝代ャ繧ｱ繝ｼ繧ｸ蜷阪〒
             if (ret == 0) {
                 String pkgName0 = lhs.packageName;
                 String pkgName1 = rhs.packageName;
