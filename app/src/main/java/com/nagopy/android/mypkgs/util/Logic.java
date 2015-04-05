@@ -39,7 +39,6 @@ import com.nagopy.android.mypkgs.R;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -116,7 +115,7 @@ public class Logic {
      * @param status RunningProcessImportance
      * @return 文字列（Foregroundとか）
      */
-    public static String getStatusText(@Constants.RunningProcessImportance int status) {
+    public static String getStatusText(int status) {
         return RUNNING_STATUS_MAP.get(status);
     }
 
@@ -231,7 +230,7 @@ public class Logic {
         }
 
         Set<String> values = sp.getStringSet(context.getString(R.string.pref_key_app_categories_advanced), Collections.<String>emptySet());
-        if (values.isEmpty()) {
+        if (values == null || values.isEmpty()) {
             return FilterType.DEFAULT_FILTERS;
         }
         List<FilterType> list = new ArrayList<>();
@@ -240,11 +239,5 @@ public class Logic {
         }
         Collections.sort(list, FilterType.COMPARATOR);
         return list;
-    }
-
-    public static <T> Set<T> toSet(T[] array) {
-        Set<T> set = new LinkedHashSet<>(array.length);
-        Collections.addAll(set, array);
-        return set;
     }
 }
