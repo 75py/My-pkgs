@@ -28,7 +28,7 @@ public class DimenUtil {
 
     public static int getPixelFromDp(Context context, int dp) {
         // density (比率)を取得する
-        float density = context.getResources().getDisplayMetrics().density;
+        float density = getDensity(context);
         // 50 dp を pixel に変換する ( dp × density + 0.5f（四捨五入) )
         return (int) (dp * density + 0.5f);
     }

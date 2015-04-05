@@ -15,13 +15,13 @@
  */
 package com.nagopy.android.mypkgs.util;
 
+import android.annotation.SuppressLint;
 import android.app.admin.DevicePolicyManager;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
 import java.lang.ref.WeakReference;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 
@@ -34,24 +34,24 @@ public class DevicePolicyUtil {
 
     public static boolean isThisASystemPackage(Context context, PackageInfo packageInfo) {
         if (devicePolicyManagerWrapper == null) {
-            devicePolicyManagerWrapper = new WeakReference<DevicePolicyManagerWrapper>(new DevicePolicyManagerWrapper(context));
+            devicePolicyManagerWrapper = new WeakReference<>(new DevicePolicyManagerWrapper(context));
         }
         DevicePolicyManagerWrapper wrapper = devicePolicyManagerWrapper.get();
         if (wrapper == null) {
             wrapper = new DevicePolicyManagerWrapper(context);
-            devicePolicyManagerWrapper = new WeakReference<DevicePolicyManagerWrapper>(wrapper);
+            devicePolicyManagerWrapper = new WeakReference<>(wrapper);
         }
         return wrapper.isThisASystemPackage(packageInfo);
     }
 
     public static boolean packageHasActiveAdmins(Context context, String packageName) {
         if (devicePolicyManagerWrapper == null) {
-            devicePolicyManagerWrapper = new WeakReference<DevicePolicyManagerWrapper>(new DevicePolicyManagerWrapper(context));
+            devicePolicyManagerWrapper = new WeakReference<>(new DevicePolicyManagerWrapper(context));
         }
         DevicePolicyManagerWrapper wrapper = devicePolicyManagerWrapper.get();
         if (wrapper == null) {
             wrapper = new DevicePolicyManagerWrapper(context);
-            devicePolicyManagerWrapper = new WeakReference<DevicePolicyManagerWrapper>(wrapper);
+            devicePolicyManagerWrapper = new WeakReference<>(wrapper);
         }
         return wrapper.packageHasActiveAdmins(packageName);
     }
@@ -68,6 +68,7 @@ public class DevicePolicyUtil {
         private Method packageHasActiveAdmins;
         private boolean enablePackageHasActiveAdminsMethod;
 
+        @SuppressLint("PackageManagerGetSignatures")
         public DevicePolicyManagerWrapper(Context context) {
             devicePolicyManager = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
             try {
@@ -98,7 +99,8 @@ public class DevicePolicyUtil {
             try {
                 return enablePackageHasActiveAdminsMethod &&
                         (boolean) packageHasActiveAdmins.invoke(devicePolicyManager, packageName);
-            } catch (IllegalAccessException | InvocationTargetException e) {
+            } catch (Exception e) {
+//            } catch (IllegalAccessException | InvocationTargetException e) {
                 DebugUtil.errorLog("実行失敗:" + e.getMessage());
                 return false;
             }

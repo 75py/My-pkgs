@@ -15,9 +15,6 @@
  */
 package com.nagopy.android.mypkgs;
 
-import android.app.ActivityManager;
-import android.support.annotation.IntDef;
-
 public class Constants {
 
     public static final String LINE_SEPARATOR = System.getProperty("line.separator");
@@ -25,16 +22,6 @@ public class Constants {
     public static final String KEY_UPDATE_FLG = "UPDATE_FLG";
 
     private Constants() {
-    }
-
-    @IntDef({
-            ActivityManager.RunningAppProcessInfo.IMPORTANCE_BACKGROUND
-            , ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND
-            , ActivityManager.RunningAppProcessInfo.IMPORTANCE_PERCEPTIBLE
-            , ActivityManager.RunningAppProcessInfo.IMPORTANCE_SERVICE
-            , ActivityManager.RunningAppProcessInfo.IMPORTANCE_VISIBLE
-            , ActivityManager.RunningAppProcessInfo.IMPORTANCE_EMPTY})
-    public @interface RunningProcessImportance {
     }
 
 }

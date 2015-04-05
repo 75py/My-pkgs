@@ -88,13 +88,13 @@ public class Logic {
     }
 
 
-    public static String makeSearchQuery(@NonNull AppData appData, @NonNull Context context) {
+    public static String makeSearchQuery(@NonNull AppData appData) {
         return appData.label + '+' + appData.packageName;
 //        return context.getString(R.string.keyword_disable) + '+' + appData.label + '+' + appData.packageName;
     }
 
-    public static String makeSearchUrl(AppData appData, Context context) {
-        return "http://www.google.com/searchIntent?q=" + makeSearchQuery(appData, context);
+    public static String makeSearchUrl(AppData appData) {
+        return "http://www.google.com/searchIntent?q=" + makeSearchQuery(appData);
     }
 
     @SuppressWarnings("unchecked")

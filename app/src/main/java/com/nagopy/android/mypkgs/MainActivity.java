@@ -30,12 +30,10 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.ListFragment;
-import android.support.v4.text.TextUtilsCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -95,7 +93,6 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
         adView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice("F3D630FD4B16A430A0CB29123A096F71")
                 .build();
         adView.loadAd(adRequest);
     }
@@ -291,11 +288,11 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
                 AppData selected = checkedItemList.get(0);
                 if (Logic.canLaunchImplicitIntent(getApplicationContext(), Intent.ACTION_WEB_SEARCH)) {
                     Intent intent = new Intent(Intent.ACTION_WEB_SEARCH);
-                    intent.putExtra(SearchManager.QUERY, Logic.makeSearchQuery(selected, getApplicationContext()));
+                    intent.putExtra(SearchManager.QUERY, Logic.makeSearchQuery(selected));
                     startActivity(intent);
                 } else {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(Logic.makeSearchUrl(selected, getApplicationContext())));
+                    intent.setData(Uri.parse(Logic.makeSearchUrl(selected)));
                     startActivity(intent);
                 }
                 break;

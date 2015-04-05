@@ -17,7 +17,6 @@ package com.nagopy.android.mypkgs.util;
 
 import android.util.Log;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -51,7 +50,8 @@ public class MethodReflectWrapper {
     public Object invoke(Object receiver, Object... args) {
         try {
             return method.invoke(receiver, args);
-        } catch (IllegalAccessException | InvocationTargetException e) {
+        } catch (Exception e) {
+//        } catch (IllegalAccessException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }
     }

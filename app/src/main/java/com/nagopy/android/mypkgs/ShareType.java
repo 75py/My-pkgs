@@ -47,13 +47,7 @@ public enum ShareType {
 
         @Override
         public String makeShareString(AppData appData) {
-            StringBuilder sb = new StringBuilder();
-            sb.append('"');
-            sb.append(appData.packageName);
-            sb.append("\",\"");
-            sb.append(appData.label);
-            sb.append('"');
-            return sb.toString();
+            return "\"" + appData.packageName + "\",\"" + appData.label + '"';
         }
     };
 
