@@ -56,7 +56,7 @@ public class AboutActivity extends ActionBarActivity {
         BufferedReader br = null;
         try {
             try {
-                is = assetManager.open("about/about.txt");
+                is = getResources().openRawResource(R.raw.about);
                 br = new BufferedReader(new InputStreamReader(is));
 
                 TextView title = null;
