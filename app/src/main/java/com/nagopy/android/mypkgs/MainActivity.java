@@ -30,10 +30,12 @@ import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.ListFragment;
+import android.support.v4.text.TextUtilsCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -470,6 +472,7 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
         private final int iconSize;
         private final int COLOR_ENABLED;
         private final int COLOR_DISABLED;
+        private List<AppInformation> appInformationList;
 
         public ApplicationListAdapter(Context context, FilterType filterType) {
             mInflater = LayoutInflater.from(context);
@@ -478,6 +481,7 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
             this.iconSize = Logic.getIconSize(context);
             this.COLOR_ENABLED = context.getResources().getColor(R.color.text_color);
             this.COLOR_DISABLED = context.getResources().getColor(R.color.textColorTertiary);
+            this.appInformationList = Logic.getAppInformation(context);
         }
 
         public void updateApplicationList(List<AppData> data) {
@@ -542,21 +546,15 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
                 }
 
                 StringBuilder sb = new StringBuilder();
-                if (!appData.process.isEmpty()) {
-                    for (String str : appData.process) {
-                        sb.append(str);
-                        sb.append(Constants.LINE_SEPARATOR);
-                    }
-                }
-
-                if (!appData.isInstalled) {
-                    sb.append(context.getString(R.string.not_installed));
+                for (AppInformation appInformation : appInformationList) {
+                    appInformation.append(context, sb, appData);
                     sb.append(Constants.LINE_SEPARATOR);
                 }
-
                 if (sb.length() > 0) {
                     sb.setLength(sb.length() - 1);
-                    holder.info.setText(sb.toString());
+                    String infoString = sb.toString().trim();
+                    infoString = infoString.replaceAll(Constants.LINE_SEPARATOR + "+", Constants.LINE_SEPARATOR);
+                    holder.info.setText(infoString);
                     holder.info.setVisibility(View.VISIBLE);
                 } else {
                     holder.info.setVisibility(View.GONE);

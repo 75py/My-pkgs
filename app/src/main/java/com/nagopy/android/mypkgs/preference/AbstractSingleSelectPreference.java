@@ -83,7 +83,7 @@ public abstract class AbstractSingleSelectPreference<T extends Selectable> exten
             boolean isChecked = p == preference;
             p.setChecked(isChecked);
             if (isChecked) {
-                DebugUtil.debugLog("save " + getKey());
+                DebugUtil.verboseLog("save " + getKey());
                 sp.edit().putString(getKey(), t.getName()).apply();
             }
         }

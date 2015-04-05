@@ -52,4 +52,16 @@
     <string name="summary_user_running" />
     <string name="summary_default">Applications that are default for some action. Ex: launcher app</string>
     <string name="pref_category_filters">表示カテゴリ</string>
+
+    <string name="pref_category_app_information">表示する情報</string>
+    <string name="title_info_process">プロセス情報</string>
+    <string name="title_info_not_installed">未インストール</string>
+    <string name="title_info_first_install_time">初回インストール日時</string>
+    <string name="title_info_last_update_time">最終更新日時</string>
+    <string name="summary_info_process" />
+    <string name="summary_info_not_installed" />
+    <string name="summary_info_first_install_time" />
+    <string name="summary_info_last_update_time" />
+    <string name="format_first_install_time">初回インストール：%1$s</string>
+    <string name="format_last_update_time">最終更新：%1$s</string>
 </resources>

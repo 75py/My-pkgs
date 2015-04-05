@@ -10,11 +10,7 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.util.AttributeSet;
 
-import com.nagopy.android.mypkgs.R;
 import com.nagopy.android.mypkgs.util.DebugUtil;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class AbstractMultiSelectPreference<T extends Selectable> extends PreferenceCategory implements Preference.OnPreferenceChangeListener {
 
@@ -94,13 +90,16 @@ public abstract class AbstractMultiSelectPreference<T extends Selectable> extend
             }
         }
 
-
-        if (sb.length() > 0 || allowEmpty) {
+        DebugUtil.verboseLog(getKey() + " " + sb.toString());
+        if (sb.length() > 0) {
             sb.setLength(sb.length() - 1);
-            DebugUtil.debugLog(sb.toString());
             sp.edit().putString(getKey(), sb.toString()).apply();
         } else {
-            ((CheckBoxPreference) preference).setChecked(true);
+            if (allowEmpty) {
+                sp.edit().putString(getKey(), sb.toString()).apply();
+            } else {
+                ((CheckBoxPreference) preference).setChecked(true);
+            }
         }
         return false;
     }

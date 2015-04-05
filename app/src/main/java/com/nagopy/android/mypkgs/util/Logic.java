@@ -33,6 +33,7 @@ import android.widget.TextView;
 
 import com.nagopy.android.mypkgs.AppComparator;
 import com.nagopy.android.mypkgs.AppData;
+import com.nagopy.android.mypkgs.AppInformation;
 import com.nagopy.android.mypkgs.Constants;
 import com.nagopy.android.mypkgs.FilterType;
 import com.nagopy.android.mypkgs.R;
@@ -42,7 +43,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class Logic {
 
@@ -250,5 +250,28 @@ public class Logic {
         }
         String name = sp.getString(context.getString(R.string.pref_key_sort), AppComparator.DEFAULT.name());
         return AppComparator.valueOf(name);
+    }
+
+    public static List<AppInformation> getAppInformation(Context context) {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean advanced = sp.getBoolean(context.getString(R.string.pref_key_enabled_advanced), false);
+        if (!advanced) {
+            return AppInformation.DEFAULT_LIST;
+        }
+
+        String key = context.getString(R.string.pref_key_app_information);
+        if (!sp.contains(key)) {
+            return AppInformation.DEFAULT_LIST;
+        }
+
+        String v = sp.getString(key, AppInformation.DEFAULT_VALUE);
+        if (v == null || v.isEmpty()) {
+            return Collections.emptyList();
+        }
+        List<AppInformation> list = new ArrayList<>();
+        for (String val : v.split(",")) {
+            list.add(AppInformation.valueOf(val));
+        }
+        return list;
     }
 }
