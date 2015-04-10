@@ -56,7 +56,7 @@ public enum AppInformation implements Selectable {
         @Override
         public void append(@NonNull Context context, @NonNull StringBuilder sb, @NonNull AppData appData) {
             DateFormat format = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT, Locale.getDefault());
-            sb.append(context.getString(R.string.format_last_update_time, format.format(new Date(appData.firstInstallTime))));
+            sb.append(context.getString(R.string.format_last_update_time, format.format(new Date(appData.lastUpdateTime))));
         }
     };
 
