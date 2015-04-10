@@ -94,7 +94,7 @@ public class Logic {
     }
 
     public static String makeSearchUrl(AppData appData) {
-        return "http://www.google.com/searchIntent?q=" + makeSearchQuery(appData);
+        return "http://www.google.com/search?q=" + makeSearchQuery(appData);
     }
 
     @SuppressWarnings("unchecked")
