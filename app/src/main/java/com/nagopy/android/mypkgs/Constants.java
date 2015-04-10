@@ -15,11 +15,26 @@
  */
 package com.nagopy.android.mypkgs;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 public class Constants {
 
     public static final String LINE_SEPARATOR = System.getProperty("line.separator");
     public static final String MINE_TYPE_TEXT_PLAIN = "text/plain";
     public static final String KEY_UPDATE_FLG = "UPDATE_FLG";
+
+    public static final long Y2K;
+
+    static {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd", Locale.getDefault());
+        try {
+            Y2K = simpleDateFormat.parse("20000101").getTime();
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     private Constants() {
     }

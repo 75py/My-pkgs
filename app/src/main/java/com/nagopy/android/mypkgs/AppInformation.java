@@ -49,12 +49,18 @@ public enum AppInformation implements Selectable {
     }, FIRST_INSTALL_TIME(R.string.title_info_first_install_time, R.string.summary_info_first_install_time) {
         @Override
         public void append(@NonNull Context context, @NonNull StringBuilder sb, @NonNull AppData appData) {
+            if (appData.firstInstallTime < Constants.Y2K) {
+                return;
+            }
             DateFormat format = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT, Locale.getDefault());
             sb.append(context.getString(R.string.format_first_install_time, format.format(new Date(appData.firstInstallTime))));
         }
     }, LAST_UPDATE_TIME(R.string.title_info_last_update_time, R.string.summary_info_last_update_time) {
         @Override
         public void append(@NonNull Context context, @NonNull StringBuilder sb, @NonNull AppData appData) {
+            if (appData.lastUpdateTime < Constants.Y2K) {
+                return;
+            }
             DateFormat format = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT, Locale.getDefault());
             sb.append(context.getString(R.string.format_last_update_time, format.format(new Date(appData.lastUpdateTime))));
         }
