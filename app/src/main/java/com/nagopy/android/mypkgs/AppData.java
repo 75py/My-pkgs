@@ -25,6 +25,7 @@ import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 
+import com.nagopy.android.mypkgs.csv.Exclude;
 import com.nagopy.android.mypkgs.util.DebugUtil;
 import com.nagopy.android.mypkgs.util.DevicePolicyUtil;
 
@@ -56,6 +57,7 @@ public class AppData {
     /**
      * アプリアイコン
      */
+    @Exclude
     public WeakReference<Drawable> icon;
 
     /**
