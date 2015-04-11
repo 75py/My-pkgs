@@ -183,6 +183,11 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
                 Intent aboutActivity = new Intent(getApplicationContext(), AboutActivity.class);
                 startActivity(aboutActivity);
                 break;
+            case 0:
+                // skip
+                break;
+            default:
+                throw new RuntimeException("unknown id:" + item.getItemId());
         }
         return super.onOptionsItemSelected(item);
     }
@@ -302,6 +307,11 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
             case R.id.action_share_csv:
                 Logic.sendIntent(this, ShareType.CSV.makeShareString(checkedItemList));
                 break;
+            case 0:
+                // skip
+                break;
+            default:
+                throw new RuntimeException("unknown id:" + item.getItemId());
         }
         return true;
     }

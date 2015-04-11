@@ -27,6 +27,7 @@ import android.widget.TextView;
 import com.nagopy.android.mypkgs.util.DimenUtil;
 
 import java.io.BufferedReader;
+import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -47,13 +48,15 @@ public class LicenseActivity extends ActionBarActivity {
 
         AssetManager assetManager = getAssets();
         InputStream is = null;
+        InputStreamReader isr = null;
         BufferedReader br = null;
         try {
             try {
                 String[] filePaths = assetManager.list("license");
                 for (String filePath : filePaths) {
                     is = assetManager.open("license/" + filePath);
-                    br = new BufferedReader(new InputStreamReader(is));
+                    isr = new InputStreamReader(is, "UTF-8");
+                    br = new BufferedReader(isr);
 
                     // １行ずつ読み込み、改行を付加する
                     String title = br.readLine();
@@ -80,11 +83,21 @@ public class LicenseActivity extends ActionBarActivity {
                     parent.addView(bodyView, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
                 }
             } finally {
-                if (is != null) is.close();
-                if (br != null) br.close();
+                close(br);
+                close(isr);
+                close(is);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void close(Closeable closeable) {
+        if (closeable != null) {
+            try {
+                closeable.close();
+            } catch (IOException ignore) {
+            }
         }
     }
 
@@ -93,6 +106,9 @@ public class LicenseActivity extends ActionBarActivity {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
+                break;
+            default:
+                // do nothing
                 break;
         }
         return super.onOptionsItemSelected(item);
