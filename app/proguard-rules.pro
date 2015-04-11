@@ -23,3 +23,7 @@
 -assumenosideeffects class com.nagopy.android.mypkgs.util.DebugUtil {
     <methods>;
 }
+
+-keep class com.nagopy.android.mypkgs.AppData {
+	<fields>;
+}

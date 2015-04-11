@@ -6,8 +6,6 @@
     android:layout_height="wrap_content"
     android:autoLink="web|email"
     android:paddingEnd="0dp"
-    android:paddingLeft="@dimen/unit_2"
-    android:paddingRight="0dp"
     android:paddingStart="@dimen/unit_2"
     android:paddingTop="@dimen/unit_2"
     android:textAppearance="@style/TextAppearance.AppTheme.Small"

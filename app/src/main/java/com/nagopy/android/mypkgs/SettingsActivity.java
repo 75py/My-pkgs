@@ -65,6 +65,8 @@ public class SettingsActivity extends ActionBarActivity implements SharedPrefere
             case android.R.id.home:
                 finish();
                 break;
+            default:
+                throw new RuntimeException("unknown id:" + item.getItemId());
         }
         return super.onOptionsItemSelected(item);
     }

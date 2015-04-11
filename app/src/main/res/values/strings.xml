@@ -4,12 +4,9 @@
     <string name="app_name">My pkgs</string>
     <string name="action_share">Share</string>
     <string name="action_search">Search</string>
-    <string name="keyword_disable">disable</string>
     <string name="not_installed">Not installed</string>
     <string name="description_application_name" translatable="false">application name</string>
     <string name="description_package_name" translatable="false">package name</string>
-    <string name="description_application_icon" translatable="false">application icon</string>
-    <string name="action_more">More</string>
     <string name="open_source_license">Open source license</string>
     <string name="about">About</string>
     <string name="description_list_parent" translatable="false">listItem</string>
@@ -26,7 +23,6 @@
     <string name="title_user">"User"</string>
     <string name="title_user_running">"User, running"</string>
     <string name="title_default">Default</string>
-    <string name="more">More</string>
     <string name="reload">Reload</string>
     <string name="title_package_name">Package name</string>
     <string name="title_csv">CSV</string>

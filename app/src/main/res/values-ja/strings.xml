@@ -4,9 +4,7 @@
     <string name="app_name">マイパッケージ</string>
     <string name="action_share">共有</string>
     <string name="action_search">検索</string>
-    <string name="keyword_disable">無効化</string>
     <string name="not_installed">未インストール</string>
-    <string name="action_more">More</string>
     <string name="open_source_license">オープンソースライセンス</string>
     <string name="about">このアプリについて</string>
 
@@ -22,7 +20,6 @@
     <string name="title_user">ユーザー</string>
     <string name="title_user_running">ユーザー（実行中）</string>
     <string name="title_default">デフォルト起動</string>
-    <string name="more">More</string>
     <string name="reload">再読み込み</string>
     <string name="title_package_name">パッケージ名</string>
     <string name="title_csv">CSV形式</string>
@@ -50,7 +47,7 @@
     <string name="summary_disabled" />
     <string name="summary_user" />
     <string name="summary_user_running" />
-    <string name="summary_default">Applications that are default for some action. Ex: launcher app</string>
+    <string name="summary_default">ホームアプリなど、デフォルトで起動する設定になっているアプリです。</string>
     <string name="pref_category_filters">表示カテゴリ</string>
 
     <string name="pref_category_app_information">表示する情報</string>

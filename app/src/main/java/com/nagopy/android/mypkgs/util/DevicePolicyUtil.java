@@ -22,6 +22,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
 import java.lang.ref.WeakReference;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 
@@ -30,7 +31,7 @@ public class DevicePolicyUtil {
     private DevicePolicyUtil() {
     }
 
-    private static WeakReference<DevicePolicyManagerWrapper> devicePolicyManagerWrapper;
+    private static volatile WeakReference<DevicePolicyManagerWrapper> devicePolicyManagerWrapper;
 
     public static boolean isThisASystemPackage(Context context, PackageInfo packageInfo) {
         if (devicePolicyManagerWrapper == null) {
@@ -99,11 +100,12 @@ public class DevicePolicyUtil {
             try {
                 return enablePackageHasActiveAdminsMethod &&
                         (boolean) packageHasActiveAdmins.invoke(devicePolicyManager, packageName);
-            } catch (Exception e) {
-//            } catch (IllegalAccessException | InvocationTargetException e) {
+            } catch (IllegalAccessException e) {
                 DebugUtil.errorLog("実行失敗:" + e.getMessage());
-                return false;
+            } catch (InvocationTargetException e) {
+                DebugUtil.errorLog("実行失敗:" + e.getMessage());
             }
+            return false;
         }
 
         /**

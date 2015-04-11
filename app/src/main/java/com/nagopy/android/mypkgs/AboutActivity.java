@@ -16,7 +16,6 @@
 package com.nagopy.android.mypkgs;
 
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -30,6 +29,7 @@ import android.widget.TextView;
 import com.nagopy.android.mypkgs.util.DebugUtil;
 
 import java.io.BufferedReader;
+import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -51,13 +51,14 @@ public class AboutActivity extends ActionBarActivity {
 
         LinearLayout parentView = (LinearLayout) findViewById(R.id.parent);
 
-        AssetManager assetManager = getAssets();
         InputStream is = null;
+        InputStreamReader isr = null;
         BufferedReader br = null;
         try {
             try {
                 is = getResources().openRawResource(R.raw.about);
-                br = new BufferedReader(new InputStreamReader(is));
+                isr = new InputStreamReader(is, "UTF-8");
+                br = new BufferedReader(isr);
 
                 TextView title = null;
                 TextView body = null;
@@ -105,11 +106,21 @@ public class AboutActivity extends ActionBarActivity {
                     sb.setLength(0);
                 }
             } finally {
-                if (is != null) is.close();
-                if (br != null) br.close();
+                close(br);
+                close(isr);
+                close(is);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void close(Closeable closeable) {
+        if (closeable != null) {
+            try {
+                closeable.close();
+            } catch (IOException ignore) {
+            }
         }
     }
 
@@ -119,6 +130,8 @@ public class AboutActivity extends ActionBarActivity {
             case android.R.id.home:
                 finish();
                 break;
+            default:
+                throw new RuntimeException("unknown id:" + item.getItemId());
         }
         return super.onOptionsItemSelected(item);
     }
@@ -129,6 +142,8 @@ public class AboutActivity extends ActionBarActivity {
                 Intent licenseActivity = new Intent(getApplicationContext(), LicenseActivity.class);
                 startActivity(licenseActivity);
                 break;
+            default:
+                throw new RuntimeException("unknown id:" + view.getId());
         }
     }
 }

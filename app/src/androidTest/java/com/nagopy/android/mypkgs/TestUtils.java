@@ -1,18 +1,6 @@
 package com.nagopy.android.mypkgs;
 
-import android.support.test.uiautomator.Configurator;
-import android.support.test.uiautomator.UiDevice;
-import android.support.test.uiautomator.UiSelector;
 import android.util.Log;
-
-import com.nagopy.android.mypkgs.uiautomator.UiAutomatorUtil;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import static junit.framework.Assert.fail;
 
 /**
  * テスト用ユーティリティクラス.

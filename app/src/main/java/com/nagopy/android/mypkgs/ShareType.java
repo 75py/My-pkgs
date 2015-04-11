@@ -15,6 +15,8 @@
  */
 package com.nagopy.android.mypkgs;
 
+import com.nagopy.android.mypkgs.csv.CsvManager;
+
 import java.util.List;
 
 public enum ShareType {
@@ -36,7 +38,7 @@ public enum ShareType {
     }, CSV {
         @Override
         public String makeShareString(List<AppData> appList) {
-            StringBuilder sb = new StringBuilder("\"pkg\",\"label\"");
+            StringBuilder sb = new StringBuilder(csv.getHeader());
             sb.append(Constants.LINE_SEPARATOR);
             for (AppData appData : appList) {
                 sb.append(makeShareString(appData));
@@ -47,11 +49,13 @@ public enum ShareType {
 
         @Override
         public String makeShareString(AppData appData) {
-            return "\"" + appData.packageName + "\",\"" + appData.label + '"';
+            return csv.toCSV(appData);
         }
     };
 
     public abstract String makeShareString(List<AppData> appList);
 
     public abstract String makeShareString(AppData appList);
+
+    private static final CsvManager<AppData> csv = new CsvManager<>(AppData.class);
 }
