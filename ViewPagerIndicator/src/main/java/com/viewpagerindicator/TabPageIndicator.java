@@ -36,7 +36,9 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
  * across different configurations or circumstances.
  */
 public class TabPageIndicator extends HorizontalScrollView implements PageIndicator {
-    /** Title text used when no title is provided by the adapter. */
+    /**
+     * Title text used when no title is provided by the adapter.
+     */
     private static final CharSequence EMPTY_TITLE = "";
 
     /**
@@ -55,7 +57,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
 
     private final OnClickListener mTabClickListener = new OnClickListener() {
         public void onClick(View view) {
-            TabView tabView = (TabView)view;
+            TabView tabView = (TabView) view;
             final int oldSelected = mViewPager.getCurrentItem();
             final int newSelected = tabView.getIndex();
             mViewPager.setCurrentItem(newSelected);
@@ -70,7 +72,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
     private ViewPager mViewPager;
     private ViewPager.OnPageChangeListener mListener;
 
-//    private int mMaxTabWidth;
+    //    private int mMaxTabWidth;
     private int mSelectedTabIndex;
 
     private OnTabReselectedListener mTabReselectedListener;
@@ -208,7 +210,7 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
         PagerAdapter adapter = mViewPager.getAdapter();
         IconPagerAdapter iconAdapter = null;
         if (adapter instanceof IconPagerAdapter) {
-            iconAdapter = (IconPagerAdapter)adapter;
+            iconAdapter = (IconPagerAdapter) adapter;
         }
         final int count = adapter.getCount();
         for (int i = 0; i < count; i++) {
@@ -237,6 +239,10 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
 
     @Override
     public void setCurrentItem(int item) {
+        if (isInEditMode()) {
+            return;
+        }
+
         if (mViewPager == null) {
             throw new IllegalStateException("ViewPager has not been bound.");
         }

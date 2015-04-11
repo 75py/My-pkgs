@@ -71,9 +71,4 @@
         <item name="android:fadingEdgeLength">@dimen/unit_4</item>
     </style>
 
-    <style name="Preference" />
-    <style name="Preference.CheckBoxPreference" />
-    <style name="Preference.CheckBoxPreference.Single">
-        <item name="android:widgetLayout">@layout/preference_widget_checkbox_single</item>
-    </style>
 </resources>
