@@ -3,9 +3,6 @@ package com.nagopy.android.mypkgs.uiautomator;
 import android.support.test.uiautomator.Configurator;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiSelector;
-import android.util.Log;
-
-import com.nagopy.android.mypkgs.TestUtils;
 
 import java.io.File;
 import java.util.ArrayList;

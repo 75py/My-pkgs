@@ -23,7 +23,7 @@ import android.util.Log;
  */
 public class DebugUtil {
 
-    public static final String TAG = "My pkgs";
+    private static final String TAG = "My pkgs";
 
     private DebugUtil() {
     }

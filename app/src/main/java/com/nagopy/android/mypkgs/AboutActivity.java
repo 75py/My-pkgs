@@ -16,7 +16,6 @@
 package com.nagopy.android.mypkgs;
 
 import android.content.Intent;
-import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -51,7 +50,6 @@ public class AboutActivity extends ActionBarActivity {
 
         LinearLayout parentView = (LinearLayout) findViewById(R.id.parent);
 
-        AssetManager assetManager = getAssets();
         InputStream is = null;
         BufferedReader br = null;
         try {

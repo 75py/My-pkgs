@@ -374,11 +374,6 @@ public class MainActivity extends ActionBarActivity implements ViewPager.OnPageC
         }
 
         @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-        }
-
-        @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             return View.inflate(getActivity().getApplicationContext(), R.layout.fragment_application_list, null);
         }
