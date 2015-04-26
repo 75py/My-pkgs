@@ -112,7 +112,7 @@ public class DevicePolicyUtil {
          * {@link android.app.admin.DevicePolicyManager}のisThisASystemPackageメソッドと同じ内容.<br>
          * 4.4以下で使用。
          *
-         * @param packageInfo 判定したいpackageinfo
+         * @param packageInfo 判定したいpackageInfo
          * @return isThisASystemPackageの結果をそのまま返す。<br>
          * エラーがあった場合はfalseを返す。
          */

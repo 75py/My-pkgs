@@ -15,125 +15,16 @@
  */
 package com.nagopy.android.mypkgs.util;
 
-import android.app.Activity;
-import android.app.ActivityManager;
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.UserHandle;
-import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.util.SparseBooleanArray;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.nagopy.android.mypkgs.AppComparator;
-import com.nagopy.android.mypkgs.AppData;
-import com.nagopy.android.mypkgs.AppInformation;
-import com.nagopy.android.mypkgs.Constants;
-import com.nagopy.android.mypkgs.FilterType;
-import com.nagopy.android.mypkgs.R;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Logic {
-
-    private static final Map<Integer, String> RUNNING_STATUS_MAP;
-
-    static {
-        Map<Integer, String> runningStatusMap = new HashMap<>();
-        runningStatusMap.put(ActivityManager.RunningAppProcessInfo.IMPORTANCE_BACKGROUND, "Background");
-        runningStatusMap.put(ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND, "Foreground");
-        runningStatusMap.put(ActivityManager.RunningAppProcessInfo.IMPORTANCE_PERCEPTIBLE, "Perceptible");
-        runningStatusMap.put(ActivityManager.RunningAppProcessInfo.IMPORTANCE_SERVICE, "Service");
-        runningStatusMap.put(ActivityManager.RunningAppProcessInfo.IMPORTANCE_VISIBLE, "Visible");
-        runningStatusMap.put(ActivityManager.RunningAppProcessInfo.IMPORTANCE_EMPTY, "Empty");
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            runningStatusMap.put(ActivityManager.RunningAppProcessInfo.IMPORTANCE_GONE, "Gone");
-        }
-        RUNNING_STATUS_MAP = Collections.unmodifiableMap(runningStatusMap);
-    }
-
-    private Logic() {
-    }
-
-    public static boolean canLaunchImplicitIntent(@NonNull Context context, @NonNull String action) {
-        Intent intent = new Intent(action);
-        return canLaunchImplicitIntent(context, intent);
-    }
-
-    public static boolean canLaunchImplicitIntent(@NonNull Context context, @NonNull Intent intent) {
-        PackageManager packageManager = context.getPackageManager();
-        return !packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY).isEmpty();
-    }
-
-    public static void sendIntent(@NonNull Activity activity, String subject, String text) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType(Constants.MINE_TYPE_TEXT_PLAIN);
-        intent.putExtra(Intent.EXTRA_TEXT, text);
-        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        activity.startActivity(intent);
-    }
-
-    public static void sendIntent(@NonNull Activity activity, String text) {
-        sendIntent(activity, null, text);
-    }
-
-
-    public static String makeSearchQuery(@NonNull AppData appData) {
-        return appData.label + '+' + appData.packageName;
-//        return context.getString(R.string.keyword_disable) + '+' + appData.label + '+' + appData.packageName;
-    }
-
-    public static String makeSearchUrl(AppData appData) {
-        return "http://www.google.com/search?q=" + makeSearchQuery(appData);
-    }
-
-    @SuppressWarnings("unchecked")
-    @NonNull
-    public static <T> List<T> getCheckedItemList(@NonNull ListView listView) {
-        List<T> checkedItemList = new ArrayList<>();
-        SparseBooleanArray checkedItemPositions = listView.getCheckedItemPositions();
-        for (int i = 0; i < checkedItemPositions.size(); i++) {
-            if (checkedItemPositions.valueAt(i)) {
-                checkedItemList.add((T) listView.getItemAtPosition(checkedItemPositions.keyAt(i)));
-            }
-        }
-        return checkedItemList;
-    }
-
-    /**
-     * ステータスのintをもとに文字列に変換
-     *
-     * @param status RunningProcessImportance
-     * @return 文字列（Foregroundとか）
-     */
-    public static String getStatusText(int status) {
-        return RUNNING_STATUS_MAP.get(status);
-    }
-
-    /**
-     * ランチャーで表示するアイコンのサイズを取得する.
-     *
-     * @param context Context
-     * @return ランチャーのアイコンサイズ
-     */
-    public static int getIconSize(@NonNull Context context) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
-            return activityManager.getLauncherLargeIconSize();
-        } else {
-            return (int) context.getResources().getDimension(android.R.dimen.app_icon_size);
-        }
-    }
 
     /**
      * ApplicationInfoを取得する.
@@ -193,20 +84,6 @@ public class Logic {
     }
 
     /**
-     * TextViewの上下左右に画像を配置する.
-     *
-     * @param textView TextView
-     * @param resId    リソースID
-     */
-    public static void setIcon(final TextView textView, final int resId) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            textView.setCompoundDrawablesWithIntrinsicBounds(resId, 0, 0, 0);
-        } else {
-            textView.setCompoundDrawablesRelativeWithIntrinsicBounds(resId, 0, 0, 0);
-        }
-    }
-
-    /**
      * TextViewの左側（START側）に画像を表示する。
      *
      * @param textView     対象View
@@ -223,55 +100,4 @@ public class Logic {
         drawable.setCallback(null);
     }
 
-    public static List<FilterType> getFilters(Context context) {
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        boolean advanced = sp.getBoolean(context.getString(R.string.pref_key_enabled_advanced), false);
-        if (!advanced) {
-            return FilterType.DEFAULT_FILTERS;
-        }
-
-        String v = sp.getString(context.getString(R.string.pref_key_filters), FilterType.DEFAULT_VALUE);
-        if (v == null || v.isEmpty()) {
-            return FilterType.DEFAULT_FILTERS;
-        }
-        List<FilterType> list = new ArrayList<>();
-        for (String val : v.split(",")) {
-            list.add(FilterType.valueOf(val));
-        }
-        Collections.sort(list, FilterType.COMPARATOR);
-        return list;
-    }
-
-    public static AppComparator getAppComparator(Context context) {
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        boolean advanced = sp.getBoolean(context.getString(R.string.pref_key_enabled_advanced), false);
-        if (!advanced) {
-            return AppComparator.DEFAULT;
-        }
-        String name = sp.getString(context.getString(R.string.pref_key_sort), AppComparator.DEFAULT.name());
-        return AppComparator.valueOf(name);
-    }
-
-    public static List<AppInformation> getAppInformation(Context context) {
-        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
-        boolean advanced = sp.getBoolean(context.getString(R.string.pref_key_enabled_advanced), false);
-        if (!advanced) {
-            return AppInformation.DEFAULT_LIST;
-        }
-
-        String key = context.getString(R.string.pref_key_app_information);
-        if (!sp.contains(key)) {
-            return AppInformation.DEFAULT_LIST;
-        }
-
-        String v = sp.getString(key, AppInformation.DEFAULT_VALUE);
-        if (v == null || v.isEmpty()) {
-            return Collections.emptyList();
-        }
-        List<AppInformation> list = new ArrayList<>();
-        for (String val : v.split(",")) {
-            list.add(AppInformation.valueOf(val));
-        }
-        return list;
-    }
 }

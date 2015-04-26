@@ -28,6 +28,8 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.lang.reflect.Field;
+
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
@@ -201,6 +203,17 @@ public class TabPageIndicator extends HorizontalScrollView implements PageIndica
             throw new IllegalStateException("ViewPager does not have adapter instance.");
         }
         mViewPager = view;
+
+        try {
+            Field mOnPageChangeListener = ViewPager.class.getDeclaredField("mOnPageChangeListener");
+            mOnPageChangeListener.setAccessible(true);
+            if (mOnPageChangeListener.get(view) != null) {
+                mListener = (OnPageChangeListener) mOnPageChangeListener.get(view);
+            }
+        } catch (NoSuchFieldException ignore) {
+        } catch (IllegalAccessException ignore) {
+        }
+
         view.setOnPageChangeListener(this);
         notifyDataSetChanged();
     }

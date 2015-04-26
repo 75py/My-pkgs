@@ -24,6 +24,24 @@
     <methods>;
 }
 
--keep class com.nagopy.android.mypkgs.AppData {
+-keep class com.nagopy.android.mypkgs.model.AppData {
 	<fields>;
+}
+
+# Butter Knife
+-keep class butterknife.** { *; }
+-dontwarn butterknife.internal.**
+-keep class **$$ViewInjector { *; }
+-keepclasseswithmembernames class * {
+    @butterknife.* <fields>;
+}
+-keepclasseswithmembernames class * {
+    @butterknife.* <methods>;
+}
+
+# Otto
+-keepattributes *Annotation*
+-keepclassmembers class ** {
+    @com.squareup.otto.Subscribe public *;
+    @com.squareup.otto.Produce public *;
 }

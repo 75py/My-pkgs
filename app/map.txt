@@ -6905,6 +6905,249 @@ android.support.v7.widget.WindowCallbackWrapper -> android.support.v7.widget.ar:
     64:64:boolean onMenuOpened(int,android.view.Menu) -> c
     69:69:android.support.v7.view.ActionMode startActionMode(android.support.v7.view.ActionMode$Callback) -> a
     74:74:android.view.View onCreatePanelView(int) -> a
+butterknife.ButterKnife -> butterknife.ButterKnife:
+    java.lang.String TAG -> TAG
+    boolean debug -> debug
+    java.util.Map INJECTORS -> INJECTORS
+    butterknife.ButterKnife$Injector NOP_INJECTOR -> NOP_INJECTOR
+    222:223:void setDebug(boolean) -> setDebug
+    232:233:void inject(android.app.Activity) -> inject
+    242:243:void inject(android.view.View) -> inject
+    252:253:void inject(android.app.Dialog) -> inject
+    263:264:void inject(java.lang.Object,android.app.Activity) -> inject
+    274:275:void inject(java.lang.Object,android.view.View) -> inject
+    285:286:void inject(java.lang.Object,android.app.Dialog) -> inject
+    297:309:void reset(java.lang.Object) -> reset
+    312:324:void inject(java.lang.Object,java.lang.Object,butterknife.ButterKnife$Finder) -> inject
+    328:348:butterknife.ButterKnife$Injector findInjectorForClass(java.lang.Class) -> findInjectorForClass
+    353:356:void apply(java.util.List,butterknife.ButterKnife$Action) -> apply
+    360:363:void apply(java.util.List,butterknife.ButterKnife$Setter,java.lang.Object) -> apply
+    372:375:void apply(java.util.List,android.util.Property,java.lang.Object) -> apply
+    380:380:android.view.View findById(android.view.View,int) -> findById
+    386:386:android.view.View findById(android.app.Activity,int) -> findById
+    392:392:android.view.View findById(android.app.Dialog,int) -> findById
+butterknife.ButterKnife$1 -> butterknife.ButterKnife$1:
+    216:216:void inject(butterknife.ButterKnife$Finder,java.lang.Object,java.lang.Object) -> inject
+    217:217:void reset(java.lang.Object) -> reset
+butterknife.ButterKnife$Action -> butterknife.ButterKnife$Action:
+    void apply(android.view.View,int) -> apply
+butterknife.ButterKnife$Finder -> butterknife.ButterKnife$Finder:
+    butterknife.ButterKnife$Finder VIEW -> VIEW
+    butterknife.ButterKnife$Finder ACTIVITY -> ACTIVITY
+    butterknife.ButterKnife$Finder DIALOG -> DIALOG
+    butterknife.ButterKnife$Finder[] $VALUES -> $VALUES
+    93:93:butterknife.ButterKnife$Finder[] values() -> values
+    93:93:butterknife.ButterKnife$Finder valueOf(java.lang.String) -> valueOf
+    124:124:java.lang.Object[] arrayOf(java.lang.Object[]) -> arrayOf
+    128:128:java.util.List listOf(java.lang.Object[]) -> listOf
+    132:143:java.lang.Object findRequiredView(java.lang.Object,int,java.lang.String) -> findRequiredView
+    147:148:java.lang.Object findOptionalView(java.lang.Object,int,java.lang.String) -> findOptionalView
+    154:160:java.lang.Object castView(android.view.View,int,java.lang.String) -> castView
+    173:175:java.lang.Object castParam(java.lang.Object,java.lang.String,int,java.lang.String,int) -> castParam
+    android.view.View findView(java.lang.Object,int) -> findView
+    android.content.Context getContext(java.lang.Object) -> getContext
+butterknife.ButterKnife$Finder$1 -> butterknife.ButterKnife$Finder$1:
+    97:97:android.view.View findView(java.lang.Object,int) -> findView
+    101:101:android.content.Context getContext(java.lang.Object) -> getContext
+butterknife.ButterKnife$Finder$2 -> butterknife.ButterKnife$Finder$2:
+    106:106:android.view.View findView(java.lang.Object,int) -> findView
+    110:110:android.content.Context getContext(java.lang.Object) -> getContext
+butterknife.ButterKnife$Finder$3 -> butterknife.ButterKnife$Finder$3:
+    115:115:android.view.View findView(java.lang.Object,int) -> findView
+    119:119:android.content.Context getContext(java.lang.Object) -> getContext
+butterknife.ButterKnife$Injector -> butterknife.ButterKnife$Injector:
+    void inject(butterknife.ButterKnife$Finder,java.lang.Object,java.lang.Object) -> inject
+    void reset(java.lang.Object) -> reset
+butterknife.ButterKnife$Setter -> butterknife.ButterKnife$Setter:
+    void set(android.view.View,java.lang.Object,int) -> set
+butterknife.ImmutableList -> butterknife.ImmutableList:
+    java.lang.Object[] views -> views
+    18:18:java.lang.Object get(int) -> get
+    22:22:int size() -> size
+    26:31:boolean contains(java.lang.Object) -> contains
+butterknife.InjectView -> butterknife.InjectView:
+    int value() -> value
+butterknife.InjectViews -> butterknife.InjectViews:
+    int[] value() -> value
+butterknife.OnCheckedChanged -> butterknife.OnCheckedChanged:
+    int[] value() -> value
+butterknife.OnClick -> butterknife.OnClick:
+    int[] value() -> value
+butterknife.OnEditorAction -> butterknife.OnEditorAction:
+    int[] value() -> value
+butterknife.OnFocusChange -> butterknife.OnFocusChange:
+    int[] value() -> value
+butterknife.OnItemClick -> butterknife.OnItemClick:
+    int[] value() -> value
+butterknife.OnItemLongClick -> butterknife.OnItemLongClick:
+    int[] value() -> value
+butterknife.OnItemSelected -> butterknife.OnItemSelected:
+    int[] value() -> value
+    butterknife.OnItemSelected$Callback callback() -> callback
+butterknife.OnItemSelected$Callback -> butterknife.OnItemSelected$Callback:
+    butterknife.OnItemSelected$Callback ITEM_SELECTED -> ITEM_SELECTED
+    butterknife.OnItemSelected$Callback NOTHING_SELECTED -> NOTHING_SELECTED
+    butterknife.OnItemSelected$Callback[] $VALUES -> $VALUES
+    52:52:butterknife.OnItemSelected$Callback[] values() -> values
+    52:52:butterknife.OnItemSelected$Callback valueOf(java.lang.String) -> valueOf
+butterknife.OnLongClick -> butterknife.OnLongClick:
+    int[] value() -> value
+butterknife.OnPageChange -> butterknife.OnPageChange:
+    int[] value() -> value
+    butterknife.OnPageChange$Callback callback() -> callback
+butterknife.OnPageChange$Callback -> butterknife.OnPageChange$Callback:
+    butterknife.OnPageChange$Callback PAGE_SELECTED -> PAGE_SELECTED
+    butterknife.OnPageChange$Callback PAGE_SCROLLED -> PAGE_SCROLLED
+    butterknife.OnPageChange$Callback PAGE_SCROLL_STATE_CHANGED -> PAGE_SCROLL_STATE_CHANGED
+    butterknife.OnPageChange$Callback[] $VALUES -> $VALUES
+    47:47:butterknife.OnPageChange$Callback[] values() -> values
+    47:47:butterknife.OnPageChange$Callback valueOf(java.lang.String) -> valueOf
+butterknife.OnTextChanged -> butterknife.OnTextChanged:
+    int[] value() -> value
+    butterknife.OnTextChanged$Callback callback() -> callback
+butterknife.OnTextChanged$Callback -> butterknife.OnTextChanged$Callback:
+    butterknife.OnTextChanged$Callback TEXT_CHANGED -> TEXT_CHANGED
+    butterknife.OnTextChanged$Callback BEFORE_TEXT_CHANGED -> BEFORE_TEXT_CHANGED
+    butterknife.OnTextChanged$Callback AFTER_TEXT_CHANGED -> AFTER_TEXT_CHANGED
+    butterknife.OnTextChanged$Callback[] $VALUES -> $VALUES
+    50:50:butterknife.OnTextChanged$Callback[] values() -> values
+    50:50:butterknife.OnTextChanged$Callback valueOf(java.lang.String) -> valueOf
+butterknife.OnTouch -> butterknife.OnTouch:
+    int[] value() -> value
+butterknife.Optional -> butterknife.Optional:
+butterknife.internal.Binding -> butterknife.internal.Binding:
+    java.lang.String getDescription() -> getDescription
+butterknife.internal.ButterKnifeProcessor -> butterknife.internal.ButterKnifeProcessor:
+    java.lang.String SUFFIX -> SUFFIX
+    java.lang.String ANDROID_PREFIX -> ANDROID_PREFIX
+    java.lang.String JAVA_PREFIX -> JAVA_PREFIX
+    java.lang.String VIEW_TYPE -> VIEW_TYPE
+    java.lang.String LIST_TYPE -> LIST_TYPE
+    java.util.List LISTENERS -> LISTENERS
+    javax.lang.model.util.Elements elementUtils -> elementUtils
+    javax.lang.model.util.Types typeUtils -> typeUtils
+    javax.annotation.processing.Filer filer -> filer
+    boolean $assertionsDisabled -> $assertionsDisabled
+    84:89:void init(javax.annotation.processing.ProcessingEnvironment) -> init
+    92:99:java.util.Set getSupportedAnnotationTypes() -> getSupportedAnnotationTypes
+    103:120:boolean process(java.util.Set,javax.annotation.processing.RoundEnvironment) -> process
+    124:164:java.util.Map findAndParseTargets(javax.annotation.processing.RoundEnvironment) -> findAndParseTargets
+    169:197:boolean isInaccessibleViaGeneratedCode(java.lang.Class,java.lang.String,javax.lang.model.element.Element) -> isInaccessibleViaGeneratedCode
+    202:216:boolean isBindingInWrongPackage(java.lang.Class,javax.lang.model.element.Element) -> isBindingInWrongPackage
+    221:280:void parseInjectView(javax.lang.model.element.Element,java.util.Map,java.util.Set) -> parseInjectView
+    284:356:void parseInjectViews(javax.lang.model.element.Element,java.util.Map,java.util.Set) -> parseInjectViews
+    360:368:java.lang.Integer findDuplicate(int[]) -> findDuplicate
+    373:378:java.lang.String doubleErasure(javax.lang.model.type.TypeMirror) -> doubleErasure
+    384:395:void findAndParseListener(javax.annotation.processing.RoundEnvironment,java.lang.Class,java.util.Map,java.util.Set) -> findAndParseListener
+    401:594:void parseListenerAnnotation(java.lang.Class,javax.lang.model.element.Element,java.util.Map,java.util.Set) -> parseListenerAnnotation
+    597:600:boolean isInterface(javax.lang.model.type.TypeMirror) -> isInterface
+    604:640:boolean isSubtypeOfType(javax.lang.model.type.TypeMirror,java.lang.String) -> isSubtypeOfType
+    645:654:butterknife.internal.ViewInjector getOrCreateTargetClass(java.util.Map,javax.lang.model.element.TypeElement) -> getOrCreateTargetClass
+    658:659:java.lang.String getClassName(javax.lang.model.element.TypeElement,java.lang.String) -> getClassName
+    666:673:java.lang.String findParentFqcn(javax.lang.model.element.TypeElement,java.util.Set) -> findParentFqcn
+    679:679:javax.lang.model.SourceVersion getSupportedSourceVersion() -> getSupportedSourceVersion
+    683:687:void error(javax.lang.model.element.Element,java.lang.String,java.lang.Object[]) -> error
+    690:690:java.lang.String getPackageName(javax.lang.model.element.TypeElement) -> getPackageName
+butterknife.internal.CollectionBinding -> butterknife.internal.CollectionBinding:
+    java.lang.String name -> name
+    java.lang.String type -> type
+    butterknife.internal.CollectionBinding$Kind kind -> kind
+    boolean required -> required
+    22:22:java.lang.String getName() -> getName
+    26:26:java.lang.String getType() -> getType
+    30:30:butterknife.internal.CollectionBinding$Kind getKind() -> getKind
+    34:34:boolean isRequired() -> isRequired
+    38:38:java.lang.String getDescription() -> getDescription
+butterknife.internal.CollectionBinding$Kind -> butterknife.internal.CollectionBinding$Kind:
+    butterknife.internal.CollectionBinding$Kind ARRAY -> ARRAY
+    butterknife.internal.CollectionBinding$Kind LIST -> LIST
+    butterknife.internal.CollectionBinding$Kind[] $VALUES -> $VALUES
+    4:4:butterknife.internal.CollectionBinding$Kind[] values() -> values
+    4:4:butterknife.internal.CollectionBinding$Kind valueOf(java.lang.String) -> valueOf
+butterknife.internal.DebouncingOnClickListener -> butterknife.internal.DebouncingOnClickListener:
+    boolean enabled -> enabled
+    java.lang.Runnable ENABLE_AGAIN -> ENABLE_AGAIN
+    19:24:void onClick(android.view.View) -> onClick
+    void doClick(android.view.View) -> doClick
+    9:9:boolean access$002(boolean) -> access$002
+butterknife.internal.DebouncingOnClickListener$1 -> butterknife.internal.DebouncingOnClickListener$1:
+    14:15:void run() -> run
+butterknife.internal.ListenerBinding -> butterknife.internal.ListenerBinding:
+    java.lang.String name -> name
+    java.util.List parameters -> parameters
+    boolean required -> required
+    19:19:java.lang.String getName() -> getName
+    23:23:java.util.List getParameters() -> getParameters
+    27:27:java.lang.String getDescription() -> getDescription
+    31:31:boolean isRequired() -> isRequired
+butterknife.internal.ListenerClass -> butterknife.internal.ListenerClass:
+    java.lang.String targetType() -> targetType
+    java.lang.String setter() -> setter
+    java.lang.String type() -> type
+    int genericArguments() -> genericArguments
+    java.lang.Class callbacks() -> callbacks
+    butterknife.internal.ListenerMethod[] method() -> method
+butterknife.internal.ListenerClass$NONE -> butterknife.internal.ListenerClass$NONE:
+    butterknife.internal.ListenerClass$NONE[] $VALUES -> $VALUES
+    32:32:butterknife.internal.ListenerClass$NONE[] values() -> values
+    32:32:butterknife.internal.ListenerClass$NONE valueOf(java.lang.String) -> valueOf
+butterknife.internal.ListenerMethod -> butterknife.internal.ListenerMethod:
+    java.lang.String name() -> name
+    java.lang.String[] parameters() -> parameters
+    java.lang.String returnType() -> returnType
+    java.lang.String defaultReturn() -> defaultReturn
+butterknife.internal.Parameter -> butterknife.internal.Parameter:
+    butterknife.internal.Parameter[] NONE -> NONE
+    int listenerPosition -> listenerPosition
+    java.lang.String type -> type
+    16:16:int getListenerPosition() -> getListenerPosition
+    20:20:java.lang.String getType() -> getType
+    24:24:boolean requiresCast(java.lang.String) -> requiresCast
+butterknife.internal.ViewBinding -> butterknife.internal.ViewBinding:
+    java.lang.String name -> name
+    java.lang.String type -> type
+    boolean required -> required
+    17:17:java.lang.String getName() -> getName
+    21:21:java.lang.String getType() -> getType
+    25:25:java.lang.String getDescription() -> getDescription
+    29:29:boolean isRequired() -> isRequired
+    33:33:boolean requiresCast() -> requiresCast
+butterknife.internal.ViewInjection -> butterknife.internal.ViewInjection:
+    int id -> id
+    java.util.Set viewBindings -> viewBindings
+    java.util.LinkedHashMap listenerBindings -> listenerBindings
+    23:23:int getId() -> getId
+    27:27:java.util.Collection getViewBindings() -> getViewBindings
+    31:31:java.util.Map getListenerBindings() -> getListenerBindings
+    35:36:boolean hasListenerBinding(butterknife.internal.ListenerClass,butterknife.internal.ListenerMethod) -> hasListenerBinding
+    41:54:void addListenerBinding(butterknife.internal.ListenerClass,butterknife.internal.ListenerMethod,butterknife.internal.ListenerBinding) -> addListenerBinding
+    57:58:void addViewBinding(butterknife.internal.ViewBinding) -> addViewBinding
+    61:76:java.util.List getRequiredBindings() -> getRequiredBindings
+butterknife.internal.ViewInjector -> butterknife.internal.ViewInjector:
+    java.util.Map viewIdMap -> viewIdMap
+    java.util.Map collectionBindings -> collectionBindings
+    java.lang.String classPackage -> classPackage
+    java.lang.String className -> className
+    java.lang.String targetClass -> targetClass
+    java.lang.String parentInjector -> parentInjector
+    33:34:void addView(int,butterknife.internal.ViewBinding) -> addView
+    38:44:boolean addListener(int,butterknife.internal.ListenerClass,butterknife.internal.ListenerMethod,butterknife.internal.ListenerBinding) -> addListener
+    48:49:void addCollection(int[],butterknife.internal.CollectionBinding) -> addCollection
+    52:53:void setParentInjector(java.lang.String) -> setParentInjector
+    56:56:butterknife.internal.ViewInjection getViewInjection(int) -> getViewInjection
+    60:65:butterknife.internal.ViewInjection getOrCreateViewInjection(int) -> getOrCreateViewInjection
+    69:69:java.lang.String getFqcn() -> getFqcn
+    73:99:java.lang.String brewJava() -> brewJava
+    103:125:void emitInject(java.lang.StringBuilder) -> emitInject
+    128:157:void emitCollectionBinding(java.lang.StringBuilder,butterknife.internal.CollectionBinding,int[]) -> emitCollectionBinding
+    160:181:void emitViewInjection(java.lang.StringBuilder,butterknife.internal.ViewInjection) -> emitViewInjection
+    184:204:void emitViewBindings(java.lang.StringBuilder,butterknife.internal.ViewInjection) -> emitViewBindings
+    207:348:void emitListenerBindings(java.lang.StringBuilder,butterknife.internal.ViewInjection) -> emitListenerBindings
+    351:370:java.util.List getListenerMethods(butterknife.internal.ListenerClass) -> getListenerMethods
+    375:388:void emitReset(java.lang.StringBuilder) -> emitReset
+    391:413:void emitHumanDescription(java.lang.StringBuilder,java.util.Collection) -> emitHumanDescription
+butterknife.internal.ViewInjector$1 -> butterknife.internal.ViewInjector$1:
+    int[] $SwitchMap$butterknife$internal$CollectionBinding$Kind -> $SwitchMap$butterknife$internal$CollectionBinding$Kind
 com.google.ads.AdRequest -> com.google.ads.AdRequest:
     java.lang.String VERSION -> VERSION
     java.lang.String LOGTAG -> LOGTAG
@@ -24725,345 +24968,566 @@ com.google.android.gms.wearable.zzg -> com.google.android.gms.wearable.e:
     java.lang.Object[] newArray(int) -> newArray
     java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
 com.nagopy.android.mypkgs.AboutActivity -> com.nagopy.android.mypkgs.AboutActivity:
-    41:114:void onCreate(android.os.Bundle) -> onCreate
-    118:123:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    127:133:void onClick(android.view.View) -> onClick
-com.nagopy.android.mypkgs.AppComparator -> com.nagopy.android.mypkgs.a:
-    com.nagopy.android.mypkgs.AppComparator DEFAULT -> a
-    com.nagopy.android.mypkgs.AppComparator UPDATE_DATE_DESC -> b
+    44:120:void onCreate(android.os.Bundle) -> onCreate
+    123:129:void close(java.io.Closeable) -> a
+    133:140:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    146:148:void showOpenSourceLicense() -> showOpenSourceLicense
+com.nagopy.android.mypkgs.AboutActivity$$ViewInjector -> com.nagopy.android.mypkgs.AboutActivity$$ViewInjector:
+    11:20:void inject(butterknife.ButterKnife$Finder,com.nagopy.android.mypkgs.AboutActivity,java.lang.Object) -> inject
+    23:23:void reset(com.nagopy.android.mypkgs.AboutActivity) -> reset
+    8:8:void reset(java.lang.Object) -> reset
+    8:8:void inject(butterknife.ButterKnife$Finder,java.lang.Object,java.lang.Object) -> inject
+com.nagopy.android.mypkgs.AboutActivity$$ViewInjector$1 -> com.nagopy.android.mypkgs.a:
+    com.nagopy.android.mypkgs.AboutActivity val$target -> a
+    com.nagopy.android.mypkgs.AboutActivity$$ViewInjector this$0 -> b
+    17:18:void doClick(android.view.View) -> doClick
+com.nagopy.android.mypkgs.ApplicationListFragment -> com.nagopy.android.mypkgs.b:
+    android.os.Handler handler -> ai
+    50:54:com.nagopy.android.mypkgs.ApplicationListFragment newInstance(com.nagopy.android.mypkgs.constants.FilterType) -> a
+    59:59:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
+    64:76:void onViewCreated(android.view.View,android.os.Bundle) -> a
+    79:104:void loadApplications() -> L
+    108:110:void onListItemClick(android.widget.ListView,android.view.View,int,long) -> a
+    113:118:com.nagopy.android.mypkgs.ApplicationListFragment showProgressBar() -> M
+    122:134:void hideProgressBar() -> N
+    138:146:void onItemCheckedStateChanged(android.view.ActionMode,int,long,boolean) -> onItemCheckedStateChanged
+    150:151:boolean onCreateActionMode(android.view.ActionMode,android.view.Menu) -> onCreateActionMode
+    156:156:boolean onPrepareActionMode(android.view.ActionMode,android.view.Menu) -> onPrepareActionMode
+    161:163:boolean onActionItemClicked(android.view.ActionMode,android.view.MenuItem) -> onActionItemClicked
+    168:169:void onDestroyActionMode(android.view.ActionMode) -> onDestroyActionMode
+    175:182:java.util.List getCheckedItemList(android.widget.ListView) -> a
+    44:44:android.os.Handler access$000(com.nagopy.android.mypkgs.ApplicationListFragment) -> a
+com.nagopy.android.mypkgs.ApplicationListFragment$1 -> com.nagopy.android.mypkgs.c:
+    com.nagopy.android.mypkgs.ApplicationListFragment this$0 -> a
+    82:102:void run() -> run
+com.nagopy.android.mypkgs.ApplicationListFragment$1$1 -> com.nagopy.android.mypkgs.d:
+    com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter val$applicationListAdapter -> a
+    com.nagopy.android.mypkgs.ApplicationListFragment$1 this$1 -> b
+    92:100:void onLoaded(java.util.List) -> a
+com.nagopy.android.mypkgs.ApplicationListFragment$1$1$1 -> com.nagopy.android.mypkgs.e:
+    java.util.List val$appList -> a
+    com.nagopy.android.mypkgs.ApplicationListFragment$1$1 this$2 -> b
+    95:98:void run() -> run
+com.nagopy.android.mypkgs.ApplicationListFragment$2 -> com.nagopy.android.mypkgs.f:
+    com.nagopy.android.mypkgs.ApplicationListFragment this$0 -> a
+    130:131:void run() -> run
+com.nagopy.android.mypkgs.LicenseActivity -> com.nagopy.android.mypkgs.LicenseActivity:
+    39:93:void onCreate(android.os.Bundle) -> onCreate
+    96:102:void close(java.io.Closeable) -> a
+    106:114:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+com.nagopy.android.mypkgs.MainActivity -> com.nagopy.android.mypkgs.MainActivity:
+    com.nagopy.android.mypkgs.view.adapter.SectionsPagerAdapter mSectionsPagerAdapter -> n
+    android.support.v4.view.ViewPager mViewPager -> mViewPager
+    com.viewpagerindicator.PageIndicator pageIndicator -> pageIndicator
+    android.view.ActionMode actionMode -> o
+    com.nagopy.android.mypkgs.model.AppData reloadAppData -> p
+    com.google.android.gms.ads.AdView adView -> adView
+    android.content.SharedPreferences sp -> q
+    com.nagopy.android.mypkgs.manager.SettingManager settingManager -> r
+    86:109:void onCreate(android.os.Bundle) -> onCreate
+    113:115:void onStart() -> onStart
+    119:121:void onResume() -> onResume
+    125:127:void onPause() -> onPause
+    131:133:void onStop() -> onStop
+    137:139:void onDestroy() -> onDestroy
+    143:172:void onRestart() -> onRestart
+    177:178:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
+    183:214:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+    223:224:com.nagopy.android.mypkgs.ApplicationListFragment getApplicationListFragment() -> j
+    233:234:com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter getApplicationListAdapter() -> k
+    245:251:void onListItemSelected(com.nagopy.android.mypkgs.model.event.ListItemSelectedEvent) -> onListItemSelected
+    255:265:void onPageSelected(int) -> onPageSelected
+    270:272:void onCreateActionMode(com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$CreateActionModeEvent) -> onCreateActionMode
+    277:280:void onItemCheckedStateChanged(com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$ItemCheckedStateChangedEvent) -> onItemCheckedStateChanged
+    285:315:void onActionItemClicked(com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$ActionItemClickedEvent) -> onActionItemClicked
+    320:321:void onDestroyActionMode(com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$DestroyActionModeEvent) -> onDestroyActionMode
+    324:329:void sendIntent(java.lang.String,java.lang.String) -> a
+    332:333:void sendIntent(java.lang.String) -> b
+    336:337:boolean canLaunchImplicitIntent(java.lang.String) -> c
+    341:342:boolean canLaunchImplicitIntent(android.content.Intent) -> c
+    346:346:java.lang.String makeSearchQuery(com.nagopy.android.mypkgs.model.AppData) -> a
+    350:350:java.lang.String makeSearchUrl(com.nagopy.android.mypkgs.model.AppData) -> b
+com.nagopy.android.mypkgs.MainActivity$$ViewInjector -> com.nagopy.android.mypkgs.MainActivity$$ViewInjector:
+    11:37:void inject(butterknife.ButterKnife$Finder,com.nagopy.android.mypkgs.MainActivity,java.lang.Object) -> inject
+    40:43:void reset(com.nagopy.android.mypkgs.MainActivity) -> reset
+    8:8:void reset(java.lang.Object) -> reset
+    8:8:void inject(butterknife.ButterKnife$Finder,java.lang.Object,java.lang.Object) -> inject
+com.nagopy.android.mypkgs.MainActivity$$ViewInjector$1 -> com.nagopy.android.mypkgs.g:
+    com.nagopy.android.mypkgs.MainActivity val$target -> a
+    com.nagopy.android.mypkgs.MainActivity$$ViewInjector this$0 -> b
+    18:19:void onPageSelected(int) -> a
+    26:26:void onPageScrolled(int,float,int) -> a
+    31:31:void onPageScrollStateChanged(int) -> b
+com.nagopy.android.mypkgs.MainActivity_MembersInjector -> com.nagopy.android.mypkgs.h:
+    dagger.MembersInjector supertypeInjector -> b
+    javax.inject.Provider spProvider -> c
+    javax.inject.Provider userSettingsProvider -> d
+    boolean $assertionsDisabled -> a
+    27:33:void injectMembers(com.nagopy.android.mypkgs.MainActivity) -> a
+    36:36:dagger.MembersInjector create(dagger.MembersInjector,javax.inject.Provider,javax.inject.Provider) -> a
+    10:10:void injectMembers(java.lang.Object) -> a
+com.nagopy.android.mypkgs.SettingsActivity -> com.nagopy.android.mypkgs.SettingsActivity:
+    32:42:void onCreate(android.os.Bundle) -> onCreate
+    46:48:void onResume() -> onResume
+    52:54:void onPause() -> onPause
+    58:61:void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String) -> onSharedPreferenceChanged
+    65:72:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
+com.nagopy.android.mypkgs.SettingsActivity$SettingsFragment -> com.nagopy.android.mypkgs.i:
+    78:80:void onCreate(android.os.Bundle) -> onCreate
+com.nagopy.android.mypkgs.constants.AppComparator -> x.a:
+    com.nagopy.android.mypkgs.constants.AppComparator DEFAULT -> a
+    com.nagopy.android.mypkgs.constants.AppComparator UPDATE_DATE_DESC -> b
     int titleResourceId -> c
     int summaryResourceId -> d
-    com.nagopy.android.mypkgs.AppComparator[] $VALUES -> e
-    22:22:com.nagopy.android.mypkgs.AppComparator[] values() -> values
-    22:22:com.nagopy.android.mypkgs.AppComparator valueOf(java.lang.String) -> valueOf
-    64:64:int getTitleResourceId() -> a
-    68:68:int getSummaryResourceId() -> b
-    72:72:java.lang.String getName() -> c
-com.nagopy.android.mypkgs.AppComparator$1 -> com.nagopy.android.mypkgs.b:
-    27:42:int compare(com.nagopy.android.mypkgs.AppData,com.nagopy.android.mypkgs.AppData) -> a
-    24:24:int compare(java.lang.Object,java.lang.Object) -> compare
-com.nagopy.android.mypkgs.AppComparator$2 -> com.nagopy.android.mypkgs.c:
-    47:51:int compare(com.nagopy.android.mypkgs.AppData,com.nagopy.android.mypkgs.AppData) -> a
-    44:44:int compare(java.lang.Object,java.lang.Object) -> compare
-com.nagopy.android.mypkgs.AppData -> com.nagopy.android.mypkgs.d:
-    java.lang.String label -> a
-    java.lang.String packageName -> b
-    boolean isEnabled -> c
-    boolean isSystem -> d
-    java.lang.ref.WeakReference icon -> e
-    java.util.List process -> f
-    boolean isInstalled -> g
-    boolean isThisASystemPackage -> h
-    boolean hasActiveAdmins -> i
-    boolean isDefaultApp -> j
-    long firstInstallTime -> k
-    long lastUpdateTime -> l
-    91:123:void load(android.content.Context,android.content.pm.ApplicationInfo) -> a
-    127:127:java.lang.String toString() -> toString
-com.nagopy.android.mypkgs.AppInformation -> com.nagopy.android.mypkgs.e:
-    com.nagopy.android.mypkgs.AppInformation PROCESS -> a
-    com.nagopy.android.mypkgs.AppInformation NOT_INSTALLED -> b
-    com.nagopy.android.mypkgs.AppInformation FIRST_INSTALL_TIME -> c
-    com.nagopy.android.mypkgs.AppInformation LAST_UPDATE_TIME -> d
+    com.nagopy.android.mypkgs.constants.AppComparator[] $VALUES -> e
+    24:24:com.nagopy.android.mypkgs.constants.AppComparator[] values() -> values
+    24:24:com.nagopy.android.mypkgs.constants.AppComparator valueOf(java.lang.String) -> valueOf
+    66:66:int getTitleResourceId() -> a
+    70:70:int getSummaryResourceId() -> b
+    74:74:java.lang.String getName() -> c
+com.nagopy.android.mypkgs.constants.AppComparator$1 -> x.b:
+    29:44:int compare(com.nagopy.android.mypkgs.model.AppData,com.nagopy.android.mypkgs.model.AppData) -> a
+    26:26:int compare(java.lang.Object,java.lang.Object) -> compare
+com.nagopy.android.mypkgs.constants.AppComparator$2 -> x.c:
+    49:53:int compare(com.nagopy.android.mypkgs.model.AppData,com.nagopy.android.mypkgs.model.AppData) -> a
+    46:46:int compare(java.lang.Object,java.lang.Object) -> compare
+com.nagopy.android.mypkgs.constants.AppInformation -> x.d:
+    com.nagopy.android.mypkgs.constants.AppInformation PROCESS -> a
+    com.nagopy.android.mypkgs.constants.AppInformation NOT_INSTALLED -> b
+    com.nagopy.android.mypkgs.constants.AppInformation FIRST_INSTALL_TIME -> c
+    com.nagopy.android.mypkgs.constants.AppInformation LAST_UPDATE_TIME -> d
     int titleResourceId -> e
     int summaryResourceId -> f
     java.util.List DEFAULT_LIST -> g
     java.lang.String DEFAULT_VALUE -> h
-    com.nagopy.android.mypkgs.AppInformation[] $VALUES -> i
-    29:29:com.nagopy.android.mypkgs.AppInformation[] values() -> values
-    29:29:com.nagopy.android.mypkgs.AppInformation valueOf(java.lang.String) -> valueOf
-    73:73:java.lang.String getName() -> c
-    78:78:int getTitleResourceId() -> a
-    83:83:int getSummaryResourceId() -> b
-    void append(android.content.Context,java.lang.StringBuilder,com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.AppInformation$1 -> com.nagopy.android.mypkgs.f:
-    34:41:void append(android.content.Context,java.lang.StringBuilder,com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.AppInformation$2 -> com.nagopy.android.mypkgs.g:
-    45:48:void append(android.content.Context,java.lang.StringBuilder,com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.AppInformation$3 -> com.nagopy.android.mypkgs.h:
-    52:54:void append(android.content.Context,java.lang.StringBuilder,com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.AppInformation$4 -> com.nagopy.android.mypkgs.i:
-    58:60:void append(android.content.Context,java.lang.StringBuilder,com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.ApplicationIconLoader -> com.nagopy.android.mypkgs.j:
-    android.content.Context context -> a
-    java.lang.ref.WeakReference textViewWeakReference -> b
-    int iconSize -> c
-    int RETRIEVE_FLAGS -> d
-    java.lang.String packageName -> e
-    android.graphics.drawable.Drawable defaultIcon -> f
-    65:91:com.nagopy.android.mypkgs.AppData doInBackground(com.nagopy.android.mypkgs.AppData[]) -> a
-    105:119:void onPostExecute(com.nagopy.android.mypkgs.AppData) -> a
-    124:127:android.graphics.drawable.Drawable getDefaultIcon(android.content.Context) -> a
-    34:34:void onPostExecute(java.lang.Object) -> onPostExecute
-    34:34:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-com.nagopy.android.mypkgs.ApplicationList -> com.nagopy.android.mypkgs.k:
-    com.nagopy.android.mypkgs.ApplicationList instance -> e
-    java.util.List appList -> a
-    java.util.Set listeners -> b
-    java.lang.Object lockObject -> c
-    java.util.Map runningStatusMap -> d
-    54:54:com.nagopy.android.mypkgs.ApplicationList getInstance() -> a
-    58:72:void loadApplicationList(android.content.Context,com.nagopy.android.mypkgs.ApplicationList$ApplicationLoadListener) -> a
-    75:76:void clearCache() -> b
-    151:174:java.util.Map getRunningStatusMap(android.content.Context) -> a
-com.nagopy.android.mypkgs.ApplicationList$ApplicationLoadListener -> com.nagopy.android.mypkgs.l:
-    void onLoaded(java.util.List) -> a
-com.nagopy.android.mypkgs.ApplicationList$ApplicationLoadTask -> com.nagopy.android.mypkgs.m:
-    java.lang.ref.WeakReference applicationListWeakReference -> a
-    89:140:java.lang.Void doInBackground(android.content.Context[]) -> a
-    78:78:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
-com.nagopy.android.mypkgs.Constants -> com.nagopy.android.mypkgs.n:
+    com.nagopy.android.mypkgs.constants.AppInformation[] $VALUES -> i
+    31:31:com.nagopy.android.mypkgs.constants.AppInformation[] values() -> values
+    31:31:com.nagopy.android.mypkgs.constants.AppInformation valueOf(java.lang.String) -> valueOf
+    88:88:java.lang.String getName() -> c
+    93:93:int getTitleResourceId() -> a
+    98:98:int getSummaryResourceId() -> b
+    boolean append(android.content.Context,java.lang.StringBuilder,com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.AppInformation$1 -> x.e:
+    36:45:boolean append(android.content.Context,java.lang.StringBuilder,com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.AppInformation$2 -> x.f:
+    50:54:boolean append(android.content.Context,java.lang.StringBuilder,com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.AppInformation$3 -> x.g:
+    59:64:boolean append(android.content.Context,java.lang.StringBuilder,com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.AppInformation$4 -> x.h:
+    69:74:boolean append(android.content.Context,java.lang.StringBuilder,com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.Constants -> x.i:
     java.lang.String LINE_SEPARATOR -> a
-com.nagopy.android.mypkgs.FilterType -> com.nagopy.android.mypkgs.o:
-    com.nagopy.android.mypkgs.FilterType ALL -> a
-    com.nagopy.android.mypkgs.FilterType RUNNING -> b
-    com.nagopy.android.mypkgs.FilterType SYSTEM -> c
-    com.nagopy.android.mypkgs.FilterType SYSTEM_RUNNING -> d
-    com.nagopy.android.mypkgs.FilterType SYSTEM_UNDISABLABLE -> e
-    com.nagopy.android.mypkgs.FilterType SYSTEM_UNDISABLABLE_RUNNING -> f
-    com.nagopy.android.mypkgs.FilterType SYSTEM_DISABLABLE -> g
-    com.nagopy.android.mypkgs.FilterType SYSTEM_DISABLABLE_RUNNING -> h
-    com.nagopy.android.mypkgs.FilterType DISABLED -> i
-    com.nagopy.android.mypkgs.FilterType DEFAULT -> j
-    com.nagopy.android.mypkgs.FilterType USER -> k
-    com.nagopy.android.mypkgs.FilterType USER_RUNNING -> l
+    long Y2K -> b
+com.nagopy.android.mypkgs.constants.FilterType -> x.j:
+    com.nagopy.android.mypkgs.constants.FilterType ALL -> a
+    com.nagopy.android.mypkgs.constants.FilterType RUNNING -> b
+    com.nagopy.android.mypkgs.constants.FilterType SYSTEM -> c
+    com.nagopy.android.mypkgs.constants.FilterType SYSTEM_RUNNING -> d
+    com.nagopy.android.mypkgs.constants.FilterType SYSTEM_UNDISABLABLE -> e
+    com.nagopy.android.mypkgs.constants.FilterType SYSTEM_UNDISABLABLE_RUNNING -> f
+    com.nagopy.android.mypkgs.constants.FilterType SYSTEM_DISABLABLE -> g
+    com.nagopy.android.mypkgs.constants.FilterType SYSTEM_DISABLABLE_RUNNING -> h
+    com.nagopy.android.mypkgs.constants.FilterType DISABLED -> i
+    com.nagopy.android.mypkgs.constants.FilterType DEFAULT -> j
+    com.nagopy.android.mypkgs.constants.FilterType USER -> k
+    com.nagopy.android.mypkgs.constants.FilterType USER_RUNNING -> l
     java.util.List DEFAULT_FILTERS -> m
     java.lang.String DEFAULT_VALUE -> n
     int titleResourceId -> o
     int summaryResourceId -> p
     int priority -> q
     java.util.Comparator COMPARATOR -> r
-    com.nagopy.android.mypkgs.FilterType[] $VALUES -> s
-    25:25:com.nagopy.android.mypkgs.FilterType[] values() -> values
-    25:25:com.nagopy.android.mypkgs.FilterType valueOf(java.lang.String) -> valueOf
-    boolean isTarget(com.nagopy.android.mypkgs.AppData) -> a
-    124:124:java.lang.String getName() -> c
-    129:129:int getTitleResourceId() -> a
-    134:134:int getSummaryResourceId() -> b
-com.nagopy.android.mypkgs.FilterType$1 -> com.nagopy.android.mypkgs.p:
-    30:30:boolean isTarget(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.FilterType$10 -> com.nagopy.android.mypkgs.q:
-    75:75:boolean isTarget(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.FilterType$11 -> com.nagopy.android.mypkgs.r:
-    80:80:boolean isTarget(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.FilterType$12 -> com.nagopy.android.mypkgs.s:
-    85:85:boolean isTarget(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.FilterType$13 -> com.nagopy.android.mypkgs.t:
-    117:117:int compare(com.nagopy.android.mypkgs.FilterType,com.nagopy.android.mypkgs.FilterType) -> a
-    114:114:int compare(java.lang.Object,java.lang.Object) -> compare
-com.nagopy.android.mypkgs.FilterType$2 -> com.nagopy.android.mypkgs.u:
-    35:35:boolean isTarget(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.FilterType$3 -> com.nagopy.android.mypkgs.v:
-    40:40:boolean isTarget(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.FilterType$4 -> com.nagopy.android.mypkgs.w:
-    45:45:boolean isTarget(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.FilterType$5 -> com.nagopy.android.mypkgs.x:
-    50:50:boolean isTarget(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.FilterType$6 -> com.nagopy.android.mypkgs.y:
-    55:55:boolean isTarget(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.FilterType$7 -> com.nagopy.android.mypkgs.z:
-    60:60:boolean isTarget(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.FilterType$8 -> com.nagopy.android.mypkgs.aa:
-    65:65:boolean isTarget(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.FilterType$9 -> com.nagopy.android.mypkgs.ab:
-    70:70:boolean isTarget(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.LicenseActivity -> com.nagopy.android.mypkgs.LicenseActivity:
-    38:89:void onCreate(android.os.Bundle) -> onCreate
-    93:98:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-com.nagopy.android.mypkgs.MainActivity -> com.nagopy.android.mypkgs.MainActivity:
-    com.nagopy.android.mypkgs.MainActivity$SectionsPagerAdapter mSectionsPagerAdapter -> n
-    android.support.v4.view.ViewPager mViewPager -> o
-    com.viewpagerindicator.PageIndicator pageIndicator -> p
-    android.view.ActionMode actionMode -> q
-    com.nagopy.android.mypkgs.AppData reloadAppData -> r
-    android.content.SharedPreferences sp -> s
-    com.google.android.gms.ads.AdView adView -> t
-    78:98:void onCreate(android.os.Bundle) -> onCreate
-    102:105:void onResume() -> onResume
-    109:112:void onPause() -> onPause
-    116:118:void onDestroy() -> onDestroy
-    122:150:void onRestart() -> onRestart
-    155:156:boolean onCreateOptionsMenu(android.view.Menu) -> onCreateOptionsMenu
-    161:187:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-    196:197:com.nagopy.android.mypkgs.MainActivity$ApplicationListFragment getApplicationListFragment() -> j
-    206:207:com.nagopy.android.mypkgs.MainActivity$ApplicationListAdapter getApplicationListAdapter() -> k
-    213:220:void onItemClick(android.widget.AdapterView,android.view.View,int,long) -> onItemClick
-    228:228:void onPageScrolled(int,float,int) -> a
-    232:242:void onPageSelected(int) -> a
-    246:246:void onPageScrollStateChanged(int) -> b
-    259:262:boolean onCreateActionMode(android.view.ActionMode,android.view.Menu) -> onCreateActionMode
-    268:271:void onItemCheckedStateChanged(android.view.ActionMode,int,long,boolean) -> onItemCheckedStateChanged
-    275:275:boolean onPrepareActionMode(android.view.ActionMode,android.view.Menu) -> onPrepareActionMode
-    280:306:boolean onActionItemClicked(android.view.ActionMode,android.view.MenuItem) -> onActionItemClicked
-    311:313:void onDestroyActionMode(android.view.ActionMode) -> onDestroyActionMode
-com.nagopy.android.mypkgs.MainActivity$1 -> com.nagopy.android.mypkgs.ac:
-com.nagopy.android.mypkgs.MainActivity$ApplicationListAdapter -> com.nagopy.android.mypkgs.ad:
-    java.util.List originalData -> a
-    java.util.List filteredData -> b
-    android.view.LayoutInflater mInflater -> c
-    com.nagopy.android.mypkgs.MainActivity$ApplicationListAdapter$ItemFilter mFilter -> d
-    com.nagopy.android.mypkgs.FilterType filterType -> e
-    android.content.Context context -> f
-    int iconSize -> g
-    int COLOR_ENABLED -> h
-    int COLOR_DISABLED -> i
-    java.util.List appInformationList -> j
-    485:488:void updateApplicationList(java.util.List) -> a
-    491:493:void removeApplication(com.nagopy.android.mypkgs.AppData) -> a
-    496:497:void doFilter() -> a
-    500:500:int getCount() -> getCount
-    504:504:com.nagopy.android.mypkgs.AppData getItem(int) -> a
-    508:508:long getItemId(int) -> getItemId
-    515:567:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
-    577:577:android.widget.Filter getFilter() -> getFilter
-    461:461:java.lang.Object getItem(int) -> getItem
-    461:461:com.nagopy.android.mypkgs.FilterType access$000(com.nagopy.android.mypkgs.MainActivity$ApplicationListAdapter) -> a
-    461:461:java.util.List access$100(com.nagopy.android.mypkgs.MainActivity$ApplicationListAdapter) -> b
-    461:461:java.util.List access$400(com.nagopy.android.mypkgs.MainActivity$ApplicationListAdapter) -> c
-    461:461:java.util.List access$102(com.nagopy.android.mypkgs.MainActivity$ApplicationListAdapter,java.util.List) -> a
-com.nagopy.android.mypkgs.MainActivity$ApplicationListAdapter$ItemFilter -> com.nagopy.android.mypkgs.ae:
-    com.nagopy.android.mypkgs.MainActivity$ApplicationListAdapter this$0 -> a
-    583:597:android.widget.Filter$FilterResults performFiltering(java.lang.CharSequence) -> performFiltering
-    603:605:void publishResults(java.lang.CharSequence,android.widget.Filter$FilterResults) -> publishResults
-com.nagopy.android.mypkgs.MainActivity$ApplicationListAdapter$ViewHolder -> com.nagopy.android.mypkgs.af:
-    android.widget.TextView title -> a
-    android.widget.TextView packageName -> b
-    android.widget.TextView info -> c
-com.nagopy.android.mypkgs.MainActivity$ApplicationListFragment -> com.nagopy.android.mypkgs.ag:
-    android.os.Handler handler -> ai
-    369:373:com.nagopy.android.mypkgs.MainActivity$ApplicationListFragment newInstance(com.nagopy.android.mypkgs.FilterType) -> a
-    378:379:void onCreate(android.os.Bundle) -> d
-    383:383:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> a
-    388:400:void onViewCreated(android.view.View,android.os.Bundle) -> a
-    403:428:void loadApplications() -> L
-    432:433:void onListItemClick(android.widget.ListView,android.view.View,int,long) -> a
-    436:441:com.nagopy.android.mypkgs.MainActivity$ApplicationListFragment showProgressBar() -> M
-    445:457:void hideProgressBar() -> N
-    363:363:android.os.Handler access$200(com.nagopy.android.mypkgs.MainActivity$ApplicationListFragment) -> a
-com.nagopy.android.mypkgs.MainActivity$ApplicationListFragment$1 -> com.nagopy.android.mypkgs.ah:
-    com.nagopy.android.mypkgs.MainActivity$ApplicationListFragment this$0 -> a
-    406:426:void run() -> run
-com.nagopy.android.mypkgs.MainActivity$ApplicationListFragment$1$1 -> com.nagopy.android.mypkgs.ai:
-    com.nagopy.android.mypkgs.MainActivity$ApplicationListAdapter val$applicationListAdapter -> a
-    com.nagopy.android.mypkgs.MainActivity$ApplicationListFragment$1 this$1 -> b
-    416:424:void onLoaded(java.util.List) -> a
-com.nagopy.android.mypkgs.MainActivity$ApplicationListFragment$1$1$1 -> com.nagopy.android.mypkgs.aj:
-    java.util.List val$appList -> a
-    com.nagopy.android.mypkgs.MainActivity$ApplicationListFragment$1$1 this$2 -> b
-    419:422:void run() -> run
-com.nagopy.android.mypkgs.MainActivity$ApplicationListFragment$2 -> com.nagopy.android.mypkgs.ak:
-    com.nagopy.android.mypkgs.MainActivity$ApplicationListFragment this$0 -> a
-    453:454:void run() -> run
-com.nagopy.android.mypkgs.MainActivity$SectionsPagerAdapter -> com.nagopy.android.mypkgs.al:
-    android.content.Context context -> a
-    java.util.List filterTypeList -> b
-    java.util.Map cache -> c
-    337:347:android.support.v4.app.Fragment getItem(int) -> a
-    353:353:int getCount() -> b
-    358:359:java.lang.CharSequence getPageTitle(int) -> b
-com.nagopy.android.mypkgs.SettingsActivity -> com.nagopy.android.mypkgs.SettingsActivity:
-    30:41:void onCreate(android.os.Bundle) -> onCreate
-    45:47:void onResume() -> onResume
-    51:53:void onPause() -> onPause
-    57:60:void onSharedPreferenceChanged(android.content.SharedPreferences,java.lang.String) -> onSharedPreferenceChanged
-    64:69:boolean onOptionsItemSelected(android.view.MenuItem) -> onOptionsItemSelected
-com.nagopy.android.mypkgs.SettingsActivity$SettingsFragment -> com.nagopy.android.mypkgs.am:
-    75:77:void onCreate(android.os.Bundle) -> onCreate
-com.nagopy.android.mypkgs.ShareType -> com.nagopy.android.mypkgs.an:
-    com.nagopy.android.mypkgs.ShareType PACKAGE -> a
-    com.nagopy.android.mypkgs.ShareType CSV -> b
-    com.nagopy.android.mypkgs.ShareType[] $VALUES -> c
-    20:20:com.nagopy.android.mypkgs.ShareType[] values() -> values
-    20:20:com.nagopy.android.mypkgs.ShareType valueOf(java.lang.String) -> valueOf
+    com.nagopy.android.mypkgs.constants.FilterType[] $VALUES -> s
+    27:27:com.nagopy.android.mypkgs.constants.FilterType[] values() -> values
+    27:27:com.nagopy.android.mypkgs.constants.FilterType valueOf(java.lang.String) -> valueOf
+    boolean isTarget(com.nagopy.android.mypkgs.model.AppData) -> a
+    126:126:java.lang.String getName() -> c
+    131:131:int getTitleResourceId() -> a
+    136:136:int getSummaryResourceId() -> b
+com.nagopy.android.mypkgs.constants.FilterType$1 -> x.k:
+    32:32:boolean isTarget(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.FilterType$10 -> x.l:
+    77:77:boolean isTarget(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.FilterType$11 -> x.m:
+    82:82:boolean isTarget(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.FilterType$12 -> x.n:
+    87:87:boolean isTarget(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.FilterType$13 -> x.o:
+    119:119:int compare(com.nagopy.android.mypkgs.constants.FilterType,com.nagopy.android.mypkgs.constants.FilterType) -> a
+    116:116:int compare(java.lang.Object,java.lang.Object) -> compare
+com.nagopy.android.mypkgs.constants.FilterType$2 -> x.p:
+    37:37:boolean isTarget(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.FilterType$3 -> x.q:
+    42:42:boolean isTarget(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.FilterType$4 -> x.r:
+    47:47:boolean isTarget(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.FilterType$5 -> x.s:
+    52:52:boolean isTarget(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.FilterType$6 -> x.t:
+    57:57:boolean isTarget(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.FilterType$7 -> x.u:
+    62:62:boolean isTarget(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.FilterType$8 -> x.v:
+    67:67:boolean isTarget(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.FilterType$9 -> x.w:
+    72:72:boolean isTarget(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.ShareType -> x.x:
+    com.nagopy.android.mypkgs.constants.ShareType PACKAGE -> a
+    com.nagopy.android.mypkgs.constants.ShareType CSV -> b
+    com.nagopy.android.mypkgs.manager.CsvManager csv -> c
+    com.nagopy.android.mypkgs.constants.ShareType[] $VALUES -> d
+    23:23:com.nagopy.android.mypkgs.constants.ShareType[] values() -> values
+    23:23:com.nagopy.android.mypkgs.constants.ShareType valueOf(java.lang.String) -> valueOf
     java.lang.String makeShareString(java.util.List) -> a
-com.nagopy.android.mypkgs.ShareType$1 -> com.nagopy.android.mypkgs.ao:
-    24:29:java.lang.String makeShareString(java.util.List) -> a
-    34:34:java.lang.String makeShareString(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.ShareType$2 -> com.nagopy.android.mypkgs.ap:
-    39:45:java.lang.String makeShareString(java.util.List) -> a
-    50:50:java.lang.String makeShareString(com.nagopy.android.mypkgs.AppData) -> a
-com.nagopy.android.mypkgs.preference.AbstractMultiSelectPreference -> com.nagopy.android.mypkgs.preference.a:
-    android.content.SharedPreferences sp -> a
-    boolean allowEmpty -> b
-    57:58:void init(android.content.Context) -> a
-    62:68:void onAttachedToHierarchy(android.preference.PreferenceManager) -> onAttachedToHierarchy
-    71:83:android.preference.Preference buildPreference(com.nagopy.android.mypkgs.preference.Selectable) -> a
-    87:87:java.lang.String getValue() -> a
-    com.nagopy.android.mypkgs.preference.Selectable[] getValues() -> b
-    java.lang.String getDefaultName() -> c
-    98:120:boolean onPreferenceChange(android.preference.Preference,java.lang.Object) -> onPreferenceChange
-com.nagopy.android.mypkgs.preference.AbstractSingleSelectPreference -> com.nagopy.android.mypkgs.preference.b:
-    android.content.SharedPreferences sp -> a
-    58:59:void init(android.content.Context) -> a
-    63:69:void onAttachedToHierarchy(android.preference.PreferenceManager) -> onAttachedToHierarchy
-    72:79:android.preference.Preference buildPreference(com.nagopy.android.mypkgs.preference.Selectable) -> a
-    83:83:java.lang.String getValue() -> a
-    com.nagopy.android.mypkgs.preference.Selectable[] getValues() -> b
-    java.lang.String getDefaultName() -> c
-    92:105:boolean onPreferenceChange(android.preference.Preference,java.lang.Object) -> onPreferenceChange
-com.nagopy.android.mypkgs.preference.AppComparatorSelectPreference -> com.nagopy.android.mypkgs.preference.AppComparatorSelectPreference:
-    47:47:com.nagopy.android.mypkgs.AppComparator[] getValues() -> d
-    52:52:java.lang.String getDefaultName() -> c
-    23:23:com.nagopy.android.mypkgs.preference.Selectable[] getValues() -> b
-com.nagopy.android.mypkgs.preference.AppFilterSelectPreference -> com.nagopy.android.mypkgs.preference.AppFilterSelectPreference:
-    47:47:com.nagopy.android.mypkgs.FilterType[] getValues() -> d
-    52:52:java.lang.String getDefaultName() -> c
-    23:23:com.nagopy.android.mypkgs.preference.Selectable[] getValues() -> b
-com.nagopy.android.mypkgs.preference.AppInformationSelectPreference -> com.nagopy.android.mypkgs.preference.AppInformationSelectPreference:
-    47:49:void init(android.content.Context) -> a
-    53:53:com.nagopy.android.mypkgs.AppInformation[] getValues() -> d
-    58:58:java.lang.String getDefaultName() -> c
-    23:23:com.nagopy.android.mypkgs.preference.Selectable[] getValues() -> b
-com.nagopy.android.mypkgs.preference.Selectable -> com.nagopy.android.mypkgs.preference.c:
-    java.lang.String getName() -> c
-    int getTitleResourceId() -> a
-    int getSummaryResourceId() -> b
-com.nagopy.android.mypkgs.util.DebugUtil -> x.a:
+    23:23:com.nagopy.android.mypkgs.manager.CsvManager access$100() -> a
+com.nagopy.android.mypkgs.constants.ShareType$1 -> x.y:
+    27:32:java.lang.String makeShareString(java.util.List) -> a
+    37:37:java.lang.String makeShareString(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.constants.ShareType$2 -> x.z:
+    42:48:java.lang.String makeShareString(java.util.List) -> a
+    53:53:java.lang.String makeShareString(com.nagopy.android.mypkgs.model.AppData) -> a
+com.nagopy.android.mypkgs.di.component.ApplicationComponent -> y.a:
+    void inject(com.nagopy.android.mypkgs.MainActivity) -> a
+com.nagopy.android.mypkgs.di.component.DaggerApplicationComponent -> y.b:
+    javax.inject.Provider provideSharedPreferencesProvider -> b
+    javax.inject.Provider provideContextProvider -> c
+    dagger.MembersInjector mainActivityMembersInjector -> d
+    boolean $assertionsDisabled -> a
+    29:29:com.nagopy.android.mypkgs.di.component.DaggerApplicationComponent$Builder builder() -> a
+    33:36:void initialize(com.nagopy.android.mypkgs.di.component.DaggerApplicationComponent$Builder) -> a
+    40:41:void inject(com.nagopy.android.mypkgs.MainActivity) -> a
+com.nagopy.android.mypkgs.di.component.DaggerApplicationComponent$1 -> y.c:
+com.nagopy.android.mypkgs.di.component.DaggerApplicationComponent$Builder -> y.d:
+    com.nagopy.android.mypkgs.di.module.ApplicationModule applicationModule -> a
+    com.nagopy.android.mypkgs.di.module.SystemServiceModule systemServiceModule -> b
+    51:57:com.nagopy.android.mypkgs.di.component.ApplicationComponent build() -> a
+    61:65:com.nagopy.android.mypkgs.di.component.DaggerApplicationComponent$Builder applicationModule(com.nagopy.android.mypkgs.di.module.ApplicationModule) -> a
+    69:73:com.nagopy.android.mypkgs.di.component.DaggerApplicationComponent$Builder systemServiceModule(com.nagopy.android.mypkgs.di.module.SystemServiceModule) -> a
+    43:43:com.nagopy.android.mypkgs.di.module.SystemServiceModule access$100(com.nagopy.android.mypkgs.di.component.DaggerApplicationComponent$Builder) -> a
+    43:43:com.nagopy.android.mypkgs.di.module.ApplicationModule access$200(com.nagopy.android.mypkgs.di.component.DaggerApplicationComponent$Builder) -> b
+com.nagopy.android.mypkgs.di.component.DaggerSystemServiceComponent -> y.e:
+    javax.inject.Provider provideContextProvider -> b
+    javax.inject.Provider provideSharedPreferencesProvider -> c
+    dagger.MembersInjector userSettingsMembersInjector -> d
+    boolean $assertionsDisabled -> a
+    27:27:com.nagopy.android.mypkgs.di.component.DaggerSystemServiceComponent$Builder builder() -> a
+    31:34:void initialize(com.nagopy.android.mypkgs.di.component.DaggerSystemServiceComponent$Builder) -> a
+    38:39:void inject(com.nagopy.android.mypkgs.manager.SettingManager) -> a
+com.nagopy.android.mypkgs.di.component.DaggerSystemServiceComponent$1 -> y.f:
+com.nagopy.android.mypkgs.di.component.DaggerSystemServiceComponent$Builder -> y.g:
+    com.nagopy.android.mypkgs.di.module.SystemServiceModule systemServiceModule -> a
+    48:51:com.nagopy.android.mypkgs.di.component.SystemServiceComponent build() -> a
+    55:59:com.nagopy.android.mypkgs.di.component.DaggerSystemServiceComponent$Builder systemServiceModule(com.nagopy.android.mypkgs.di.module.SystemServiceModule) -> a
+    41:41:com.nagopy.android.mypkgs.di.module.SystemServiceModule access$100(com.nagopy.android.mypkgs.di.component.DaggerSystemServiceComponent$Builder) -> a
+com.nagopy.android.mypkgs.di.component.SystemServiceComponent -> y.h:
+    void inject(com.nagopy.android.mypkgs.manager.SettingManager) -> a
+com.nagopy.android.mypkgs.di.module.ApplicationModule -> z.a:
+    android.content.Context context -> a
+    28:28:com.nagopy.android.mypkgs.manager.SettingManager provideContext() -> a
+com.nagopy.android.mypkgs.di.module.ApplicationModule_ProvideContextFactory -> z.b:
+    com.nagopy.android.mypkgs.di.module.ApplicationModule module -> b
+    boolean $assertionsDisabled -> a
+    18:22:com.nagopy.android.mypkgs.manager.SettingManager get() -> a
+    26:26:dagger.internal.Factory create(com.nagopy.android.mypkgs.di.module.ApplicationModule) -> a
+    7:7:java.lang.Object get() -> b
+com.nagopy.android.mypkgs.di.module.SystemServiceModule -> z.c:
+    android.content.Context context -> a
+    26:26:android.content.Context provideContext() -> a
+    32:32:android.content.SharedPreferences provideSharedPreferences() -> b
+com.nagopy.android.mypkgs.di.module.SystemServiceModule_ProvideContextFactory -> z.d:
+    com.nagopy.android.mypkgs.di.module.SystemServiceModule module -> b
+    boolean $assertionsDisabled -> a
+    18:22:android.content.Context get() -> a
+    26:26:dagger.internal.Factory create(com.nagopy.android.mypkgs.di.module.SystemServiceModule) -> a
+    7:7:java.lang.Object get() -> b
+com.nagopy.android.mypkgs.di.module.SystemServiceModule_ProvideSharedPreferencesFactory -> z.e:
+    com.nagopy.android.mypkgs.di.module.SystemServiceModule module -> b
+    boolean $assertionsDisabled -> a
+    18:22:android.content.SharedPreferences get() -> a
+    26:26:dagger.internal.Factory create(com.nagopy.android.mypkgs.di.module.SystemServiceModule) -> a
+    7:7:java.lang.Object get() -> b
+com.nagopy.android.mypkgs.model.AppData -> com.nagopy.android.mypkgs.model.AppData:
+    java.lang.String label -> label
+    java.lang.String packageName -> packageName
+    boolean isEnabled -> isEnabled
+    boolean isSystem -> isSystem
+    java.lang.ref.WeakReference icon -> icon
+    java.util.List process -> process
+    boolean isInstalled -> isInstalled
+    boolean isThisASystemPackage -> isThisASystemPackage
+    boolean hasActiveAdmins -> hasActiveAdmins
+    boolean isDefaultApp -> isDefaultApp
+    long firstInstallTime -> firstInstallTime
+    long lastUpdateTime -> lastUpdateTime
+    93:125:void load(android.content.Context,android.content.pm.ApplicationInfo) -> a
+    129:129:java.lang.String toString() -> toString
+com.nagopy.android.mypkgs.manager.CsvManager -> aa.a:
+    java.util.List fields -> a
+    java.lang.String header -> b
+    54:54:java.lang.String getHeader() -> a
+    58:81:java.lang.String toCSV(java.lang.Object) -> a
+com.nagopy.android.mypkgs.manager.Exclude -> aa.b:
+com.nagopy.android.mypkgs.model.event.ListItemSelectedEvent -> ab.a:
+    com.nagopy.android.mypkgs.model.AppData appData -> a
+com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent -> ab.b:
+com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$1 -> ab.c:
+com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$ActionItemClickedEvent -> ab.d:
+    android.view.ActionMode actionMode -> a
+    android.view.MenuItem menuItem -> b
+    java.util.List checkedItemList -> c
+com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$CreateActionModeEvent -> ab.e:
+    android.view.ActionMode actionMode -> a
+    android.view.Menu menu -> b
+com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$DestroyActionModeEvent -> ab.f:
+    android.view.ActionMode actionMode -> a
+com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$ItemCheckedStateChangedEvent -> ab.g:
+    android.view.ActionMode actionMode -> a
+    int position -> b
+    long id -> c
+    boolean checked -> d
+    int checkedItemCount -> e
+com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$ItemCheckedStateChangedEvent$Builder -> ab.h:
+    com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$ItemCheckedStateChangedEvent event -> a
+    100:101:com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$ItemCheckedStateChangedEvent$Builder setActionMode(android.view.ActionMode) -> a
+    105:106:com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$ItemCheckedStateChangedEvent$Builder setPosition(int) -> a
+    110:111:com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$ItemCheckedStateChangedEvent$Builder setId(long) -> a
+    115:116:com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$ItemCheckedStateChangedEvent$Builder setChecked(boolean) -> a
+    120:121:com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$ItemCheckedStateChangedEvent$Builder setCheckedItemCount(int) -> b
+    125:125:com.nagopy.android.mypkgs.model.event.MultiChoiceModeListenerEvent$ItemCheckedStateChangedEvent build() -> a
+com.nagopy.android.mypkgs.model.loader.ApplicationIconLoader -> ac.a:
+    android.content.Context context -> a
+    java.lang.ref.WeakReference textViewWeakReference -> b
+    int iconSize -> c
+    int RETRIEVE_FLAGS -> d
+    java.lang.String packageName -> e
+    android.graphics.drawable.Drawable defaultIcon -> f
+    67:93:com.nagopy.android.mypkgs.model.AppData doInBackground(com.nagopy.android.mypkgs.model.AppData[]) -> a
+    107:121:void onPostExecute(com.nagopy.android.mypkgs.model.AppData) -> a
+    126:129:android.graphics.drawable.Drawable getDefaultIcon(android.content.Context) -> a
+    36:36:void onPostExecute(java.lang.Object) -> onPostExecute
+    36:36:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
+com.nagopy.android.mypkgs.model.loader.ApplicationLoader -> ac.b:
+    com.nagopy.android.mypkgs.model.loader.ApplicationLoader instance -> e
+    java.util.List appList -> a
+    java.util.Set listeners -> b
+    java.lang.Object lockObject -> c
+    java.util.Map runningStatusMap -> d
+    55:55:com.nagopy.android.mypkgs.model.loader.ApplicationLoader getInstance() -> a
+    59:73:void loadApplicationList(android.content.Context,com.nagopy.android.mypkgs.model.loader.ApplicationLoader$ApplicationLoadListener) -> a
+    76:77:void clearCache() -> b
+    152:175:java.util.Map getRunningStatusMap(android.content.Context) -> a
+com.nagopy.android.mypkgs.model.loader.ApplicationLoader$ApplicationLoadListener -> ac.c:
+    void onLoaded(java.util.List) -> a
+com.nagopy.android.mypkgs.model.loader.ApplicationLoader$ApplicationLoadTask -> ac.d:
+    java.lang.ref.WeakReference applicationListWeakReference -> a
+    90:141:java.lang.Void doInBackground(android.content.Context[]) -> a
+    79:79:java.lang.Object doInBackground(java.lang.Object[]) -> doInBackground
+com.nagopy.android.mypkgs.util.DebugUtil -> ad.a:
     39:40:void verboseLog(java.lang.String) -> a
     69:70:void errorLog(java.lang.String) -> b
-com.nagopy.android.mypkgs.util.DevicePolicyUtil -> x.b:
+com.nagopy.android.mypkgs.util.DevicePolicyUtil -> ad.b:
     java.lang.ref.WeakReference devicePolicyManagerWrapper -> a
-    36:44:boolean isThisASystemPackage(android.content.Context,android.content.pm.PackageInfo) -> a
-    48:56:boolean packageHasActiveAdmins(android.content.Context,java.lang.String) -> a
-com.nagopy.android.mypkgs.util.DevicePolicyUtil$DevicePolicyManagerWrapper -> x.c:
+    37:45:boolean isThisASystemPackage(android.content.Context,android.content.pm.PackageInfo) -> a
+    49:57:boolean packageHasActiveAdmins(android.content.Context,java.lang.String) -> a
+com.nagopy.android.mypkgs.util.DevicePolicyUtil$DevicePolicyManagerWrapper -> ad.c:
     android.app.admin.DevicePolicyManager devicePolicyManager -> a
     android.content.pm.PackageInfo mSystemPackageInfo -> b
     boolean enableSystemPackageInfo -> c
     java.lang.reflect.Method packageHasActiveAdmins -> d
     boolean enablePackageHasActiveAdminsMethod -> e
-    100:105:boolean packageHasActiveAdmins(java.lang.String) -> a
-    118:120:boolean isThisASystemPackage(android.content.pm.PackageInfo) -> a
-com.nagopy.android.mypkgs.util.DimenUtil -> x.d:
+    101:108:boolean packageHasActiveAdmins(java.lang.String) -> a
+    120:122:boolean isThisASystemPackage(android.content.pm.PackageInfo) -> a
+com.nagopy.android.mypkgs.util.DimenUtil -> ad.d:
     26:26:float getDensity(android.content.Context) -> a
     31:33:int getPixelFromDp(android.content.Context,int) -> a
-com.nagopy.android.mypkgs.util.FieldReflectWrapper -> x.e:
+com.nagopy.android.mypkgs.util.EventBus -> ad.e:
+    com.squareup.otto.Bus BUS -> a
+    13:13:com.squareup.otto.Bus getDefault() -> a
+com.nagopy.android.mypkgs.util.FieldReflectWrapper -> ad.f:
     java.lang.reflect.Field field -> a
-    boolean enabled -> b
-    60:62:int getInt(java.lang.Object) -> a
-    67:68:void log(java.lang.Exception) -> a
-com.nagopy.android.mypkgs.util.Logic -> x.f:
+    48:50:int getInt(java.lang.Object) -> a
+com.nagopy.android.mypkgs.util.Logic -> ad.g:
     java.util.Map RUNNING_STATUS_MAP -> a
-    69:70:boolean canLaunchImplicitIntent(android.content.Context,java.lang.String) -> a
-    74:75:boolean canLaunchImplicitIntent(android.content.Context,android.content.Intent) -> a
-    79:84:void sendIntent(android.app.Activity,java.lang.String,java.lang.String) -> a
-    87:88:void sendIntent(android.app.Activity,java.lang.String) -> a
-    92:92:java.lang.String makeSearchQuery(com.nagopy.android.mypkgs.AppData) -> a
-    97:97:java.lang.String makeSearchUrl(com.nagopy.android.mypkgs.AppData) -> b
-    103:110:java.util.List getCheckedItemList(android.widget.ListView) -> a
-    120:120:java.lang.String getStatusText(int) -> a
-    130:134:int getIconSize(android.content.Context) -> a
-    146:152:android.content.pm.ApplicationInfo getApplicationInfo(android.content.pm.PackageManager,java.lang.String) -> a
-    161:190:int getRetrieveFlags() -> a
-    202:207:void setIcon(android.widget.TextView,int) -> a
-    217:224:void setIcon(android.widget.TextView,android.graphics.drawable.Drawable,int) -> a
-    227:242:java.util.List getFilters(android.content.Context) -> b
-    246:252:com.nagopy.android.mypkgs.AppComparator getAppComparator(android.content.Context) -> c
-    256:275:java.util.List getAppInformation(android.content.Context) -> d
-com.nagopy.android.mypkgs.util.MethodReflectWrapper -> x.g:
+    69:69:java.lang.String getStatusText(int) -> a
+    79:83:int getIconSize(android.content.Context) -> a
+    95:101:android.content.pm.ApplicationInfo getApplicationInfo(android.content.pm.PackageManager,java.lang.String) -> a
+    110:139:int getRetrieveFlags() -> a
+    152:159:void setIcon(android.widget.TextView,android.graphics.drawable.Drawable,int) -> a
+com.nagopy.android.mypkgs.util.MethodReflectWrapper -> ad.h:
     java.lang.reflect.Method method -> a
-    boolean enabled -> b
-    52:55:java.lang.Object invoke(java.lang.Object,java.lang.Object[]) -> a
-    60:61:void log(java.lang.Exception) -> a
+    40:43:java.lang.Object invoke(java.lang.Object,java.lang.Object[]) -> a
+com.nagopy.android.mypkgs.manager.SettingManager -> ad.i:
+    android.content.Context context -> a
+    android.content.SharedPreferences sp -> b
+    46:51:com.nagopy.android.mypkgs.constants.AppComparator getAppComparator() -> a
+    55:73:java.util.List getAppInformation() -> b
+    77:91:java.util.List getFilters() -> c
+com.nagopy.android.mypkgs.util.UserSettings_MembersInjector -> ad.j:
+    javax.inject.Provider contextProvider -> b
+    javax.inject.Provider spProvider -> c
+    boolean $assertionsDisabled -> a
+    23:28:void injectMembers(com.nagopy.android.mypkgs.manager.SettingManager) -> a
+    31:31:dagger.MembersInjector create(javax.inject.Provider,javax.inject.Provider) -> a
+    9:9:void injectMembers(java.lang.Object) -> a
+com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter -> com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter:
+    com.nagopy.android.mypkgs.constants.FilterType filterType -> a
+    java.util.List originalData -> b
+    java.util.List filteredData -> c
+    android.view.LayoutInflater inflater -> d
+    com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter$ItemFilter mFilter -> e
+    android.content.Context context -> f
+    int iconSize -> g
+    int COLOR_ENABLED -> h
+    int COLOR_DISABLED -> i
+    java.util.List appInformationList -> j
+    com.nagopy.android.mypkgs.constants.AppComparator appComparator -> k
+    76:79:void updateApplicationList(java.util.List) -> a
+    82:84:void removeApplication(com.nagopy.android.mypkgs.model.AppData) -> a
+    87:88:void doFilter() -> a
+    91:91:int getCount() -> getCount
+    95:95:com.nagopy.android.mypkgs.model.AppData getItem(int) -> a
+    99:99:long getItemId(int) -> getItemId
+    106:156:android.view.View getView(int,android.view.View,android.view.ViewGroup) -> getView
+    173:173:android.widget.Filter getFilter() -> getFilter
+    47:47:java.lang.Object getItem(int) -> getItem
+com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter$1 -> com.nagopy.android.mypkgs.view.adapter.a:
+com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter$ItemFilter -> com.nagopy.android.mypkgs.view.adapter.b:
+    com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter this$0 -> a
+    179:193:android.widget.Filter$FilterResults performFiltering(java.lang.CharSequence) -> performFiltering
+    199:201:void publishResults(java.lang.CharSequence,android.widget.Filter$FilterResults) -> publishResults
+com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter$ViewHolder -> com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter$ViewHolder:
+    android.widget.TextView title -> title
+    android.widget.TextView packageName -> packageName
+    android.widget.TextView info -> info
+com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter$ViewHolder$$ViewInjector -> com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter$ViewHolder$$ViewInjector:
+    11:17:void inject(butterknife.ButterKnife$Finder,com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter$ViewHolder,java.lang.Object) -> inject
+    20:23:void reset(com.nagopy.android.mypkgs.view.adapter.ApplicationListAdapter$ViewHolder) -> reset
+    8:8:void reset(java.lang.Object) -> reset
+    8:8:void inject(butterknife.ButterKnife$Finder,java.lang.Object,java.lang.Object) -> inject
+com.nagopy.android.mypkgs.view.adapter.SectionsPagerAdapter -> com.nagopy.android.mypkgs.view.adapter.c:
+    android.content.Context context -> a
+    java.util.List filterTypeList -> b
+    java.util.Map cache -> c
+    49:59:android.support.v4.app.Fragment getItem(int) -> a
+    65:65:int getCount() -> b
+    70:71:java.lang.CharSequence getPageTitle(int) -> b
+com.nagopy.android.mypkgs.view.preference.AbstractMultiSelectPreference -> com.nagopy.android.mypkgs.view.preference.a:
+    android.content.SharedPreferences sp -> a
+    boolean allowEmpty -> b
+    57:58:void init(android.content.Context) -> a
+    62:68:void onAttachedToHierarchy(android.preference.PreferenceManager) -> onAttachedToHierarchy
+    71:83:android.preference.Preference buildPreference(com.nagopy.android.mypkgs.view.preference.Selectable) -> a
+    87:87:java.lang.String getValue() -> a
+    com.nagopy.android.mypkgs.view.preference.Selectable[] getValues() -> b
+    java.lang.String getDefaultName() -> c
+    98:120:boolean onPreferenceChange(android.preference.Preference,java.lang.Object) -> onPreferenceChange
+com.nagopy.android.mypkgs.view.preference.AbstractSingleSelectPreference -> com.nagopy.android.mypkgs.view.preference.b:
+    android.content.SharedPreferences sp -> a
+    58:59:void init(android.content.Context) -> a
+    63:69:void onAttachedToHierarchy(android.preference.PreferenceManager) -> onAttachedToHierarchy
+    72:79:android.preference.Preference buildPreference(com.nagopy.android.mypkgs.view.preference.Selectable) -> a
+    83:83:java.lang.String getValue() -> a
+    com.nagopy.android.mypkgs.view.preference.Selectable[] getValues() -> b
+    java.lang.String getDefaultName() -> c
+    92:105:boolean onPreferenceChange(android.preference.Preference,java.lang.Object) -> onPreferenceChange
+com.nagopy.android.mypkgs.view.preference.AppComparatorSelectPreference -> com.nagopy.android.mypkgs.view.preference.AppComparatorSelectPreference:
+    47:47:com.nagopy.android.mypkgs.constants.AppComparator[] getValues() -> d
+    52:52:java.lang.String getDefaultName() -> c
+    23:23:com.nagopy.android.mypkgs.view.preference.Selectable[] getValues() -> b
+com.nagopy.android.mypkgs.view.preference.AppFilterSelectPreference -> com.nagopy.android.mypkgs.view.preference.AppFilterSelectPreference:
+    47:47:com.nagopy.android.mypkgs.constants.FilterType[] getValues() -> d
+    52:52:java.lang.String getDefaultName() -> c
+    23:23:com.nagopy.android.mypkgs.view.preference.Selectable[] getValues() -> b
+com.nagopy.android.mypkgs.view.preference.AppInformationSelectPreference -> com.nagopy.android.mypkgs.view.preference.AppInformationSelectPreference:
+    47:49:void init(android.content.Context) -> a
+    53:53:com.nagopy.android.mypkgs.constants.AppInformation[] getValues() -> d
+    58:58:java.lang.String getDefaultName() -> c
+    23:23:com.nagopy.android.mypkgs.view.preference.Selectable[] getValues() -> b
+com.nagopy.android.mypkgs.view.preference.Selectable -> com.nagopy.android.mypkgs.view.preference.c:
+    java.lang.String getName() -> c
+    int getTitleResourceId() -> a
+    int getSummaryResourceId() -> b
+com.squareup.otto.AnnotatedHandlerFinder -> ae.a:
+    java.util.Map PRODUCERS_CACHE -> a
+    java.util.Map SUBSCRIBERS_CACHE -> b
+    49:118:void loadAnnotatedMethods(java.lang.Class) -> a
+    122:136:java.util.Map findAllProducers(java.lang.Object) -> a
+    141:158:java.util.Map findAllSubscribers(java.lang.Object) -> b
+com.squareup.otto.Bus -> ae.b:
+    java.util.concurrent.ConcurrentMap handlersByType -> a
+    java.util.concurrent.ConcurrentMap producersByType -> b
+    java.lang.String identifier -> c
+    com.squareup.otto.ThreadEnforcer enforcer -> d
+    com.squareup.otto.HandlerFinder handlerFinder -> e
+    java.lang.ThreadLocal eventsToDispatch -> f
+    java.lang.ThreadLocal isDispatching -> g
+    java.util.Map flattenHierarchyCache -> h
+    170:170:java.lang.String toString() -> toString
+    186:242:void register(java.lang.Object) -> a
+    245:255:void dispatchProducerResultToHandler(com.squareup.otto.EventHandler,com.squareup.otto.EventProducer) -> a
+    265:302:void unregister(java.lang.Object) -> b
+    315:339:void post(java.lang.Object) -> c
+    346:347:void enqueueEvent(java.lang.Object,com.squareup.otto.EventHandler) -> a
+    356:375:void dispatchQueuedEvents() -> a
+    386:391:void dispatch(java.lang.Object,com.squareup.otto.EventHandler) -> b
+    401:401:com.squareup.otto.EventProducer getProducerForEventType(java.lang.Class) -> a
+    412:412:java.util.Set getHandlersForEventType(java.lang.Class) -> b
+    423:429:java.util.Set flattenHierarchy(java.lang.Class) -> c
+    433:447:java.util.Set getClassesFor(java.lang.Class) -> d
+    456:460:void throwRuntimeException(java.lang.String,java.lang.reflect.InvocationTargetException) -> a
+com.squareup.otto.Bus$1 -> ae.c:
+    com.squareup.otto.Bus this$0 -> a
+    112:112:java.util.concurrent.ConcurrentLinkedQueue initialValue() -> a
+    110:110:java.lang.Object initialValue() -> initialValue
+com.squareup.otto.Bus$2 -> ae.d:
+    com.squareup.otto.Bus this$0 -> a
+    119:119:java.lang.Boolean initialValue() -> a
+    117:117:java.lang.Object initialValue() -> initialValue
+com.squareup.otto.Bus$EventWithHandler -> ae.e:
+    java.lang.Object event -> a
+    com.squareup.otto.EventHandler handler -> b
+com.squareup.otto.DeadEvent -> ae.f:
+    java.lang.Object source -> a
+    java.lang.Object event -> b
+com.squareup.otto.EventHandler -> ae.g:
+    java.lang.Object target -> a
+    java.lang.reflect.Method method -> b
+    int hashCode -> c
+    boolean valid -> d
+    64:64:boolean isValid() -> a
+    73:74:void invalidate() -> b
+    85:98:void handleEvent(java.lang.Object) -> a
+    101:101:java.lang.String toString() -> toString
+    105:105:int hashCode() -> hashCode
+    109:123:boolean equals(java.lang.Object) -> equals
+com.squareup.otto.EventProducer -> ae.h:
+    java.lang.Object target -> a
+    java.lang.reflect.Method method -> b
+    int hashCode -> c
+    boolean valid -> d
+    60:60:boolean isValid() -> a
+    69:70:void invalidate() -> b
+    80:91:java.lang.Object produceEvent() -> c
+    96:96:java.lang.String toString() -> toString
+    100:100:int hashCode() -> hashCode
+    104:118:boolean equals(java.lang.Object) -> equals
+com.squareup.otto.HandlerFinder -> ae.i:
+    com.squareup.otto.HandlerFinder ANNOTATED -> a
+    java.util.Map findAllProducers(java.lang.Object) -> a
+    java.util.Map findAllSubscribers(java.lang.Object) -> b
+com.squareup.otto.HandlerFinder$1 -> ae.j:
+    33:33:java.util.Map findAllProducers(java.lang.Object) -> a
+    38:38:java.util.Map findAllSubscribers(java.lang.Object) -> b
+com.squareup.otto.Produce -> ae.k:
+com.squareup.otto.Subscribe -> ae.l:
+com.squareup.otto.ThreadEnforcer -> ae.m:
+    com.squareup.otto.ThreadEnforcer ANY -> a
+    com.squareup.otto.ThreadEnforcer MAIN -> b
+    void enforce(com.squareup.otto.Bus) -> a
+com.squareup.otto.ThreadEnforcer$1 -> ae.n:
+    40:40:void enforce(com.squareup.otto.Bus) -> a
+com.squareup.otto.ThreadEnforcer$2 -> ae.o:
+    46:49:void enforce(com.squareup.otto.Bus) -> a
 com.viewpagerindicator.CirclePageIndicator -> com.viewpagerindicator.CirclePageIndicator:
     float mRadius -> a
     android.graphics.Paint mPaintPageFill -> b
@@ -25187,7 +25651,6 @@ com.viewpagerindicator.LinePageIndicator$SavedState$1 -> com.viewpagerindicator.
     436:436:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
 com.viewpagerindicator.PageIndicator -> com.viewpagerindicator.g:
     void setViewPager(android.support.v4.view.ViewPager) -> setViewPager
-    void setOnPageChangeListener(android.support.v4.view.ViewPager$OnPageChangeListener) -> setOnPageChangeListener
     void notifyDataSetChanged() -> a
 com.viewpagerindicator.R -> com.viewpagerindicator.h:
 com.viewpagerindicator.R$attr -> com.viewpagerindicator.i:
@@ -25229,41 +25692,40 @@ com.viewpagerindicator.TabPageIndicator -> com.viewpagerindicator.TabPageIndicat
     com.viewpagerindicator.IcsLinearLayout mTabLayout -> d
     android.support.v4.view.ViewPager mViewPager -> e
     android.support.v4.view.ViewPager$OnPageChangeListener mListener -> f
-    int mMaxTabWidth -> g
-    int mSelectedTabIndex -> h
-    com.viewpagerindicator.TabPageIndicator$OnTabReselectedListener mTabReselectedListener -> i
-    91:92:void setOnTabReselectedListener(com.viewpagerindicator.TabPageIndicator$OnTabReselectedListener) -> setOnTabReselectedListener
-    96:119:void onMeasure(int,int) -> onMeasure
-    122:134:void animateToTab(int) -> c
-    138:143:void onAttachedToWindow() -> onAttachedToWindow
-    147:151:void onDetachedFromWindow() -> onDetachedFromWindow
-    154:165:void addTab(int,java.lang.CharSequence,int) -> a
-    169:172:void onPageScrollStateChanged(int) -> b
-    176:179:void onPageScrolled(int,float,int) -> a
-    183:187:void onPageSelected(int) -> a
-    191:204:void setViewPager(android.support.v4.view.ViewPager) -> setViewPager
-    207:230:void notifyDataSetChanged() -> a
-    240:255:void setCurrentItem(int) -> setCurrentItem
-    259:260:void setOnPageChangeListener(android.support.v4.view.ViewPager$OnPageChangeListener) -> setOnPageChangeListener
-    287:291:void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo) -> onInitializeAccessibilityNodeInfo
-    38:38:android.support.v4.view.ViewPager access$000(com.viewpagerindicator.TabPageIndicator) -> a
-    38:38:com.viewpagerindicator.TabPageIndicator$OnTabReselectedListener access$100(com.viewpagerindicator.TabPageIndicator) -> b
-    38:38:java.lang.Runnable access$202(com.viewpagerindicator.TabPageIndicator,java.lang.Runnable) -> a
+    int mSelectedTabIndex -> g
+    com.viewpagerindicator.TabPageIndicator$OnTabReselectedListener mTabReselectedListener -> h
+    95:96:void setOnTabReselectedListener(com.viewpagerindicator.TabPageIndicator$OnTabReselectedListener) -> setOnTabReselectedListener
+    100:123:void onMeasure(int,int) -> onMeasure
+    126:138:void animateToTab(int) -> c
+    142:147:void onAttachedToWindow() -> onAttachedToWindow
+    151:155:void onDetachedFromWindow() -> onDetachedFromWindow
+    158:169:void addTab(int,java.lang.CharSequence,int) -> a
+    173:176:void onPageScrollStateChanged(int) -> b
+    180:183:void onPageScrolled(int,float,int) -> a
+    187:191:void onPageSelected(int) -> a
+    195:219:void setViewPager(android.support.v4.view.ViewPager) -> setViewPager
+    222:245:void notifyDataSetChanged() -> a
+    255:274:void setCurrentItem(int) -> setCurrentItem
+    278:279:void setOnPageChangeListener(android.support.v4.view.ViewPager$OnPageChangeListener) -> setOnPageChangeListener
+    306:310:void onInitializeAccessibilityNodeInfo(android.view.accessibility.AccessibilityNodeInfo) -> onInitializeAccessibilityNodeInfo
+    40:40:android.support.v4.view.ViewPager access$000(com.viewpagerindicator.TabPageIndicator) -> a
+    40:40:com.viewpagerindicator.TabPageIndicator$OnTabReselectedListener access$100(com.viewpagerindicator.TabPageIndicator) -> b
+    40:40:java.lang.Runnable access$202(com.viewpagerindicator.TabPageIndicator,java.lang.Runnable) -> a
 com.viewpagerindicator.TabPageIndicator$1 -> com.viewpagerindicator.j:
     com.viewpagerindicator.TabPageIndicator this$0 -> a
-    58:65:void onClick(android.view.View) -> onClick
+    62:69:void onClick(android.view.View) -> onClick
 com.viewpagerindicator.TabPageIndicator$2 -> com.viewpagerindicator.k:
     android.view.View val$tabView -> a
     com.viewpagerindicator.TabPageIndicator this$0 -> b
-    128:131:void run() -> run
+    132:135:void run() -> run
 com.viewpagerindicator.TabPageIndicator$OnTabReselectedListener -> com.viewpagerindicator.l:
     void onTabReselected(int) -> a
 com.viewpagerindicator.TabPageIndicator$TabView -> com.viewpagerindicator.m:
     int mIndex -> b
     com.viewpagerindicator.TabPageIndicator this$0 -> a
-    271:278:void onMeasure(int,int) -> onMeasure
-    281:281:int getIndex() -> a
-    262:262:int access$302(com.viewpagerindicator.TabPageIndicator$TabView,int) -> a
+    290:297:void onMeasure(int,int) -> onMeasure
+    300:300:int getIndex() -> a
+    281:281:int access$302(com.viewpagerindicator.TabPageIndicator$TabView,int) -> a
 com.viewpagerindicator.TitlePageIndicator -> com.viewpagerindicator.TitlePageIndicator:
     android.support.v4.view.ViewPager mViewPager -> a
     android.support.v4.view.ViewPager$OnPageChangeListener mListener -> b
@@ -25420,3 +25882,23 @@ com.viewpagerindicator.UnderlinePageIndicator$SavedState$1 -> com.viewpagerindic
     398:398:com.viewpagerindicator.UnderlinePageIndicator$SavedState[] newArray(int) -> a
     390:390:java.lang.Object[] newArray(int) -> newArray
     390:390:java.lang.Object createFromParcel(android.os.Parcel) -> createFromParcel
+dagger.MembersInjector -> af.a:
+    void injectMembers(java.lang.Object) -> a
+dagger.internal.Factory -> ag.a:
+dagger.internal.MembersInjectors -> ag.b:
+    36:36:dagger.MembersInjector noOp() -> a
+dagger.internal.MembersInjectors$NoOpMembersInjector -> ag.c:
+    dagger.internal.MembersInjectors$NoOpMembersInjector INSTANCE -> a
+    dagger.internal.MembersInjectors$NoOpMembersInjector[] $VALUES -> b
+    39:39:dagger.internal.MembersInjectors$NoOpMembersInjector[] values() -> values
+    39:39:dagger.internal.MembersInjectors$NoOpMembersInjector valueOf(java.lang.String) -> valueOf
+    43:46:void injectMembers(java.lang.Object) -> a
+dagger.internal.ScopedProvider -> ag.d:
+    java.lang.Object UNINITIALIZED -> b
+    dagger.internal.Factory factory -> c
+    java.lang.Object instance -> d
+    boolean $assertionsDisabled -> a
+    41:50:java.lang.Object get() -> b
+    55:58:javax.inject.Provider create(dagger.internal.Factory) -> a
+javax.inject.Provider -> ah.a:
+    java.lang.Object get() -> b

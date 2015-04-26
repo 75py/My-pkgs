@@ -15,36 +15,24 @@
  */
 package com.nagopy.android.mypkgs.util;
 
-import android.util.Log;
-
 import java.lang.reflect.Field;
 
 /**
- * リフレクションでフィールドを取得する際、try-catchを書かずに済ませるためのラッパークラス.<br>
- * インスタンス生成時にリフレクションを実行し、成功判定を保存する。<br>
- * 呼び出す側は、{@link #isEnabled()}を事前に使用し、{@link java.lang.reflect.Field}取得に成功している場合は値取得メソッドを使用できる。
+ * リフレクションでフィールドを取得する際、try-catchを書かずに済ませるためのラッパークラス.
  */
 public class FieldReflectWrapper {
 
     private final Field field;
-    private final boolean enabled;
 
     public FieldReflectWrapper(Class<?> cls, String fieldName) {
-        Field field = null;
-        boolean enabled = false;
+        Field field;
         try {
             field = cls.getDeclaredField(fieldName);
             field.setAccessible(true);
-            enabled = true;
         } catch (NoSuchFieldException e) {
-            log(e);
+            throw new RuntimeException(e);
         }
         this.field = field;
-        this.enabled = enabled;
-    }
-
-    public boolean isEnabled() {
-        return enabled;
     }
 
     public Object get(Object object) {
@@ -61,10 +49,6 @@ public class FieldReflectWrapper {
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private void log(Exception e) {
-        Log.e("FieldReflectWrapper", e.getMessage());
     }
 
 }

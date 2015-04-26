@@ -12,7 +12,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/list_item_vertical_margin">
 
-    <TextView
+    <com.nagopy.android.mypkgs.view.AppLabelView
         android:id="@+id/list_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
