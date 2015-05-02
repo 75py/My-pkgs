@@ -61,4 +61,6 @@
     <string name="summary_info_last_update_time" />
     <string name="format_first_install_time">初回インストール：%1$s</string>
     <string name="format_last_update_time">最終更新：%1$s</string>
+    <string name="pref_title_sort_package_name">パッケージ名</string>
+    <string name="pref_summary_sort_package_name">パッケージ名の昇順</string>
 </resources>
