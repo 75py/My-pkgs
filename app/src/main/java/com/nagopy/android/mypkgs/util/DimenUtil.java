@@ -15,7 +15,9 @@
  */
 package com.nagopy.android.mypkgs.util;
 
+import android.app.ActivityManager;
 import android.content.Context;
+import android.support.annotation.NonNull;
 
 public class DimenUtil {
 
@@ -31,5 +33,24 @@ public class DimenUtil {
         float density = getDensity(context);
         // 50 dp を pixel に変換する ( dp × density + 0.5f（四捨五入) )
         return (int) (dp * density + 0.5f);
+    }
+
+    /**
+     * ランチャーで表示するアイコンのサイズを取得する.
+     *
+     * @param context Context
+     * @return ランチャーのアイコンサイズ
+     */
+    public static int getIconSize(@NonNull Context context) {
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        return activityManager.getLauncherLargeIconSize();
+        /*
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+            return activityManager.getLauncherLargeIconSize();
+        } else {
+            return (int) context.getResources().getDimension(android.R.dimen.app_icon_size);
+        }
+        */
     }
 }

@@ -15,36 +15,24 @@
  */
 package com.nagopy.android.mypkgs.util;
 
-import android.util.Log;
-
 import java.lang.reflect.Method;
 
 /**
- * リフレクションでメソッドを取得する際、try-catchを書かずに済ませるためのラッパークラス.<br>
- * インスタンス生成時にリフレクションを実行し、成功判定を保存する。<br>
- * 呼び出す側は、{@link #isEnabled()}を事前に使用し、{@link java.lang.reflect.Method}取得に成功している場合はメソッドを使用できる。
+ * リフレクションでメソッドを取得する際、try-catchを書かずに済ませるためのラッパークラス.
  */
 public class MethodReflectWrapper {
 
     private final Method method;
-    private final boolean enabled;
 
     public MethodReflectWrapper(Class<?> cls, String methodName, Class<?>... parameterTypes) {
-        Method method = null;
-        boolean enabled = false;
+        Method method;
         try {
             method = cls.getDeclaredMethod(methodName, parameterTypes);
             method.setAccessible(true);
-            enabled = true;
         } catch (NoSuchMethodException e) {
-            log(e);
+            throw new RuntimeException(e);
         }
         this.method = method;
-        this.enabled = enabled;
-    }
-
-    public boolean isEnabled() {
-        return enabled;
     }
 
     public Object invoke(Object receiver, Object... args) {
@@ -54,10 +42,6 @@ public class MethodReflectWrapper {
 //        } catch (IllegalAccessException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private void log(Exception e) {
-        Log.e("MethodReflectWrapper", e.getMessage());
     }
 
 }

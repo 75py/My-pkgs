@@ -3,6 +3,7 @@ package com.nagopy.android.mypkgs.uiautomator;
 import android.support.test.uiautomator.Configurator;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiSelector;
+import android.util.Log;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -121,5 +122,24 @@ public class UiAutomatorUtil {
             }
         }
         return false;
+    }
+
+    public static final String PACKAGE_NAME = "com.nagopy.android.mypkgs";
+    public static final String TAG = "nagopy_uiautomator";
+
+    public static void debugLog(Object obj) {
+        Log.d(TAG, obj == null ? "null" : obj.toString());
+    }
+
+    public static void infoLog(Object obj) {
+        Log.i(TAG, obj == null ? "null" : obj.toString());
+    }
+
+    public static void warningLog(Object obj) {
+        Log.w(TAG, obj == null ? "null" : obj.toString());
+    }
+
+    public static void errorLog(Throwable t) {
+        Log.e(TAG, t.getMessage());
     }
 }

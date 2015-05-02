@@ -17,7 +17,7 @@ package com.nagopy.android.mypkgs;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.TextUtils;
@@ -34,16 +34,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class AboutActivity extends ActionBarActivity {
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+public class AboutActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_about);
-        // ツールバーをアクションバーとしてセット
+        ButterKnife.inject(this);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //noinspection ConstantConditions
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView versionName = (TextView) findViewById(R.id.version_name);
@@ -136,14 +141,10 @@ public class AboutActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.button_open_source_license:
-                Intent licenseActivity = new Intent(getApplicationContext(), LicenseActivity.class);
-                startActivity(licenseActivity);
-                break;
-            default:
-                throw new RuntimeException("unknown id:" + view.getId());
-        }
+    @SuppressWarnings("unused")
+    @OnClick(R.id.button_open_source_license)
+    public void showOpenSourceLicense() {
+        Intent licenseActivity = new Intent(getApplicationContext(), LicenseActivity.class);
+        startActivity(licenseActivity);
     }
 }

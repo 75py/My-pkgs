@@ -14,9 +14,9 @@ import android.text.TextUtils;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.nagopy.android.mypkgs.BuildConfig;
 import com.nagopy.android.mypkgs.MainActivity;
 import com.nagopy.android.mypkgs.R;
-import com.nagopy.android.mypkgs.TestUtils;
 import com.viewpagerindicator.TabPageIndicator;
 
 import org.junit.After;
@@ -54,7 +54,7 @@ public class UITest extends ActivityInstrumentationTestCase2<MainActivity> {
     @After
     public void tearDown() throws Exception {
         uiDevice.pressBack();
-        UiAutomatorUtil.finishApp(uiDevice, TestUtils.PACKAGE_NAME);
+        UiAutomatorUtil.finishApp(uiDevice, BuildConfig.APPLICATION_ID);
         super.tearDown();
     }
 
@@ -123,7 +123,7 @@ public class UITest extends ActivityInstrumentationTestCase2<MainActivity> {
             listView.setSwipeDeadZonePercentage(0.2); // デッドゾーンを若干大きめにして、スクロール幅を縮小する
         } catch (NoSuchMethodError e) {
             // API16以上のはずだが、SH-02Eでエラーになる。テストに大きく支障があるわけではないため無視する。
-            TestUtils.errorLog(e);
+            UiAutomatorUtil.errorLog(e);
         }
 
         List<String> errorAppList = new ArrayList<>();
@@ -157,7 +157,7 @@ public class UITest extends ActivityInstrumentationTestCase2<MainActivity> {
                         label = titleTextView.getText();
                     } catch (UiObjectNotFoundException e) {
                         // タイトルが取得できない場合
-                        TestUtils.debugLog("continue (title not found)");
+                        UiAutomatorUtil.debugLog("continue (title not found)");
                         continue;
                     }
                     UiObject packageNameTextView =
@@ -169,10 +169,10 @@ public class UITest extends ActivityInstrumentationTestCase2<MainActivity> {
                             );
                     String packageName = packageNameTextView.getText();
                     if (TextUtils.isEmpty(packageName) || testedPackages.contains(packageName)) {
-                        TestUtils.debugLog("continue " + packageName);
+                        UiAutomatorUtil.debugLog("continue " + packageName);
                         continue;
                     }
-                    TestUtils.infoLog(label + " [" + packageName + "]");
+                    UiAutomatorUtil.infoLog(label + " [" + packageName + "]");
                     hasNext = true;
                     testedPackages.add(packageName);
                     titleTextView.clickAndWaitForNewWindow();
@@ -183,7 +183,7 @@ public class UITest extends ActivityInstrumentationTestCase2<MainActivity> {
                         // バリデータでエラーになった場合
                         if (UiAutomatorUtil.isIgnorePackage(packageName)) {
                             // 無視リストに入っている場合はエラーにせず、ログ出力のみで次へ進む
-                            TestUtils.infoLog("[Info] Ignore application:" + packageName);
+                            UiAutomatorUtil.infoLog("[Info] Ignore application:" + packageName);
                         } else {
                             // バリデータでエラーになり、かつ無視リストに入っていない場合はエラーとする
                             errorAppList.add(packageName);
@@ -195,7 +195,7 @@ public class UITest extends ActivityInstrumentationTestCase2<MainActivity> {
                     // 画面に表示されているListViewの要素のi番目が見つからない OR パッケージ名が見つからない
                     // ＝ 今表示されている分は全部見た
                     // ＝ forループは抜け、次へ進む
-                    TestUtils.debugLog(i + ", continue(e) " + e.getMessage());
+                    UiAutomatorUtil.debugLog(i + ", continue(e) " + e.getMessage());
                     break;
                 }
             }
@@ -205,7 +205,7 @@ public class UITest extends ActivityInstrumentationTestCase2<MainActivity> {
     }
 
     private void validateCurrentPageTitle(String title) throws UiObjectNotFoundException {
-        TestUtils.debugLog("validateCurrentPageTitle " + title);
+        UiAutomatorUtil.debugLog("validateCurrentPageTitle " + title);
         UiObject titlePageIndicator = uiDevice.findObject(
                 new UiSelector()
                         .className(TabPageIndicator.class)
