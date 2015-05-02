@@ -43,6 +43,15 @@ public enum AppComparator implements Comparator<AppData>, Selectable {
             }
             return ret;
         }
+    }, PACKAGE_NAME(R.string.pref_title_sort_package_name, R.string.pref_summary_sort_package_name) {
+        @Override
+        public int compare(AppData lhs, AppData rhs) {
+            if (lhs.isInstalled != rhs.isInstalled) {
+                // 「未インストール」は最後に
+                return lhs.isInstalled ? -1 : 1;
+            }
+            return lhs.packageName.compareToIgnoreCase(rhs.packageName);
+        }
     }, UPDATE_DATE_DESC(R.string.pref_title_sort_update_time_desc, R.string.pref_summary_sort_update_time_desc) {
         @Override
         public int compare(AppData lhs, AppData rhs) {
