@@ -181,8 +181,14 @@ public class MainActivity extends AppCompatActivity {
 
         ApplicationListAdapter listAdapter = getApplicationListAdapter();
         switch (item.getItemId()) {
+            case R.id.action_share_label:
+                sendIntent(getString(listAdapter.filterType.titleResourceId), ShareType.LABEL.makeShareString(listAdapter.filteredData));
+                break;
             case R.id.action_share_package_name:
                 sendIntent(getString(listAdapter.filterType.titleResourceId), ShareType.PACKAGE.makeShareString(listAdapter.filteredData));
+                break;
+            case R.id.action_share_label_and_package_name:
+                sendIntent(getString(listAdapter.filterType.titleResourceId), ShareType.LABEL_AND_PACKAGE.makeShareString(listAdapter.filteredData));
                 break;
             case R.id.action_share_csv:
                 sendIntent(getString(listAdapter.filterType.titleResourceId), ShareType.CSV.makeShareString(listAdapter.filteredData));
@@ -294,8 +300,14 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 break;
+            case R.id.action_share_label:
+                sendIntent(ShareType.LABEL.makeShareString(checkedItemList));
+                break;
             case R.id.action_share_package_name:
                 sendIntent(ShareType.PACKAGE.makeShareString(checkedItemList));
+                break;
+            case R.id.action_share_label_and_package_name:
+                sendIntent(ShareType.LABEL_AND_PACKAGE.makeShareString(checkedItemList));
                 break;
             case R.id.action_share_csv:
                 sendIntent(ShareType.CSV.makeShareString(checkedItemList));

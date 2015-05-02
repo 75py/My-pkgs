@@ -24,7 +24,9 @@
     <string name="title_user_running">"User, running"</string>
     <string name="title_default">Default</string>
     <string name="reload">Reload</string>
+    <string name="title_label">App name</string>
     <string name="title_package_name">Package name</string>
+    <string name="title_label_and_package_name">App name &amp; Package name</string>
     <string name="title_csv">CSV</string>
 
     <string name="pref_key_enabled_advanced" translatable="false">pref_key_enabled_advanced</string>

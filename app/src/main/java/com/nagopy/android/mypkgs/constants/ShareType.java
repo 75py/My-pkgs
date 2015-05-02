@@ -15,12 +15,37 @@
  */
 package com.nagopy.android.mypkgs.constants;
 
-import com.nagopy.android.mypkgs.model.AppData;
 import com.nagopy.android.mypkgs.manager.CsvManager;
+import com.nagopy.android.mypkgs.model.AppData;
 
 import java.util.List;
 
+/**
+ * 共有方法の定義クラス
+ */
 public enum ShareType {
+    /**
+     * アプリ名共有
+     */
+    LABEL {
+        @Override
+        public String makeShareString(List<AppData> appList) {
+            StringBuilder sb = new StringBuilder();
+            for (AppData appData : appList) {
+                sb.append(makeShareString(appData));
+                sb.append(Constants.LINE_SEPARATOR);
+            }
+            return sb.toString();
+        }
+
+        @Override
+        public String makeShareString(AppData appData) {
+            return appData.label;
+        }
+    },
+    /**
+     * パッケージ名
+     */
     PACKAGE {
         @Override
         public String makeShareString(List<AppData> appList) {
@@ -36,10 +61,34 @@ public enum ShareType {
         public String makeShareString(AppData appData) {
             return appData.packageName;
         }
-    }, CSV {
+    },
+    /**
+     * アプリ名とパッケージ名
+     */
+    LABEL_AND_PACKAGE {
         @Override
         public String makeShareString(List<AppData> appList) {
-            StringBuilder sb = new StringBuilder(csv.getHeader());
+            StringBuilder sb = new StringBuilder();
+            for (AppData appData : appList) {
+                sb.append(makeShareString(appData));
+                sb.append(Constants.LINE_SEPARATOR);
+                sb.append(Constants.LINE_SEPARATOR);
+            }
+            return sb.toString();
+        }
+
+        @Override
+        public String makeShareString(AppData appData) {
+            return appData.label + Constants.LINE_SEPARATOR + appData.packageName;
+        }
+    },
+    /**
+     * CSV形式
+     */
+    CSV {
+        @Override
+        public String makeShareString(List<AppData> appList) {
+            StringBuilder sb = new StringBuilder(CSV_MANAGER.getHeader());
             sb.append(Constants.LINE_SEPARATOR);
             for (AppData appData : appList) {
                 sb.append(makeShareString(appData));
@@ -50,13 +99,25 @@ public enum ShareType {
 
         @Override
         public String makeShareString(AppData appData) {
-            return csv.toCSV(appData);
+            return CSV_MANAGER.toCSV(appData);
         }
     };
 
+    /**
+     * 共有用の文字列を作成する
+     *
+     * @param appList 共有対象
+     * @return 共有用の文字列
+     */
     public abstract String makeShareString(List<AppData> appList);
 
-    public abstract String makeShareString(AppData appList);
+    /**
+     * 共有用の文字列を作成する
+     *
+     * @param appData 共有対象
+     * @return 共有用の文字列
+     */
+    public abstract String makeShareString(AppData appData);
 
-    private static final CsvManager<AppData> csv = new CsvManager<>(AppData.class);
+    private static final CsvManager<AppData> CSV_MANAGER = new CsvManager<>(AppData.class);
 }
