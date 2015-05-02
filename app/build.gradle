@@ -52,3 +52,39 @@ dependencies {
     androidTestCompile 'org.mockito:mockito-core:1.9.5'
     androidTestCompile "com.google.dexmaker:dexmaker-mockito:1.2"
 }
+
+// Findbugs
+apply plugin: 'findbugs'
+task findbugs(type: FindBugs) {
+    ignoreFailures = true
+    effort = "max"
+    reportLevel = "low"
+    excludeFilter = new File("${project.rootDir}/config_findbugs_filter.xml")
+    classes = files("build/intermediates/classes/")
+    classes += files("${project.rootDir}/ViewPagerIndicator/build/intermediates/classes/")
+    source 'src/main'
+    source "${project.rootDir}/ViewPagerIndicator/src/main"
+    include '**/*.java'
+    reports {
+        xml {
+            destination "${project.rootDir}/build/reports/findbugs_report.xml"
+        }
+    }
+    classpath = files()
+}
+check.dependsOn 'findbugs'
+
+// Checkstyle
+apply plugin: 'checkstyle'
+task checkstyle(type: Checkstyle) {
+    configFile file("${project.rootDir}/config_checkstyle.xml")
+    source 'src/main'
+    include '**/*.java'
+    reports {
+        xml {
+            destination "${project.rootDir}/build/reports/checkstyle.xml"
+        }
+    }
+    classpath = files()
+}
+check.dependsOn 'checkstyle'
