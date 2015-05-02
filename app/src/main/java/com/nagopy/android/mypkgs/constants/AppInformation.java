@@ -28,8 +28,14 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * アプリ毎に表示する詳細情報の定義クラス
+ */
 public enum AppInformation implements Selectable {
 
+    /**
+     * プロセス情報
+     */
     PROCESS(R.string.title_info_process, R.string.summary_info_process) {
         @Override
         public boolean append(@NonNull Context context, @NonNull StringBuilder sb, @NonNull AppData appData) {
@@ -44,7 +50,11 @@ public enum AppInformation implements Selectable {
             }
             return true;
         }
-    }, NOT_INSTALLED(R.string.title_info_not_installed, R.string.summary_info_not_installed) {
+    },
+    /**
+     * インストール状態
+     */
+    NOT_INSTALLED(R.string.title_info_not_installed, R.string.summary_info_not_installed) {
         @Override
         public boolean append(@NonNull Context context, @NonNull StringBuilder sb, @NonNull AppData appData) {
             if (!appData.isInstalled) {
@@ -53,7 +63,11 @@ public enum AppInformation implements Selectable {
             }
             return false;
         }
-    }, FIRST_INSTALL_TIME(R.string.title_info_first_install_time, R.string.summary_info_first_install_time) {
+    },
+    /**
+     * 初回インストール日時
+     */
+    FIRST_INSTALL_TIME(R.string.title_info_first_install_time, R.string.summary_info_first_install_time) {
         @Override
         public boolean append(@NonNull Context context, @NonNull StringBuilder sb, @NonNull AppData appData) {
             if (appData.firstInstallTime < Constants.Y2K) {
@@ -63,7 +77,11 @@ public enum AppInformation implements Selectable {
             sb.append(context.getString(R.string.format_first_install_time, format.format(new Date(appData.firstInstallTime))));
             return true;
         }
-    }, LAST_UPDATE_TIME(R.string.title_info_last_update_time, R.string.summary_info_last_update_time) {
+    },
+    /**
+     * 最終更新日時
+     */
+    LAST_UPDATE_TIME(R.string.title_info_last_update_time, R.string.summary_info_last_update_time) {
         @Override
         public boolean append(@NonNull Context context, @NonNull StringBuilder sb, @NonNull AppData appData) {
             if (appData.lastUpdateTime < Constants.Y2K) {
@@ -75,12 +93,18 @@ public enum AppInformation implements Selectable {
         }
     };
 
-    public final int titleResourceId;
-    public final int summaryResourceId;
+    private final int titleResourceId;
+    private final int summaryResourceId;
 
-    AppInformation(int titleResourceId, int summaryResourceId) {
-        this.titleResourceId = titleResourceId;
-        this.summaryResourceId = summaryResourceId;
+    /**
+     * コンストラクタ
+     *
+     * @param titleId   設定画面で表示するタイトルの文字列リソースID
+     * @param summaryId 設定画面で表示する説明文の文字列リソースID
+     */
+    AppInformation(int titleId, int summaryId) {
+        this.titleResourceId = titleId;
+        this.summaryResourceId = summaryId;
     }
 
     @Override
@@ -98,11 +122,24 @@ public enum AppInformation implements Selectable {
         return summaryResourceId;
     }
 
+    /**
+     * 定義された情報をStringBuilderに追加する。
+     *
+     * @param context Context
+     * @param sb      StringBuilder
+     * @param appData アプリ情報
+     * @return 文字列を追加した場合はtrue、追加しなかった場合はfalse
+     */
     public abstract boolean append(@NonNull Context context, @NonNull StringBuilder sb, @NonNull AppData appData);
 
-
+    /**
+     * デフォルトで使用する AppInformation のリスト
+     */
     public static final List<AppInformation> DEFAULT_LIST
             = Collections.unmodifiableList(Collections.singletonList(AppInformation.PROCESS));
+    /**
+     * デフォルトで使用する AppInformation のリスト（SharedPreferencesのデフォルト文字列）
+     */
     public static final String DEFAULT_VALUE;
 
     static {

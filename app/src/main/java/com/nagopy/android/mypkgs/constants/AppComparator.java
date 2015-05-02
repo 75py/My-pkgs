@@ -15,14 +15,24 @@
  */
 package com.nagopy.android.mypkgs.constants;
 
-import com.nagopy.android.mypkgs.model.AppData;
 import com.nagopy.android.mypkgs.R;
+import com.nagopy.android.mypkgs.model.AppData;
 import com.nagopy.android.mypkgs.view.preference.Selectable;
 
 import java.util.Comparator;
 
+/**
+ * ソート順の定義クラス
+ */
 public enum AppComparator implements Comparator<AppData>, Selectable {
 
+    /**
+     * デフォルトのソート順。<br />
+     * <ol>
+     * <li>インストール状態が異なる場合、未インストールを後ろにする。</li>
+     * <li>アプリ表示名の昇順に並べる。ただし、アプリ表示名が同一の場合はパッケージ名の昇順で並べる。</li>
+     * </ol>
+     */
     DEFAULT(R.string.pref_title_sort_default, R.string.pref_summary_sort_default) {
         @Override
         public int compare(AppData lhs, AppData rhs) {
@@ -43,7 +53,11 @@ public enum AppComparator implements Comparator<AppData>, Selectable {
             }
             return ret;
         }
-    }, PACKAGE_NAME(R.string.pref_title_sort_package_name, R.string.pref_summary_sort_package_name) {
+    },
+    /**
+     * パッケージ名の昇順
+     */
+    PACKAGE_NAME(R.string.pref_title_sort_package_name, R.string.pref_summary_sort_package_name) {
         @Override
         public int compare(AppData lhs, AppData rhs) {
             if (lhs.isInstalled != rhs.isInstalled) {
@@ -52,7 +66,11 @@ public enum AppComparator implements Comparator<AppData>, Selectable {
             }
             return lhs.packageName.compareToIgnoreCase(rhs.packageName);
         }
-    }, UPDATE_DATE_DESC(R.string.pref_title_sort_update_time_desc, R.string.pref_summary_sort_update_time_desc) {
+    },
+    /**
+     * 最終更新日時の降順
+     */
+    UPDATE_DATE_DESC(R.string.pref_title_sort_update_time_desc, R.string.pref_summary_sort_update_time_desc) {
         @Override
         public int compare(AppData lhs, AppData rhs) {
             if (lhs.lastUpdateTime != rhs.lastUpdateTime) {
@@ -66,19 +84,27 @@ public enum AppComparator implements Comparator<AppData>, Selectable {
     private final int titleResourceId;
     private final int summaryResourceId;
 
-    AppComparator(int titleResourceId, int summaryResourceId) {
-        this.titleResourceId = titleResourceId;
-        this.summaryResourceId = summaryResourceId;
+    /**
+     * コンストラクタ
+     * @param titleId 設定画面で表示するタイトルの文字列リソースID
+     * @param summaryId 設定画面で表示する説明文の文字列リソースID
+     */
+    AppComparator(int titleId, int summaryId) {
+        this.titleResourceId = titleId;
+        this.summaryResourceId = summaryId;
     }
 
+    @Override
     public int getTitleResourceId() {
         return titleResourceId;
     }
 
+    @Override
     public int getSummaryResourceId() {
         return summaryResourceId;
     }
 
+    @Override
     public String getName() {
         return name();
     }

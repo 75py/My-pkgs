@@ -19,12 +19,29 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+/**
+ * 定数クラス
+ */
 public class Constants {
 
+    /**
+     * 改行
+     */
     public static final String LINE_SEPARATOR = System.getProperty("line.separator");
+
+    /**
+     * text/plain
+     */
     public static final String MINE_TYPE_TEXT_PLAIN = "text/plain";
+
+    /**
+     * 更新有無フラグを保存するためのキー
+     */
     public static final String KEY_UPDATE_FLG = "UPDATE_FLG";
 
+    /**
+     * 2000/01/01（ミリ秒）
+     */
     public static final long Y2K;
 
     static {
