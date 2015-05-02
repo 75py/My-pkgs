@@ -8,3 +8,5 @@
 build
 *.apk
 gradle.properties
+*.iml
+app/map.txt
